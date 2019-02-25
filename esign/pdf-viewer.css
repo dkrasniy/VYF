@@ -1,0 +1,225 @@
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	text-align: left;
+	background-color: #fff
+}
+
+.toolbar-wrapper {
+	background: #333;
+	padding: 0;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-flex: 2;
+	    -ms-flex: 2;
+	        flex: 2;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	color: #fff;
+	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+	position: relative;
+	white-space: nowrap;
+	background-color: #3d464d;
+	z-index: 2;
+	overflow-x: auto;
+}
+
+.d-flex {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.align-items-center {
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.justify-content-center {
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+.dropdown-group {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.toolbar-button {
+	background: transparent;
+	padding-left: 0;
+	border: 0;
+	-ms-touch-action: pan-x;
+	    touch-action: pan-x;
+	cursor: pointer;
+	width: auto;
+	outline: none;
+	background-color: inherit;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 10px 15px;
+	-webkit-transition: .2s ease all;
+	-o-transition: .2s ease all;
+	transition: .2s ease all;
+}
+
+.toolbar-button:hover {
+	background: #5f6d78;
+}
+
+.toolbar-button span {
+	-webkit-box-flex: 24px;
+	    -ms-flex: 24px 0 0px;
+	        flex: 24px 0 0;
+	width: 24px;
+	height: 24px;
+	fill: white;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+
+path.stroke-color {
+	stroke: white;
+}
+
+path.fill-color {
+	fill: #fff;
+}
+
+.page-indicator {
+    margin: 0 20px;
+    font-size:80%;
+}
+
+.page-indicator button {
+	width: 26px;
+	height: 100%;
+	background: rgba(0, 0, 0, .2);
+	color: #fff;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	padding: 7px 3px;
+	-ms-touch-action: none;
+	    touch-action: none;
+}
+
+.page-indicator .input-controls {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	height: 28px;
+	margin: 0 4px;
+}
+
+.page-indicator input[type=number]::-webkit-inner-spin-button, 
+.page-indicator input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.page-indicator .input-controls label {
+	position: absolute;
+	top: -1000000px;
+	left: -1000000px;
+}
+
+.page-indicator .input-controls input {
+	width: 48px;
+	text-align: center;
+	font-size: 13px;
+	padding: 4px;
+	font-weight: 400;
+	background: rgba(0, 0, 0, .2);
+	border: none;
+	outline: none;
+	color: #83888d;
+	line-height: 13px;
+	-webkit-transition: all .15s;
+	-o-transition: all .15s;
+	transition: all .15s;
+    margin: 0 1px;
+    font-size:110%;
+}
+.page-indicator .input-controls input:focus {
+    color: #fff;
+}
+
+.page-indicator .arrow-controls {
+	width: 14px;
+	height: 14px;
+	display: block;
+}
+
+.page-indicator button .arrow-controls {
+	fill: #fff;
+}
+
+.page-indicator button:disabled .arrow-controls {
+	fill: #83888d;
+}
+
+.page-indicator button:hover {
+	background: #5f6d78;
+}
+
+span.dropdown-caret {
+	width: 12px;
+}
+
+span.dropdown-caret svg {
+	width: 12px;
+	margin-left: 7px;
+}
+
+button.prev-page {
+	border-radius: 4px 0 0 4px;
+}
+
+button.next-page {
+	border-radius: 0 4px 4px 0;
+}
+
+.toolbar-button.has-divider-left {
+	border-left: 1px solid #48535b;
+}
+.dropdown-content  {
+    visibility: hidden;
+    opacity: 0;
+}

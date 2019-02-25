@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+      <link rel="stylesheet" href="../scss/custom.css">
+      <link rel="stylesheet" href="../fonts/fonts.css">
+      <title>Components - Virtual Yellow Folder</title>
+   
+   </head>
+   <body style="margin: 0 auto; max-width:900px; padding:1em;">
+      <h2>Icon Buttons</h2>
+      <div class="section-to-code">
+            <button type="button" class="icon-container" aria-label="Close">
+               <i class="fas fa-times"></i>
+            </button>
+      </div>
+      <div class="section-to-code">
+            <button type="button" class="icon-container light" aria-label="Close">
+            <i class="fas fa-times"></i>
+            </button>
+      </div>
+      <div class="section-to-code">
+            <button type="button" class="icon-container dark" aria-label="Close">
+            <i class="fas fa-times"></i>
+            </button>
+      </div>
+
+      
+      
+
+      
+   
+      <!-- JavaScript -->
+      <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+      <script src="../bootstrap/js/bootstrap.min.js"></script>
+      <script>
+         var matches = document.querySelectorAll("div.section-to-code");
+         //console.log(matches.length)
+         for(i = 0; i < matches.length; i++){
+            let innerSection = (matches[i]);
+            var div = document.createElement("div");
+            div.innerHTML = "<code>" + innerSection.innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/>/g, '<&gt;>') + "</code>"; 
+            div.classList.add("code-code");
+            innerSection.appendChild(div)
+         }
+      </script>
+   </body>
+</html>

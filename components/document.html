@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+      <link rel="stylesheet" href="../scss/custom.css">
+      <link rel="stylesheet" href="../fonts/fonts.css">
+      <title>Components - Virtual Yellow Folder</title>
+      
+   </head>
+   <body style="margin: 0 auto; max-width:900px; padding:1em;">
+      <h2>Sortable Accordians</h2>
+        <div id="folder-list">
+            <input class="search form-control mb-2" placeholder="Search" />
+            <div class="accordion list">
+               
+                  <div class="folder-card">
+                    <a class="folder-card-header" id="headingOne" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="false" aria-controls="collapseOne">
+                        <div class="icon-container" aria-label="Folder">
+                            <i class="fas fa-folder"></i>
+                        </div>
+                         
+                         <h4 class="title">Travel Expense Folder</h4>
+                         <p>David Krasniy</p>
+                         <p>6 Documents</p>
+                         <p>2 hours ago</p>
+                         <p>Signature</p>
+
+                    </a>
+                
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne">
+                      <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="folder-card">
+                      <a class="folder-card-header" id="folderTwo" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
+                          <div class="icon-container" aria-label="Folder">
+                              <i class="fas fa-folder"></i>
+                          </div>
+                           
+                           <h4 class="title">Some Other Folder</h4>
+                           <p>David Krasniy</p>
+                           <p>6 Documents</p>
+                           <p>2 hours ago</p>
+                           <p>Signature</p>
+                      </a>
+                  
+                      <div id="collapseTwo" class="collapse" aria-labelledby="folderTwo">
+                        <div class="card-body">
+                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                
+                  
+                </div>
+              </div>
+   
+      <!-- JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+      <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+      <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+      <script>
+        var options = {
+            valueNames: [ 'title', 'city' ]
+        };
+
+        var folderList = new List('folder-list', options);
+</script>
+      
+   </body>
+</html>

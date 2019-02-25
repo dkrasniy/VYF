@@ -1,0 +1,85 @@
+// Typography
+$font-stack: Inter UI, sans-serif;
+
+// Colors
+$bg-color: #f7f7f7;
+
+$primary-color: #0874D9;
+
+
+
+body {
+    background: $bg-color;
+    font-family: $font-stack;
+}
+
+.navbar {
+    background: white;
+    padding: .75rem 1rem;
+}
+
+.logo-vyf {
+    max-width: 110px;
+}
+
+.bl-1 {
+    border-left:1px solid #eee;
+}
+.br-1 {
+    border-right:1px solid #eee;
+}
+.bb-1 {
+    border-bottom:1px solid #eee;
+}
+
+
+.main-navigation .nav-item a {
+    color: #333;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100; /* Behind the navbar */
+    padding: 70px 0 0; /* Height of navbar */
+    background-color:#fff;
+  }
+
+  .right-sidebar-activity {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100; /* Behind the navbar */
+    padding: 70px 0 0; /* Height of navbar */
+    background-color:#fff;
+  }
+  
+  .sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    padding: 1.75em 1.5em;
+  }
+  
+  @supports ((position: -webkit-sticky) or (position: sticky)) {
+    .sidebar-sticky {
+      position: -webkit-sticky;
+      position: sticky;
+    }
+  }
+body {
+    padding-top: 70px; /* Space for fixed navbar */
+  }
+  
+
+
+  button.btn {
+    font-size: .95rem;
+}
