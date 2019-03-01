@@ -28,6 +28,8 @@ $red: #E02200;
 $red-light: hsla(9, 70%, 95%, 1);
 $orange: #FA710E;
 $orange-light:hsla(25, 95%, 95%, 1);
+$yellow:#F0B429;
+$yellow-light:#FDF8E4;
 
 $purple: #913FD6;
 
@@ -204,7 +206,7 @@ h1 {
 
 .form-control {
     padding: 0.5rem 1rem;
-    line-height: 1.5;
+    line-height: 1.25;
     border:none; 
     border-radius: $borderRadius;
     box-shadow: none;
@@ -466,11 +468,43 @@ h1 {
         background: $light-grey;
     }
 }
+
+.icon-container.signature-icon{
+    background: $yellow-light;
+    color: $yellow;
+}
+
+
 .document-card {
+    .sign-setup-ready {
+        .signatures {
+            align-items: center;
+            justify-content: center;
+            display:flex;
+            .signature-icon {
+                
+                height: 30px;
+                width: 30px;
+                margin-right: 10px;
+            }
+            .signatures-text {
+                font-size: 12px;
+                display: block;
+                color:$grey-6;
+                .signatures-count {
+                    font-weight: bold;
+                    display: block;
+                    color: $yellow;
+                    font-size:14px;
+                    line-height: 1;
+                }
+            }
+        }
+    }
     .chevron-expand-collapse {
         color: #666;
     }
-    
+
     overflow: hidden;
     .card-header {
         padding:.5em .75em;
@@ -508,9 +542,48 @@ h1 {
         grid-column-start: 5;
         grid-column-end: 7;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-around;
         align-items: center;
     }
+
+    .document-signatures {
+        .signature-header-layout {
+            margin-bottom:5px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+            .title-container {
+                margin-left: 20px;
+            }
+        }
+        &.no-signatures {
+            text-align: center;
+            padding: 2em;
+        }
+    }
+    .document-details {
+        margin: -1.25rem;
+        background: #fff;
+        margin-bottom: 1.25rem;
+        box-shadow: rgba(0, 0, 0, 0.03) 0px 2px 4px 0px;    
+        input {
+            background:$bg-color;
+        }
+        .form-control {
+            border:1px solid hsla(0, 0%, 0%, 0.05)!important;
+        }
+        label {
+            margin-bottom: 0.15rem;
+            font-weight: bold;
+            font-size: .9rem;
+        }
+        .document-details-row {
+            margin-right: 15px;
+            margin-left: 15px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding: .75em 0;
+        }
+    }
+    
+
    
 }
 
@@ -674,7 +747,7 @@ h1 {
     height: 3.25rem;
 }
 
-label.float-label {
+.float-labels label {
     height: 3.25em;
     left: 16px;
     line-height: 3.25em;
@@ -692,7 +765,7 @@ label.float-label {
     font-size: 1em;
 }
 
-label.float-label.float-true {
+.float-labels label.float-true {
     -webkit-transform: translateY(-5px);
     transform: translateY(-5px);
     font-size: .815em;
@@ -703,7 +776,7 @@ label.float-label.float-true {
     height: 3.25em;
 }
 
-input.form-control.float-true {
+.float-labels input.form-control.float-true {
     padding-top: 1.65rem;
 }
 
@@ -944,12 +1017,22 @@ input.form-control.float-true {
        }
 }
 
+.toggle-route-slip {
+    outline:none;
+    cursor: pointer;
+}
 
 .folder-view {
     &.route-slip-collapsed {
         .routing-slip {
-            flex: 0 0 10%;
-            max-width: 8%;
+            flex: 0 0 5%;
+            max-width: 5%;
+            min-width: 60px;
+            
+            &:hover {
+                box-shadow:1px 1px 5px 1px rgba(0, 0, 0, 0.09);
+                cursor: pointer;
+            }
             .routing-header {
                 justify-content: center;
                 h2 {
@@ -957,6 +1040,7 @@ input.form-control.float-true {
                     transition-delay: 0;
                     visibility: hidden;
                     position: absolute;
+                    white-space: nowrap;
                     
                 }
                 button.icon-container.toggle-route-slip {
@@ -971,14 +1055,16 @@ input.form-control.float-true {
             width: inherit;
             margin: 0;
         }
-        .routing-slip-container {
+        .routing-body {
             opacity: 0;
             height: 0;
+            padding: 0;
         }
         }
+        
         .folder-items {
-            flex: 0 0 92%;
-            max-width: 92%;
+            flex: 0 0 94%;
+            max-width: 94%;
         }
         
     }
@@ -1029,6 +1115,14 @@ input.form-control.float-true {
             align-items: center;
             font-weight: 800;
             line-height:1.3;
+        }
+        .icon-container {
+            height: 40px;
+            width: 40px;
+            background: #E5F1FB;
+            color:$blue;
+            margin-right:8px;
+            font-size: 20px;
         }
     }
     .folder-details {
@@ -1083,6 +1177,9 @@ input.form-control.float-true {
                 margin: 0;
                 padding: 0;
                 list-style: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 li {
                     height: 40px;
                     width: 40px;
@@ -1113,6 +1210,7 @@ input.form-control.float-true {
                     transition-delay: .5s;
                     padding: .5em;
                     transition: .2s ease all;
+                    white-space: nowrap;
                     opacity: 1;
                 }
             }
@@ -1503,8 +1601,11 @@ padding: 1em;
         margin-bottom:20px;
     }
     h2 {
-        font-size: 1.75em;
+        font-size: 1.5em;
         font-weight: 700;
+    }
+    p {
+        color:$grey-6;
     }
     &.hidden {
         display: none;
@@ -1513,7 +1614,7 @@ padding: 1em;
 
 #filesListing {
     .collapsing {
-        transition: height 0.1s ease;
+        transition: height 0.15s ease;
     }
 }
 
@@ -1524,6 +1625,9 @@ padding: 1em;
         opacity: 1;
         visibility: visible;
         transition:.2s ease all;
+    }
+    progress#progress-bar {
+        display: none;
     }
    
 
@@ -1544,6 +1648,62 @@ padding: 1em;
             visibility: visible;
             transform: scale(1);
         }
+    }
+}
+
+
+
+.header-top {
+    .side-navigation {
+        width: inherit;
+        position: inherit;
+        top: 0;
+        left: 0;
+        height: inherit;
+        z-index: 1;
+        background: #fff;
+        padding: 0 3em;
+        border-right: none;
+        ul {
+            display: flex;
+            margin: 0;
+            li.active{
+                background: transparent;
+                border: none;
+                 a:before {
+                     content:none;
+                 }
+            }
+        }
+        .logo-container {
+            min-width: 300px;
+        }
+        display: flex;
+    }
+    .user-account,.new-folder-button {
+        display: none;
+    }
+    .content-wrapper {
+        margin-left: 0;
+    }
+    .folder-header {
+        box-shadow: rgba(0, 0, 0, 0.03) 0px 2px 4px 0px;
+        border: none;
+    }
+}
+
+
+.chekbox-clean {
+    input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        height: 0;
+        width: 0;
+        pointer-events: none;
     }
 }
 

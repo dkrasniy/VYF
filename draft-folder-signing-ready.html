@@ -80,11 +80,69 @@
             
 
                     </div>
+                    <div class="routing-slip-initials">
+                        <ul>
+                           <li>PM</li>
+                           <li>AS</li>
+                           <li>TT</li>
+                        </ul>
+                     </div>
                     <div class="routing-body">
-                    <div class="empty-state">
-                       <h4>No Route Yet</h4>
-                       <p>Start by uploading your documents. We’ll generate a routing slip for you which you can modify later.</p>
-                    </div>
+                    
+                        <div class="routing-slip-container ui-sortable" id="sortable">
+                              <div class="routing-item routing-header ui-sortable-handle">
+                                 <div>Deliver To</div>
+                                 <div>Dept</div>
+                                 <div>Access</div>
+                              </div>
+                              <div class="routing-item ui-sortable-handle">
+                                 <div>Paul Makhnovskiy<span class="desc">Signing 2 documents</span></div>
+                                 <div>ESDD</div>
+                                 <div class="access"><div class="form-group user-access">
+                                       <label for="sel1" class="sr-only">Select list:</label>
+                                       <select class="form-control" id="sel1">
+                                         <option disabled>View</option>
+                                         <option selected>Sign</option>
+                                         <option>Edit</option>
+                                       </select>
+                                     </div></div>
+                              </div>
+                              <div class="routing-item ui-sortable-handle">
+                                 <div>Andrew Studer<span class="desc">Signing 1 document</span></div>
+                                 <div>ESDD</div>
+                                 <div class="access">
+                                       <div class="form-group user-access">
+                                             <label for="sel1" class="sr-only">Select list:</label>
+                                             <select class="form-control" id="sel1">
+                                               <option>View</option>
+                                               <option>Sign</option>
+                                               <option>Edit</option>
+                                             </select>
+                                           </div>
+                                 </div>
+                              </div>
+                              <div class="routing-item ui-sortable-handle">
+                                 <div>Timothy Taylor<span class="desc">Viewing documents</span></div>
+                                 <div>ESDD</div>
+                                 <div class="sign-edit"><div class="form-group user-access">
+                                       <label for="sel1" class="sr-only">Select list:</label>
+                                       <select class="form-control" id="sel1">
+                                         <option>View</option>
+                                         <option>Sign</option>
+                                         <option selected>Edit</option>
+                                       </select>
+                                     </div></div>
+                              </div>
+                           
+                              <div class="add-viewer-container">
+                                 <button type="button" class="btn btn-primary tertiary btn-sm">Add Viewer</button>
+                              </div>
+                              <div class="add-viewer-container">
+                              <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#routeFolder">Route</button>
+                              <p class="estimated-completion">Estimated Completion <b>4 days</b></p>
+                                 </div>
+                              
+                           </div>
                  </div>
                  </div>
                     <div class="col-8 folder-items"  id="drop-area">
@@ -94,7 +152,83 @@
                               <label class="button sr-only" for="fileElem">Select files to upload</label>
                            </form>
                            <progress id="progress-bar" max=100 value=0></progress>
-                           <div class="accordion list" id="filesListing"></div>
+                           <div class="accordion list" id="filesListing">
+
+                                 <div upload-progress-id="8jqh25" class="document-card">
+                                       <a class="card-header collapsed" id="doc8jqh25" data-toggle="collapse" href="#collapse8jqh25" role="button" aria-expanded="false" aria-controls="collapse8jqh25">
+                                          <div class="icon-container file-icon" aria-label="Folder">       <i class="fas fa-file-pdf"></i>   </div>
+                                          <div class="title-container">
+                                             <h4 class="title document-title-8jqh25">Buck Slip</h4>
+                                             <p class="original-file-name">01-Buck Slip.pdf<span class="uploader-name">Timothy Taylor</span></p>
+                                          </div>
+                                          <div class="accordion-expand-actions">
+                                             <div class="sign-setup-ready">
+                                                <div class="signatures">
+                                                      <div class="icon-container signature-icon" aria-label="6 Signatures"><i class="fas fa-signature"></i></div>
+                                                      <span class="signatures-text"><span class="signatures-count">6 signatures</span>from 2 approvers</p>
+                                                </div>
+                                             </div>
+                                                   
+                                             <div class="icon-sm ml-2 mr-1 chevron-expand-collapse">       
+                                                <i class="fas fa-chevron-down"></i>       
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <div id="collapse8jqh25" class="collapse" aria-labelledby="document8jqh25" data-parent="#filesListing">
+                                          <div class="card-body">
+                                             <div class="document-details">
+                                                <div class="row document-details-row">
+                                                   <div class="col-12 col-md-6">
+                                                      <div class="position-relative">     
+                                                         <label for="8jqh25">Document Name</label>    
+                                                         <input type="text" class="form-control syncDocumentName" id="8jqh25" value="Buck Slip"></div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="document-signatures">
+
+
+
+
+                                                   <div class="card-header signature-header-layout">
+                                                         <div class="icon-container signature-icon" aria-label="Signautre">
+                                                            <i class="fas fa-signature"></i>
+                                                         </div>
+                                                         <div class="title-container">
+                                                            <h4 class="title">Andrew Studer</h4>
+                                                            <p class="original-file-name">5 signatures required</p>
+                                                         </div>
+                                                         <div class="accordion-expand-actions justify-content-end">
+                                                            <button type="button" class="icon-sm icon-container " aria-label="Close">
+                                                                  <i class="fas fa-times"></i>
+                                                               </button>
+                                                         </div>
+                                                      </div>
+                                                      <div class="card-header signature-header-layout">
+                                                            <div class="icon-container signature-icon" aria-label="Signautre">
+                                                               <i class="fas fa-signature"></i>
+                                                            </div>
+                                                            <div class="title-container">
+                                                               <h4 class="title">Paul Makhnovskiy</h4>
+                                                               <p class="original-file-name">1 signature required</p>
+                                                            </div>
+                                                            <div class="accordion-expand-actions justify-content-end">
+                                                               <button type="button" class="icon-sm icon-container " aria-label="Close">
+                                                                     <i class="fas fa-times"></i>
+                                                                  </button>
+                                                            </div>
+                                                         </div>
+
+
+
+
+
+  </div>
+                                          </div>
+                                       </div>
+                                    </div>
+
+                           </div>
                         
                             
                        <div class="empty-state-x">
@@ -177,13 +311,6 @@
                      '     <label for="'+trackID+'">Document Name</label>'+
                       '    <input type="text" class="form-control syncDocumentName" id="' + trackID +'"></div>'+
                       '   </div>'+
-                      '   <div class="col-12 col-md-6">'+
-                     '   <div class="position-relative chekbox-clean">' +
-                           '<input type="checkbox" id="doc-viewable-' + trackID +'" class="checkbox-filter" value="Only visible to signers">'+
-                     '     <label for="doc-viewable-' + trackID +'">Only visible to signers</label>'+
-                      '   </div>'+
-                      '   </div>'+
-
                       '   </div>'+
                       '   </div>'+
                      '    <div class="document-signatures no-signatures">                                                                                    '+

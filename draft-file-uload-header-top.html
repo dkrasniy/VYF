@@ -24,7 +24,7 @@
         }
 </style>
      </head>
-     <body>
+     <body class="header-top">
            <main>
               <nav class="side-navigation">
                  <div class="logo-container">
@@ -52,10 +52,10 @@
                  </div>
               </nav>
               <div class="content-wrapper">
-              <div class="folder-view color-blue">
+              <div class="folder-view">
                  <div class="folder-header">
                     <div class="folder-info">
-                       <h1><div class="icon-container" aria-label="Folder"><i class="fas fa-folder"></i></div>Travel Expense Folder<span class="status-badge status-draft">Draft</span></h1>
+                       <h1>Travel Expense Folder<span class="status-badge status-draft">Draft</span></h1>
                        <!-- <div class="folder-details">
                           <ul>
                              <li><span class="label">Created</span> 01/22/2019 3:12pm</li>
@@ -73,12 +73,7 @@
                     <div class="routing-header">
                          <img src="assets/empty-states/route-icon.svg"/>
                        <h2>Routing Slip</h2>
-                       
-                         <button type="button" class="icon-container toggle-route-slip">
-                               <i class="fas fa-chevron-left"></i>
-                               </button>
-            
-
+                       <div></div>
                     </div>
                     <div class="routing-body">
                     <div class="empty-state">
@@ -170,26 +165,9 @@
                      ' </a>'+
                      ' <div id="collapse'+trackID +'" class="collapse" aria-labelledby="document'+trackID +'" data-parent="#filesListing">'+
                      '   <div class="card-body">'+
-                           '   <div class="document-details">'+
-                           '   <div class="row document-details-row">'+
-                         '   <div class="col-12 col-md-6">'+
-                     '   <div class="position-relative">' +
+                     '   <div class="position-relative form-group float-labels">' +
                      '     <label for="'+trackID+'">Document Name</label>'+
                       '    <input type="text" class="form-control syncDocumentName" id="' + trackID +'"></div>'+
-                      '   </div>'+
-                      '   <div class="col-12 col-md-6">'+
-                     '   <div class="position-relative chekbox-clean">' +
-                           '<input type="checkbox" id="doc-viewable-' + trackID +'" class="checkbox-filter" value="Only visible to signers">'+
-                     '     <label for="doc-viewable-' + trackID +'">Only visible to signers</label>'+
-                      '   </div>'+
-                      '   </div>'+
-
-                      '   </div>'+
-                      '   </div>'+
-                     '    <div class="document-signatures no-signatures">                                                                                    '+
-                     '     <p class="no-signatures-message">No signatures are setup for this document yet.</p>                                               '+
-                     '     <button type="button" data-setup-signing-id="'+trackID+'" class="btn btn-white btn-sm btn-setup-signing">Setup Signing</button>   '+
-                     '    </div>                                                                                                                             '+
                      '   </div>'+
                      ' </div>'
                   

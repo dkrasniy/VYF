@@ -2,7 +2,8 @@ $(document).ready(function(){
     checkFolderStatus();
 });
 
-$("#loginUsername, #loginPassword").bind('input propertychange', function () {
+$(document.body).on("input propertychange",'.float-labels input', function () {
+    console.log(this)
     if (!this.value) {
         $(this).removeClass('float-true');
         $(this).prev().removeClass('float-true');
@@ -11,9 +12,11 @@ $("#loginUsername, #loginPassword").bind('input propertychange', function () {
         $(this).addClass('float-true');
         $(this).prev().addClass('float-true');
     }
-});
+})
 
-$('#filesListing').on("keyup",".syncDocumentName",function() {
+
+
+$(document.body).on("keyup",".syncDocumentName",function() {
     var ID = this.getAttribute('id')
     var dInput = this.value;
     $('.document-title-'+ID).html(dInput)
@@ -27,9 +30,7 @@ $('#filesListing').on("keyup",".syncDocumentName",function() {
 });
 
 
-
-
-$('.toggle-route-slip').click(function() {
+$(document.body).on("click", '.toggle-route-slip', function() {
     $('.routing-slip').toggleClass('toggle-route-slip')
     $('.folder-view').toggleClass('route-slip-collapsed')
 })
@@ -44,9 +45,7 @@ $(function(){
 
 
 //Toggle empty folder state 
-//Checks if 
 function checkFolderStatus () {
-    console.log("Checking foler status...")
     if ( $('#filesListing').children().length > 0 ) {
         $('.empty-state-x').addClass('hidden')
     } else {
