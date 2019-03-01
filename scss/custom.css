@@ -8616,6 +8616,9 @@ h1 {
 .document-card {
   overflow: hidden;
 }
+.document-card .chevron-expand-collapse {
+  color: #666;
+}
 .document-card .card-header {
   padding: 0.5em 0.75em;
 }
@@ -9414,6 +9417,74 @@ span.uploader-name:before {
   background: white;
   color: #21252a;
   border-color: transparent;
+}
+
+.drop-files-highlight-container {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s ease all;
+  position: absolute;
+  width: 60%;
+  text-align: center;
+  background: #0072e1;
+  border-radius: 10px;
+  left: 20%;
+  transform: scale(0.9);
+  bottom: 40px;
+}
+.drop-files-highlight-container .drop-instruction-text {
+  color: white;
+  font-size: 1.15em;
+  padding: 10px;
+  line-height: 1.25;
+}
+
+.empty-state-x {
+  padding: 2em;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 440px;
+}
+.empty-state-x img {
+  margin-bottom: 20px;
+}
+.empty-state-x h2 {
+  font-size: 1.75em;
+  font-weight: 700;
+}
+.empty-state-x.hidden {
+  display: none;
+}
+
+#filesListing .collapsing {
+  transition: height 0.1s ease;
+}
+
+#drop-area {
+  border: 2px solid transparent;
+  position: relative;
+}
+#drop-area .empty-state {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.2s ease all;
+}
+#drop-area.file-drop-highlight-active {
+  border: 2px dashed #0874d9;
+  background: rgba(0, 112, 224, 0.05);
+  border-radius: 10px;
+}
+#drop-area.file-drop-highlight-active .empty-state-x {
+  opacity: 0.3;
+  visibility: visible;
+}
+#drop-area.file-drop-highlight-active #filesListing {
+  opacity: 0.3;
+}
+#drop-area.file-drop-highlight-active .drop-files-highlight-container {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
 }
 
 /*# sourceMappingURL=custom.css.map */

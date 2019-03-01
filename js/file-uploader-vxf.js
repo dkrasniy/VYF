@@ -24,11 +24,11 @@ function preventDefaults(e) {
 }
 
 function highlight(e) {
-  dropArea.classList.add("highlight");
+  dropArea.classList.add("file-drop-highlight-active");
 }
 
 function unhighlight(e) {
-  dropArea.classList.remove("active");
+  dropArea.classList.remove("file-drop-highlight-active");
 }
 
 function handleDrop(e) {
@@ -54,37 +54,44 @@ function updateProgress(fileNumber, percent) {
   uploadProgress[fileNumber] = percent;
   let total =
     uploadProgress.reduce((tot, curr) => tot + curr, 0) / uploadProgress.length;
-  console.debug("update", fileNumber, percent, total);
+  console.log("update", fileNumber, percent, total);
   progressBar.value = total;
 }
 
 function handleFiles(files) {
   files = [...files];
   initializeProgress(files.length);
-  files.forEach(uploadFile);
-  files.forEach(previewFile);
+
+
+
+  files.forEach(file => {
+    //generate random file tracking ID 
+    let trackID = Math.random().toString(36).substr(2, 6);
+
+    uploadFile(file,trackID);
+    previewFile(file,trackID);
+  });
+
 }
 
-function previewFile(file) {
-  let fileName = file.name;
+function previewFile(file, trackID, i) {
   let reader = new FileReader();
   reader.readAsDataURL(file);
-
   reader.onloadend = function() {
-    let img = document.createElement("p");
-    img.innerText = fileName;
-    document.getElementById("gallery").appendChild(img);
+
+    addUploadedFileToFolder(file,trackID,i);//function is on folder page 
+    checkFolderStatus();//removes/adds empty state 
+
   };
 }
 
-function uploadFile(file, i) {
-  var url = "https://api.cloudinary.com/v1_1/joezimim007/image/upload";
+function uploadFile(file, trackID, i) {
+  var url = "'https://api.cloudinary.com/v1_1/joezimim007/image/upload";
   var xhr = new XMLHttpRequest();
   var formData = new FormData();
   xhr.open("POST", url, true);
   xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 
-  // Update progress (can be used to show progress indicator)
   xhr.upload.addEventListener("progress", function(e) {
     updateProgress(i, (e.loaded * 100.0) / e.total || 100);
   });
@@ -97,7 +104,6 @@ function uploadFile(file, i) {
     }
   });
 
-  formData.append("upload_preset", "ujpu6gyk");
   formData.append("file", file);
   xhr.send(formData);
 }

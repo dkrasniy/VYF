@@ -14,11 +14,7 @@
 
         <style>
         #drop-area {
-          border: 2px dashed #ccc;
-          border-radius: 20px;
-          width: 480px;
-          margin: 50px auto;
-          padding: 20px;
+       
         }
         #drop-area.highlight {
           border-color: purple;
@@ -69,7 +65,7 @@
                     </div>
                     <div class="folder-actions">
                        <button type="button" class="btn btn-white mr-2" data-toggle="modal" data-target="#folderSettings">Settings</button> 
-                       <label type="button" for="fileElem" class="btn btn-primary">Upload Documents</label> 
+                       <button type="button" class="btn btn-primary" id="upload_documents">Upload Documents</button>                      
                     </div>
                  </div>
                  <div class="folder-contents row">
@@ -86,26 +82,31 @@
                     </div>
                  </div>
                  </div>
-                    <div class="col-8 folder-items">
-                       <div class="empty-state">
-                          <img src="assets/empty-states/newfolder.svg" alt="Folder with upload icon"/>
-                          <h1>Upload Documents</h1>
-                          <p>Start by dropping your files here. We’ll generate a routing slip for you which you can modify later.                        </p>
-                          <div id="drop-area">
-                            <form class="my-form">
-                              <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
+                    <div class="col-8 folder-items"  id="drop-area">
+                        
+                           <form class="my-form">
                               <input type="file" id="fileElem" multiple accept="application/pdf" onchange="handleFiles(this.files)">
-                              <label class="button" for="fileElem">Select some files</label>
-                            </form>
-                            <progress id="progress-bar" max=100 value=0></progress>
-                            <div id="gallery"></div>
-                          </div>
-                          
-                   
+                              <label class="button sr-only" for="fileElem">Select files to upload</label>
+                           </form>
+                           <progress id="progress-bar" max=100 value=0></progress>
+                           <div class="accordion list" id="filesListing"></div>
+                        
+                            
+                       <div class="empty-state-x">
+                          <img src="assets/empty-states/newfolder.svg" alt="Folder with upload icon"/>
+                          <h2>Upload Documents</h2>
+                          <p>Start by dropping your files here. We’ll generate a routing slip for you which you can modify later.</p>
                         </div>
+
+                        <div class="drop-files-highlight-container">
+                           <h3 class="drop-instruction-text">Drop files to instatly upload them to <br/><b>Travel Expense Folder</b></h3>
+                     </div>
                     </div>
                  </div>
-              </div>
+             
+               </div>
+               
+            </div>
            </main>
       
            <!-- JavaScript -->
@@ -114,6 +115,42 @@
            <script src="bootstrap/js/bootstrap.min.js"></script>
            <script src="js/vxf.js"></script>
            <script src="js/file-uploader-vxf.js"></script>
+
+           <script>
+               function addUploadedFileToFolder(file,trackID, i) {
+                  let uploadedDocument = document.createElement("div");
+                  uploadedDocument.setAttribute("upload-progress-id", trackID);
+                  uploadedDocument.classList.add("document-card")
+                  uploadedDocument.innerHTML = (
+                     '<a class="card-header" id="doc'+trackID +'" data-toggle="collapse" href="#collapse'+trackID +'" role="button" aria-expanded="false" aria-controls="collapse'+trackID +'">'+
+                     '   <div class="icon-container file-icon" aria-label="Folder">'+
+                     '       <i class="fas fa-file-pdf"></i>'+
+                     '   </div>'+
+                     '   <div class="title-container">'+
+                     '       <h4 class="missing-document-name title document-title-' + trackID +'">Please provide document name</h4>'+
+                     '       <p class="original-file-name">' +file.name + '<span class="uploader-name">Timothy Taylor</span></p>'+
+                     '   </div>'+
+                     '   <div class="accordion-expand-actions">'+
+                     '       <button type="button" class="btn btn-white btn-sm btn-setup-signing">Setup Signing</button>'+
+                     '       <div class="icon-sm ml-2 mr-1 chevron-expand-collapse">'+
+                     '       <i class="fas fa-chevron-down"></i>'+
+                     '       </div>'+
+                     '   </div>'+
+                     ' </a>'+
+                     ' <div id="collapse'+trackID +'" class="collapse" aria-labelledby="folder'+trackID +'" data-parent="#filesListing">'+
+                     '   <div class="card-body">'+
+                     '   <div class="form-group">' +
+                     '     <label for="folderName">Document Name</label>'+
+                      '    <input type="text" class="form-control syncDocumentName" id="' + trackID +'"></div>'+
+                     '   </div>'+
+                     ' </div>'
+                  
+                  );
+
+                  
+                  document.getElementById("filesListing").appendChild(uploadedDocument);
+               }
+            </script>
         </body>
   </html>
   
