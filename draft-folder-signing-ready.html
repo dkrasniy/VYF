@@ -64,7 +64,7 @@
                           </div> -->
                     </div>
                     <div class="folder-actions">
-                       <button type="button" class="btn btn-white mr-2" data-toggle="modal" data-target="#folderEdit">Edit</button> 
+                       <button type="button" class="btn btn-white mr-2" data-toggle="modal" data-target="#folderEdit" onclick="this.blur();">Edit</button> 
                        <button type="button" class="btn btn-primary" id="upload_documents">Upload Documents</button>                      
                     </div>
                  </div>
@@ -267,7 +267,7 @@
                <div class="modal-dialog" role="document">
                <div class="modal-content">
                   <div class="modal-header">
-                     <h5 class="modal-title" id="folderEditLabel">Travel Expense Folder</h5>
+                     <h5 class="modal-title" id="folderEditLabel">Folder Details</h5>
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      
                         <div class="icon-container">
@@ -276,10 +276,58 @@
                      </button>
                   </div>
                   <div class="modal-body">
-                       <p>Created: 10 minutes ago</p>
-                       <button class="btn btn-danger tertiary">Delete Folder</button>
+                        <div class="form-group">
+                           <label for="folderName">Folder Name</label>
+                           <input type="text" class="form-control" id="folderName" value="Travel Expense Folder">
+                        </div>
+                        <div class="form-group">
+                              <label for="folderDescription">Description</label>
+                              <textarea class="form-control" id="folderDescription" rows="3"></textarea>
+                           </div>
+                           <div class="form-group">
+                              
+                              
+                              <fieldset>
+                                 <legend>Folder Color</legend>
+                                 <div class="color-picker-container">
+                                    
+                                 <input type="radio" name="color" value="grey" id="grey">
+                                 <label class="color-option grey" for="grey"></label>
+                                 <input type="radio" name="color" value="yellow" id="yellow">
+                                 <label class="color-option yellow" for="yellow"></label>
+                                 <input type="radio" name="color" value="blue" id="blue" checked>
+                                 <label class="color-option blue" for="blue"></label>
+                                 <input type="radio" name="color" value="green" id="green">
+                                 <label class="color-option green" for="green"></label>
+                                 <input type="radio" name="color" value="orange" id="orange">
+                                 <label class="color-option orange" for="orange"></label>
+                                 <input type="radio" name="color" value="red" id="red">
+                                 <label class="color-option red" for="red"></label>
+                                 <input type="radio" name="color" value="purple" id="purple">
+                                 <label class="color-option purple" for="purple"></label>
+                              </div>
+                              </fieldset>
+                              
+
+                           </div>
+                        
+                        <div class="folder-specs">
+                           <div class="folder-spec"><b>Created</b> 10/22/2019 4:21pm</div>
+                           <div class="folder-spec"><b>Modified</b> 31 minutes ago</div>
+                           <div class="folder-spec"><b>Owner</b> Timothy Taylor</div>
+                        </div>
+                       
+                      
                      </div>
-                     
+                     <div class="modal-footer justify-content-space-between">
+                           <div>
+                              <button class="btn btn-danger tertiary">Delete Folder</button>
+                           </div>
+                           <div>
+                                 <button type="button" class="btn btn-primary tertiary" data-dismiss="modal">Cancel</button> 
+                                 <button class="btn btn-primary" disabled>Save</button>
+                              </div>
+                     </div>
                </div>
                </div>
             </div>

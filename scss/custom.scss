@@ -135,6 +135,9 @@ h1 {
 .main-navigation li a i {
     width: 24px;
 }
+label {
+    font-weight:bold;
+}
   
 .btn {
     font-weight: 600;
@@ -967,7 +970,10 @@ h1 {
 
 
 .color-picker-container {
-    margin-top: 2em;
+    background:#fff;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
 
     input {
        display: none;
@@ -1400,23 +1406,7 @@ span.uploader-name {
 	overflow-x: auto;
 }
 
-.d-flex {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-}
 
-.align-items-center {
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-}
-
-.justify-content-center {
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-}
 
 .dropdown-group {
 	display: -webkit-box;
@@ -1807,4 +1797,43 @@ padding: 1em;
         -webkit-transform: scale(1);
         transform: scale(1);
     }
+}
+
+.folder-specs {
+    .folder-spec {
+        color: $grey-6;
+        b {
+            color:$grey-3;
+            display: block;
+        }
+    }
+    padding:20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+legend {
+        font-weight: bold;
+        font-size: inherit;
+}
+
+.d-flex {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.align-items-center {
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.justify-content-center {
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.justify-content-space-between {
+    justify-content: space-between!important;
 }
