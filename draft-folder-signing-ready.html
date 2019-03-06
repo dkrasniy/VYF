@@ -90,7 +90,7 @@
                     <div class="routing-body">
                     
                         <div class="routing-slip-container ui-sortable" id="sortable">
-                              <div class="routing-item routing-header ui-sortable-handle">
+                              <div class="routing-item  ui-sortable-handle">
                                  <div>Deliver To</div>
                                  <div>Dept</div>
                                  <div>Access</div>
@@ -135,7 +135,7 @@
                               </div>
                            
                               <div class="add-viewer-container">
-                                 <button type="button" class="btn btn-primary tertiary btn-sm">Add Viewer</button>
+                                 <button type="button" class="btn btn-primary tertiary btn-sm" data-toggle="modal" data-target="#addViewer">Add Viewer</button>
                               </div>
                               <div class="add-viewer-container">
                               <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#routeFolder">Route</button>
@@ -182,7 +182,18 @@
                                                       <div class="position-relative">     
                                                          <label for="8jqh25">Document Name</label>    
                                                          <input type="text" class="form-control syncDocumentName" id="8jqh25" value="Buck Slip"></div>
-                                                   </div>
+                                                         </div>
+
+                                                   <div class="col-12 col-md-6">
+                                                   <label>File Settings</label>
+                                                    <div class="custom-checkbox">
+                                                <input type="checkbox" id="doc-viewable-8jqh25" class="checkbox-filter" value="Only visible to signers">
+                                                      <label for="doc-viewable-8jqh25">Only visible to signers</label>
+                                                     </div>
+                                                     <a href="#" class="color-red font-size-xs">Remove file</a>
+                                                     
+                                                     </div>
+                                                    
                                                 </div>
                                              </div>
                                              <div class="document-signatures">
@@ -200,7 +211,7 @@
                                                          </div>
                                                          <div class="accordion-expand-actions justify-content-end">
                                                             <button type="button" class="icon-sm icon-container " aria-label="Close">
-                                                                  <i class="fas fa-times"></i>
+                                                                  <i class="fas fa-trash"></i>
                                                                </button>
                                                          </div>
                                                       </div>
@@ -214,7 +225,7 @@
                                                             </div>
                                                             <div class="accordion-expand-actions justify-content-end">
                                                                <button type="button" class="icon-sm icon-container " aria-label="Close">
-                                                                     <i class="fas fa-times"></i>
+                                                                     <i class="fas fa-trash"></i>
                                                                   </button>
                                                             </div>
                                                          </div>
@@ -272,6 +283,35 @@
                </div>
                </div>
             </div>
+
+
+           <!-- Add Viewer Modal -->
+         <div class="modal fade" id="addViewer" tabindex="-1" role="dialog" aria-labelledby="addViewerLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="addViewerLabel">Add Viewer</h5>
+                  
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <div class="icon-container">
+                        <i class="fas fa-times"></i>
+                  </div>
+                  </button>
+               </div>
+               <div class="modal-body">
+                    
+                    <div class="form-group">
+                     <label for="viewerName">Viewer Name</label>
+                     <input type="text" class="form-control" id="viewerName">
+                  </div>
+                  </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-primary tertiary" data-dismiss="modal">Cancel</button> 
+               <button class="btn btn-primary">Add Viewer</a>
+            </div>
+            </div>
+            </div>
+         </div>
 
       
            <!-- JavaScript -->

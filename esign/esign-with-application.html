@@ -1,0 +1,177 @@
+
+
+  <!doctype html>
+  <html lang="en">
+     <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <link rel="stylesheet" href="../scss/custom.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <title>Prepare Signing</title>
+
+     </head>
+     <body>
+         <main>
+            <nav class="side-navigation">
+               <div class="logo-container">
+                  <img src="../assets/logo/filled-color-h.svg" alt="Virtual Yellow Folder Logo">
+               </div>
+               <button type="button" class="btn btn-primary new-folder-button  btn-block" data-toggle="modal"
+                  data-target="#newFolderModal">New Folder</button>
+               <ul role="list">
+                  <li role="listitem" class="active"><a href="home.html">Inbox</a></li>
+                  <li role="listitem"><a href="drafts.html">Drafts</a></li>
+                  <li role="listitem"><a href="en-route.html">En Route</a></li>
+                  <li role="listitem"><a href="completed.html">Completed</a></li>
+               </ul>
+               <div class="user-account btn-group dropup">
+                  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                     aria-expanded="false">
+                     Timothy Taylor
+                     <span>timothy.taylor@calpers.ca.gov</span>
+                     <i class="fas fa-chevron-up"></i>
+                  </button>
+                  <div class="dropdown-menu">
+                     <a class="dropdown-item" href="#">My Account</a>
+                     <a class="dropdown-item" href="#">Settings</a>
+                     <div class="dropdown-divider"></div>
+                     <a class="dropdown-item" href="#">Sign Out</a>
+                  </div>
+               </div>
+            </nav>
+            <div class="content-wrapper">
+               <div class="folder-view esign">
+                  <div class="folder-header">
+                     <div class="folder-info">
+                        <h1>Prepare document signing<span class="status-badge status-draft">0 Signatures</span></h1>
+         
+                     </div>
+                     <div class="folder-actions">
+                        <button type="button" class="btn btn-white mr-2" data-toggle="modal"
+                           data-target="#folderEdit">Edit</button>
+                        <button type="button" class="btn btn-primary" id="upload_documents">Save</button>
+                     </div>
+                  </div>
+                  <div class="toolbar">
+                     <div class="container">
+                        <div class="toolbar-wrapper">
+                           <div class="toolbar-item dropdown-group">
+                              <button class="toolbar-button sidepanel-dropdown-icon"></button>
+                              <div class="dropdown-content" role="listbox"></div>
+                           </div>
+                           <div class="toolbar-item">
+                              <button class="toolbar-button sign-icon"></button>
+                           </div>
+                           <div class="toolbar-item">
+                              <button class="toolbar-button has-divider-left"><span
+                                    style="font-size:21px; font-weight:bold;">T.T</span></button>
+                           </div>
+                           <div class="toolbar-item">
+                              <button class="toolbar-button has-divider-left"><i style="font-size:23px;"
+                                    class="far fa-calendar"></i></button>
+                           </div>
+         
+
+                           <div class="toolbar-item">
+                              <div class="page-indicator d-flex align-items-center">
+                                 <span>Page</span>
+                                 <span>
+                                    <div class="input-controls">
+                                       <button class="prev-page" title="Previous Page" disabled="disabled"><span
+                                             class="left-arrow-icon arrow-controls"></span></button>
+                                       <label for="navigatePage">Go to Page</label>
+                                       <input id="navigatePage" max="5" min="1" type="number" value="1" />
+                                       <button class="next-page" title="Next Page"><span
+                                             class="right-arrow-icon arrow-controls"></span></button>
+                                    </div>
+                                 </span>
+                                 <span> of 5</span>
+                              </div>
+                           </div>
+                           <div style="flex: 1 1 0%;"></div>
+                           <div class="toolbar-item">
+                              <button class="toolbar-button zoom-out-icon has-divider-left"></button>
+                           </div>
+                           <div class="toolbar-item">
+                              <button class="toolbar-button zoom-in-icon has-divider-left"></button>
+                           </div>
+                           <div class="toolbar-item">
+                              <button class="toolbar-button print-icon has-divider-left"></button>
+                           </div>
+         
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </main>
+
+
+
+
+           <!-- Folder Settings Modal -->
+         <div class="modal fade modal-wide" id="folderEdit" tabindex="-1" role="dialog" aria-labelledby="folderEditLabel" aria-hidden="true">
+               <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="folderEditLabel">Travel Expense Folder</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     
+                        <div class="icon-container">
+                           <i class="fas fa-times"></i>
+                     </div>
+                     </button>
+                  </div>
+                  <div class="modal-body">
+                       <p>Created: 10 minutes ago</p>
+                       <button class="btn btn-danger tertiary">Delete Folder</button>
+                     </div>
+                     
+               </div>
+               </div>
+            </div>
+
+
+           <!-- Add Viewer Modal -->
+         <div class="modal fade" id="addViewer" tabindex="-1" role="dialog" aria-labelledby="addViewerLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="addViewerLabel">Add Viewer</h5>
+                  
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <div class="icon-container">
+                        <i class="fas fa-times"></i>
+                  </div>
+                  </button>
+               </div>
+               <div class="modal-body">
+                    
+                    <div class="form-group">
+                     <label for="viewerName">Viewer Name</label>
+                     <input type="text" class="form-control" id="viewerName">
+                  </div>
+                  </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-primary tertiary" data-dismiss="modal">Cancel</button> 
+               <button class="btn btn-primary">Add Viewer</a>
+            </div>
+            </div>
+            </div>
+         </div>
+
+      
+           <!-- JavaScript -->
+           <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+           <script src="../bootstrap/js/popper.min.js"></script>
+           <script src="../bootstrap/js/bootstrap.min.js"></script>
+           <script src="../js/vxf.js"></script>
+           <script src="../js/file-uploader-vxf.js"></script>
+           <script src="icons.js"></script>
+        </body>
+  </html>
+  
+  

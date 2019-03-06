@@ -1,4 +1,16 @@
 @charset "UTF-8";
+.color-red {
+  color: #E02200;
+}
+
+.color-red:hover {
+  color: #ad1a00;
+}
+
+.font-size-xs {
+  font-size: 0.85rem;
+}
+
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -8239,7 +8251,7 @@ html {
 }
 
 body {
-  background: #f6f6f6;
+  background: #f4f4f4;
   font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
@@ -8606,11 +8618,14 @@ h1 {
   font-size: 14px;
   text-align: left;
 }
+.folder-card a[aria-expanded=true] .chevron-expand-collapse i, .document-card a[aria-expanded=true] .chevron-expand-collapse i {
+  transform: rotate(180deg);
+}
 .folder-card a, .document-card a {
   text-decoration: none;
 }
 .folder-card .card-body, .document-card .card-body {
-  background: #f7f7f7;
+  background: #eee;
 }
 
 .icon-container.signature-icon {
@@ -8645,6 +8660,9 @@ h1 {
 }
 .document-card .chevron-expand-collapse {
   color: #666;
+}
+.document-card .chevron-expand-collapse i {
+  transition: 0.2s ease all;
 }
 .document-card .card-header {
   padding: 0.5em 0.75em;
@@ -8690,7 +8708,7 @@ h1 {
   box-shadow: rgba(0, 0, 0, 0.03) 0px 2px 4px 0px;
 }
 .document-card .document-details input {
-  background: #f6f6f6;
+  background: #f4f4f4;
 }
 .document-card .document-details .form-control {
   border: 1px solid rgba(0, 0, 0, 0.05) !important;
@@ -8938,6 +8956,12 @@ h1 {
   margin: 0 auto;
   z-index: -1;
   padding: 1em;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .color-picker-container {
@@ -9018,9 +9042,9 @@ h1 {
 }
 
 .folder-view.route-slip-collapsed .routing-slip {
-  flex: 0 0 5%;
-  max-width: 5%;
-  min-width: 60px;
+  flex: 0 0 6%;
+  max-width: 6%;
+  min-width: 62px;
 }
 .folder-view.route-slip-collapsed .routing-slip:hover {
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.09);
@@ -9045,6 +9069,7 @@ h1 {
   height: inherit;
   width: inherit;
   margin: 0;
+  padding: 10px 0;
 }
 .folder-view.route-slip-collapsed .routing-slip .routing-body {
   opacity: 0;
@@ -9052,8 +9077,8 @@ h1 {
   padding: 0;
 }
 .folder-view.route-slip-collapsed .folder-items {
-  flex: 0 0 94%;
-  max-width: 94%;
+  flex: 1;
+  max-width: 100%;
 }
 .folder-view .routing-slip {
   transition: 0.2s ease all;
@@ -9061,12 +9086,15 @@ h1 {
 .folder-view .folder-items {
   transition: 0.2s ease all;
 }
+.folder-view .folder-items {
+  flex: 1;
+  max-width: 100%;
+}
 .folder-view .folder-header {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #eee;
   padding-bottom: 0.75em;
-  margin-bottom: 0.75em;
   background: #fff;
   padding: 1.25em 3em;
 }
@@ -9094,7 +9122,7 @@ h1 {
 }
 .folder-view .folder-info h1 {
   margin-bottom: 0.1em;
-  font-size: 1.75em;
+  font-size: 1.5em;
   display: flex;
   align-items: center;
   font-weight: 800;
@@ -9167,6 +9195,9 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+.folder-view .routing-slip .routing-slip-initials ul li:last-child {
+  margin-bottom: 0;
+}
 .folder-view .routing-slip .routing-header {
   width: 100%;
   padding: 0.75em 1em;
@@ -9174,6 +9205,7 @@ h1 {
   align-items: center;
   justify-content: space-between;
   opacity: 1;
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 2px 4px 0px;
 }
 .folder-view .routing-slip .routing-header img {
   max-width: 30px;
@@ -9532,6 +9564,12 @@ span.uploader-name:before {
 }
 .empty-state-x img {
   margin-bottom: 20px;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 .empty-state-x h2 {
   font-size: 1.5em;
@@ -9615,16 +9653,68 @@ span.uploader-name:before {
   border: none;
 }
 
-.chekbox-clean input {
+.custom-checkbox {
+  font-weight: normal;
+  margin: 5px 0;
+}
+.custom-checkbox input[type=checkbox] {
   position: absolute;
-  left: 0;
-  top: 0;
-  margin: 0;
-  padding: 0;
-  opacity: 0;
-  height: 0;
-  width: 0;
-  pointer-events: none;
+  left: -999999px;
+}
+.custom-checkbox input[type=checkbox] + label {
+  cursor: pointer;
+  display: flex;
+  font-weight: normal;
+}
+.custom-checkbox input[type=checkbox] + label:before {
+  content: "";
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1.2em;
+  height: 1.2em;
+  background-color: #f6f6f6;
+  border: 2px solid #f6f6f6;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  position: relative;
+  transition: transform 0.2s;
+  border-radius: 4px;
+  top: 0.1em;
+}
+.custom-checkbox input[type=checkbox]:checked + label:before {
+  background-color: #0874d9;
+  border-color: #0874d9;
+  transform: scale(1);
+  animation: check-bounce 0.3s;
+}
+.custom-checkbox input[type=checkbox]:active + label:before {
+  transform: scale(0.8);
+}
+.custom-checkbox input[type=checkbox]:checked:active + label:before {
+  transform: scale(1);
+}
+.custom-checkbox input[type=checkbox]:checked + label:before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg class='nc-icon-wrapper' stroke-width='2' fill='%23ffffff' stroke='%23ffffff'%3E%3Cpolyline fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' points='1,9 5,13 15,3 ' data-cap='butt'%3E%3C/polyline%3E%3C/g%3E%3C/svg%3E");
+  background-size: 12px;
+}
+.custom-checkbox input[type=checkbox]:checked:active + label:before, .custom-checkbox input[type=checkbox]:focus + label:before {
+  border-color: #0874d9;
+}
+
+@keyframes check-bounce {
+  0% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  35% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
 
 /*# sourceMappingURL=custom.css.map */
