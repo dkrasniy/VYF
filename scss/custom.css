@@ -8352,6 +8352,18 @@ label {
   border-color: #deebf7;
 }
 
+.btn-white {
+  color: #333;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.btn-white:hover {
+  color: #222;
+  background-color: #fbfbfb;
+  border-color: #fbfbfb;
+}
+
 .btn-primary.tertiary {
   color: #0874d9;
   background-color: transparent !important;
