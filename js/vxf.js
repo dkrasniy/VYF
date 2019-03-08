@@ -1,5 +1,6 @@
 $(document).ready(function(){
     checkFolderStatus();
+    feather.replace();
 });
 
 $(document.body).on("input propertychange",'.float-labels input', function () {

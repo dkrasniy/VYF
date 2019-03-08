@@ -4,7 +4,7 @@ $grey-10: #f6f6f6;
 $grey-9:#ccc;
 $grey-8:#a7a7a7;
 $grey-7:#999;
-$grey-6:#7c7c7c;
+$grey-6:#767676;
 $grey-5:#666;
 $grey-4:#404040;
 $grey-3:#333;
@@ -138,6 +138,31 @@ h1 {
 label {
     font-weight:bold;
 }
+
+
+@media (min-width: 576px){
+    .container {
+        max-width: 640px;
+    }}
+@media (min-width: 768px){
+    .container {
+        max-width: 820px;
+    }}
+        
+@media (min-width: 992px) {
+    .container {
+        max-width: 992px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1220px;
+    }
+}
+
+
+
   
 .btn {
     font-weight: 600;
@@ -229,12 +254,6 @@ label {
     box-shadow: none;
 }
 
-
-.page-header {
-    font-size: 2em;
-    font-weight: 800;
-    margin-bottom: .5em;
-}
 
 // .btn-link {
 //     -webkit-box-shadow: none!important;
@@ -491,7 +510,7 @@ label {
         
     }
     .card-body {
-        background: #eee;
+        background:#F8F8F8;
     }
 }
 
@@ -811,6 +830,114 @@ label {
 }
 
 
+.main-header {
+    background: #fff;
+    padding: 0;
+    .logo-container {
+        min-width:90px;
+        img {
+            max-width:110px;
+        }
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        list-style-type: none;
+        position: relative;
+        //Return list semantics in VoiceOver. It's magic
+        &:before {
+            content: " "; 
+          }
+          padding: 0 1.25em;
+          a {
+            display:block;
+            color: $grey-6;
+            font-size: .98rem;
+            text-decoration: none;
+            padding: 1.25em 0;
+            border-bottom: 3px solid transparent;
+            display:flex;
+            align-items: center;
+            transition:.2s ease all;
+            svg {
+                max-width: 17px;
+                margin-right: 10px;
+            }
+            i {
+                padding-right: 5px;
+                font-size: .85em;
+            }
+          }
+          &.active, &:hover{
+            
+              a {
+                border-color: $primary!important;
+                color: $primary!important;
+             
+                  
+              }
+          }
+    }
+
+}
+.main-content-container {
+padding:1.5rem 0;
+}
+.page-header {
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 2px 4px 0px;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    background: white;
+
+    .page-info {
+        max-width: 66.666666%;
+
+    }
+    .page-title {
+        font-size:1.5rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        margin-bottom:.15rem;
+    }
+    .page-description {
+        margin-bottom:0;
+        color:$grey-6;
+        font-style: italic;
+    }
+}
+
+.status-badge {
+    margin-left: 10px;
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: $borderRadius;
+    text-transform: uppercase;
+   &.status-draft {
+    background: #f6f6f6;
+   }
+   &.status-enroute {
+    background: $orange;
+    color:#fff;
+   }
+   &.status-completed {
+    background: $green;
+    color:#fff;
+   }
+}
+
+
+.page-header > .container {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1em;
+}
 
  .side-navigation {
      width:$sidebarNavWidth;
@@ -1133,24 +1260,7 @@ label {
         }
         padding:1.25em 3em;
     }
-    .status-badge {
-        margin-left: 10px;
-        font-size: 12px;
-        padding: 3px 7px;
-        border-radius: .25em;
-        text-transform: uppercase;
-       &.status-draft {
-        background: #f6f6f6;
-       }
-       &.status-enroute {
-        background: $orange;
-        color:#fff;
-       }
-       &.status-completed {
-        background: $green;
-        color:#fff;
-       }
-    }
+    
 
     .folder-info {
         h1 {
@@ -1192,7 +1302,6 @@ label {
     .folder-contents {
         margin-left: 0;
         margin-right: 0;
-        padding: 1em 3em;
         .empty-state {
             height: 60vh;
             max-width: 400px;
@@ -1268,8 +1377,8 @@ label {
                 .routing-item {
                     display: -ms-grid;
                     display: grid;
-                    -ms-grid-columns: 2fr 1fr 1f;
-                    grid-template-columns: 2fr 1fr 1fr;
+                    -ms-grid-columns:2fr 1fr 1f .5fr ;
+                    grid-template-columns: 2fr 1fr 1fr .5fr ;
                     grid-gap: 5px;
                     border-bottom: 1px solid #eee;
                     padding: .75em 0;
@@ -1734,7 +1843,70 @@ padding: 1em;
 
 
 
-
+.custom-switch {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        position: relative;
+        width: 3em;
+        height: 1.5em;
+        border-radius: 50em;
+        padding: 3px 0;
+      
+      input, label {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      
+        input {
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        height: 0;
+        width: 0;
+        pointer-events: none;
+      
+        &:checked + label {
+          background-color: $green;
+        }
+      
+        &:checked + label + .switch__marker {
+          left: calc(100% - 1.5em + 3px);
+        }
+      
+        &:focus + label,
+        &:active + label {
+            // need to add a focus style for accesibility 
+        //   box-shadow: 0 0 0 3px rgba(0, 0, 0, .1);
+        }
+      }
+      
+      label {
+        width: 100%;
+        height: 100%;
+        color: transparent;
+        user-select: none;
+        background-color:white;
+        border-radius: inherit;
+        z-index: 1;
+        transition: background 0.2s;
+      }
+      
+      .switch__marker {
+        position: relative;
+        background-color: #fff;
+        width: calc(1.5em - 3px * 2);
+        height: calc(1.5em - 3px * 2);
+        border-radius: 50%;
+        z-index: 2;
+        pointer-events: none;
+        box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.25);
+        left: 3px;
+        transition: left .2s;
+        will-change: left;
+      }
+}
 .custom-checkbox {
     font-weight:normal;
     margin: 5px 0;

@@ -8305,6 +8305,26 @@ label {
   font-weight: bold;
 }
 
+@media (min-width: 576px) {
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 820px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 992px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1220px;
+  }
+}
 .btn {
   font-weight: 600;
   padding: 0.4rem 1rem;
@@ -8401,12 +8421,6 @@ label {
   border: none;
   border-radius: 0.35em;
   box-shadow: none;
-}
-
-.page-header {
-  font-size: 2em;
-  font-weight: 800;
-  margin-bottom: 0.5em;
 }
 
 /* --------- MODALS --------- */
@@ -8571,7 +8585,7 @@ label {
 }
 
 .alert .alert-content {
-  color: #7c7c7c;
+  color: #767676;
   padding-left: 1.25em;
 }
 .alert .alert-content p {
@@ -8629,7 +8643,7 @@ label {
   text-decoration: none;
 }
 .folder-card .card-body, .document-card .card-body {
-  background: #eee;
+  background: #F8F8F8;
 }
 
 .icon-container.signature-icon {
@@ -8653,7 +8667,7 @@ label {
 .document-card .sign-setup-ready .signatures .signatures-text {
   font-size: 12px;
   display: block;
-  color: #7c7c7c;
+  color: #767676;
 }
 .document-card .sign-setup-ready .signatures .signatures-text .signatures-count {
   font-weight: bold;
@@ -8832,6 +8846,107 @@ label {
   padding-top: 1.65rem;
 }
 
+.main-header {
+  background: #fff;
+  padding: 0;
+}
+.main-header .logo-container {
+  min-width: 90px;
+}
+.main-header .logo-container img {
+  max-width: 110px;
+}
+.main-header ul {
+  padding: 0;
+  margin: 0;
+}
+.main-header li {
+  list-style-type: none;
+  position: relative;
+  padding: 0 1.25em;
+}
+.main-header li:before {
+  content: " ";
+}
+.main-header li a {
+  display: block;
+  color: #767676;
+  font-size: 0.98rem;
+  text-decoration: none;
+  padding: 1.25em 0;
+  border-bottom: 3px solid transparent;
+  display: flex;
+  align-items: center;
+  transition: 0.2s ease all;
+}
+.main-header li a svg {
+  max-width: 17px;
+  margin-right: 10px;
+}
+.main-header li a i {
+  padding-right: 5px;
+  font-size: 0.85em;
+}
+.main-header li.active a, .main-header li:hover a {
+  border-color: #0874d9 !important;
+  color: #0874d9 !important;
+}
+
+.main-content-container {
+  padding: 1.5rem 0;
+}
+
+.page-header {
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 2px 4px 0px;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+  background: white;
+}
+.page-header .page-info {
+  max-width: 66.666666%;
+}
+.page-header .page-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.15rem;
+}
+.page-header .page-description {
+  margin-bottom: 0;
+  color: #767676;
+  font-style: italic;
+}
+
+.status-badge {
+  margin-left: 10px;
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 0.35em;
+  text-transform: uppercase;
+}
+.status-badge.status-draft {
+  background: #f6f6f6;
+}
+.status-badge.status-enroute {
+  background: #FA710E;
+  color: #fff;
+}
+.status-badge.status-completed {
+  background: #30B34E;
+  color: #fff;
+}
+
+.page-header > .container {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1em;
+}
+
 .side-navigation {
   width: 240px;
   position: fixed;
@@ -8911,7 +9026,7 @@ label {
 .side-navigation .user-account .btn span {
   display: block;
   font-size: 12px;
-  color: #7c7c7c;
+  color: #767676;
   font-weight: 400;
 }
 .side-navigation .user-account .btn i {
@@ -9109,24 +9224,6 @@ label {
   display: flex;
   align-items: center;
 }
-.folder-view .status-badge {
-  margin-left: 10px;
-  font-size: 12px;
-  padding: 3px 7px;
-  border-radius: 0.25em;
-  text-transform: uppercase;
-}
-.folder-view .status-badge.status-draft {
-  background: #f6f6f6;
-}
-.folder-view .status-badge.status-enroute {
-  background: #FA710E;
-  color: #fff;
-}
-.folder-view .status-badge.status-completed {
-  background: #30B34E;
-  color: #fff;
-}
 .folder-view .folder-info h1 {
   margin-bottom: 0.1em;
   font-size: 1.5em;
@@ -9157,7 +9254,6 @@ label {
 .folder-view .folder-contents {
   margin-left: 0;
   margin-right: 0;
-  padding: 1em 3em;
 }
 .folder-view .folder-contents .empty-state {
   height: 60vh;
@@ -9233,8 +9329,8 @@ label {
 .folder-view .routing-slip .routing-body .routing-item {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr 1fr 1f;
-  grid-template-columns: 2fr 1fr 1fr;
+  -ms-grid-columns: 2fr 1fr 1f 0.5fr;
+  grid-template-columns: 2fr 1fr 1fr 0.5fr;
   grid-gap: 5px;
   border-bottom: 1px solid #eee;
   padding: 0.75em 0;
@@ -9287,7 +9383,7 @@ label {
   font-weight: bold;
 }
 .folder-view .routing-slip .empty-state p {
-  color: #7c7c7c;
+  color: #767676;
   font-size: 0.9em;
 }
 
@@ -9568,7 +9664,7 @@ span.uploader-name:before {
   font-weight: 700;
 }
 .empty-state-x p {
-  color: #7c7c7c;
+  color: #767676;
 }
 .empty-state-x.hidden {
   display: none;
@@ -9645,6 +9741,59 @@ span.uploader-name:before {
   border: none;
 }
 
+.custom-switch {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  position: relative;
+  width: 3em;
+  height: 1.5em;
+  border-radius: 50em;
+  padding: 3px 0;
+}
+.custom-switch input, .custom-switch label {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.custom-switch input {
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+.custom-switch input:checked + label {
+  background-color: #30B34E;
+}
+.custom-switch input:checked + label + .switch__marker {
+  left: calc(100% - 1.5em + 3px);
+}
+.custom-switch label {
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  user-select: none;
+  background-color: white;
+  border-radius: inherit;
+  z-index: 1;
+  transition: background 0.2s;
+}
+.custom-switch .switch__marker {
+  position: relative;
+  background-color: #fff;
+  width: calc(1.5em - 3px * 2);
+  height: calc(1.5em - 3px * 2);
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  left: 3px;
+  transition: left 0.2s;
+  will-change: left;
+}
+
 .custom-checkbox {
   font-weight: normal;
   margin: 5px 0;
@@ -9715,7 +9864,7 @@ span.uploader-name:before {
   justify-content: space-between;
 }
 .folder-specs .folder-spec {
-  color: #7c7c7c;
+  color: #767676;
 }
 .folder-specs .folder-spec b {
   color: #333;
