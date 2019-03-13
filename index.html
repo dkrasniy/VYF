@@ -12,16 +12,42 @@
    <title>VXF Sitemap</title>
 
    <style>
-     .sitemap ul {
+      .sitemap ul {
          list-style: none;
-         color:#333;
-         padding:0;
+         color: #333;
+         padding: 0;
          max-width: 25%;
-         padding-right:20px;
+         padding-right: 20px;
       }
+
+      .components {
+         border-top: 1px solid #e1e1e1;
+         padding-top: 2em;
+         margin-top: 3em;
+      }
+
+      .components h5 {
+         text-align: center;
+         font-weight: bold;
+         font-size: 1.15em;
+         margin-bottom: 1em;
+      }
+
+      .components ul {
+         max-width: 100%;
+         display: flex;
+         flex-wrap: wrap;
+      }
+
+      .components ul li {
+         min-width: 24%;
+         margin-right: 1%;
+      }
+
       .sitemap ul:last-child {
-         padding-right:0;
+         padding-right: 0;
       }
+
       .sitemap li a {
          color: #333;
          font-size: .9em;
@@ -36,18 +62,23 @@
          text-decoration: none;
          transition: .15s ease all;
       }
+
       .sitemap li a:hover {
-         box-shadow: 0 6px 12px -2px rgba(202, 202, 202, 0.25), 0 3px 7px -3px rgba(0,0,0,.3);
+         box-shadow: 0 6px 12px -2px rgba(202, 202, 202, 0.25), 0 3px 7px -3px rgba(0, 0, 0, .3);
       }
+
       .sitemap li.not-started a {
          cursor: default;
       }
+
       .sitemap li.not-started a:hover {
-         box-shadow:none;
+         box-shadow: none;
       }
+
       .d-flex ul {
-         flex:1;
+         flex: 1;
       }
+
       .sitemap li a::before {
          content: '';
          height: 20px;
@@ -63,6 +94,7 @@
          top: calc(50% - 7.5px);
          right: 10px;
       }
+
       .sitemap li a::after {
          font-size: 12px;
          display: block;
@@ -70,38 +102,51 @@
          font-family: monospace;
          font-weight: normal;
       }
-      .sitemap li.completed a::before, .sitemap li.completed a::after {
+
+      .sitemap li.completed a::before,
+      .sitemap li.completed a::after {
          color: #30B34E;
       }
-      .sitemap li.not-started a::before, .sitemap li.not-started a::after {
-         color:#444;
+
+      .sitemap li.not-started a::before,
+      .sitemap li.not-started a::after {
+         color: #444;
       }
-      .sitemap li.in-progress a::before, .sitemap li.in-progress a::after {
+
+      .sitemap li.in-progress a::before,
+      .sitemap li.in-progress a::after {
          color: hsla(25, 96%, 52%, 1);
       }
-      .sitemap  li.completed a::before {
+
+      .sitemap li.completed a::before {
          background: hsla(134, 58%, 95%, 1);
-         content: '\f00c'; 
+         content: '\f00c';
       }
-      .sitemap  li.not-started a::before {
+
+      .sitemap li.not-started a::before {
          background: #f6f6f6;
          content: '\f12a';
-        
+
       }
-      .sitemap  li.in-progress a::before {
+
+      .sitemap li.in-progress a::before {
          background: hsla(25, 96%, 97%, 1);
          content: '\f70c';
-        
+
       }
-      .sitemap  li.completed a::after {
+
+      .sitemap li.completed a::after {
          content: 'Completed';
       }
-      .sitemap  li.not-started a::after {
+
+      .sitemap li.not-started a::after {
          content: 'Not Started';
       }
-      .sitemap  li.in-progress a::after {
+
+      .sitemap li.in-progress a::after {
          content: 'In Progress';
       }
+
       .overall-progress span {
          margin-left: 35px;
          position: relative;
@@ -109,6 +154,7 @@
          font-size: 13px;
          font-weight: bold;
       }
+
       .overall-progress span:before {
          content: '';
          width: 18px;
@@ -123,34 +169,35 @@
          top: calc(50% - 9px);
          left: -23px;
          border-radius: 50%;
-         background: transparent!important;
+         background: transparent !important;
       }
+
       span.pages-complete {
          color: #30B34E;
       }
+
       span.pages-in-progress {
          color: hsla(25, 96%, 52%, 1);
       }
+
       span.pages-complete::before {
          background: hsla(134, 58%, 95%, 1);
          content: '\f00c';
          color: #30B34E;
       }
+
       span.pages-not-started::before {
          background: #f6f6f6;
          content: '\f12a';
          color: #444;
 
       }
+
       span.pages-in-progress::before {
          background: hsla(25, 96%, 97%, 1);
          content: '\f70c';
          color: hsla(25, 96%, 52%, 1);
       }
-
-      
-    
-
    </style>
 </head>
 
@@ -193,29 +240,30 @@
    <div class="page-header">
       <div class="container">
          <div class="page-info">
-               <div class="details">
-                  <h1 class="page-title">HTML Design Sitemap<span class="status-badge status-draft sitemap-page-count"></span></h1>
-               </div>
+            <div class="details">
+               <h1 class="page-title">HTML Design Sitemap<span
+                     class="status-badge status-draft sitemap-page-count"></span></h1>
+            </div>
          </div>
          <div class="page-actions">
-                <div class="overall-progress">
-                     <span class="pages-complete"></span>
-                  <span class="pages-in-progress"></span>
-                  <span class="pages-not-started"></span>
-                </div>
+            <div class="overall-progress">
+               <span class="pages-complete"></span>
+               <span class="pages-in-progress"></span>
+               <span class="pages-not-started"></span>
+            </div>
          </div>
       </div>
    </div>
    <main>
       <div class="container sitemap" style="padding-top:2em;">
-         <div class="folder-view">
+         <div id="sitemapSection">
             <div class="folder-contents row display-flex d-flex">
-               
+
                <ul>
                   <b>Inbox (Dashboard)</b>
                   <li class="completed"><a href="./home.html">Inbox (Empty State)</a></li>
                   <li class="in-progress"><a href="./home-contains.html">Inbox (Contains Folders)</a></li>
-                  
+
                   </li>
                </ul>
                <ul>
@@ -223,7 +271,8 @@
                   <li class="completed"><a href="./drafts.html">Drafts (Empty State)</a></li>
                   <li class="not-started"><a href="#">Drafts (Contains Folders)</a></li>
                   <li class="in-progress"><a href="./draft-folder.html">Draft Folder (Empty State)</a></li>
-                  <li class="in-progress"><a href="./draft-folder-signing-ready.html">Draft Folder (Contains Documents)</a>
+                  <li class="in-progress"><a href="./draft-folder-signing-ready.html">Draft Folder (Contains
+                        Documents)</a>
                   </li>
                </ul>
                <ul>
@@ -239,13 +288,25 @@
                   </li>
                </ul>
             </div>
-          
             <ul>
-                  <b>Login</b>
-                  <li class="completed"><a href="./login.html">Simple Login</a></li>
-                  <li class="not-started"><a href="">SSO Login</a></li>
-               </ul>
+               <b>Login</b>
+               <li class="completed"><a href="./login.html">Simple Login</a></li>
+               <li class="not-started"><a href="">SSO Login</a></li>
+            </ul>
          </div>
+
+         <div class="components">
+            <h5>Components</h5>
+            <ul>
+               <li class="in-progress"><a href="./components/form-elements.html">Form Elements</a></li>
+               <li class="completed"><a href="./components/alerts.html">Alerts</a></li>
+               <li class="completed"><a href="./components/buttons.html">Buttons</a></li>
+               <li class="completed"><a href="./components/modals.html">Modals</a></li>
+               <li class="completed"><a href="./components/icons.html">Icons</a></li>
+               <li class="in-progress"><a href="./components/accordian-sortable.html">Sortable Accordians</a></li>
+            </ul>
+         </div>
+
       </div>
    </main>
 
@@ -259,13 +320,14 @@
    <script src="js/vxf.js"></script>
 
    <script>
-      $('.pages-not-started').html($('.not-started').length + ' not started');
-      $('.pages-in-progress').html($('.in-progress').length + ' in progress');
-      $('.pages-complete').html($('.completed').length + ' complete');
+      $('.pages-not-started').html($('#sitemapSection .not-started').length + ' not started');
+      $('.pages-in-progress').html($('#sitemapSection .in-progress').length + ' in progress');
+      $('.pages-complete').html($('#sitemapSection .completed').length + ' complete');
 
-      $('.sitemap-page-count').html($(".sitemap ul li").length + ' pages')
+      $('.sitemap-page-count').html($("#sitemapSection ul li").length + ' pages')
    </script>
 
    <script src="https://unpkg.com/feather-icons"></script>
 </body>
+
 </html>
