@@ -606,7 +606,13 @@ label {
     }
 
     .document-signatures {
+        counter-reset: signaturescount;
+
         .signature-header-layout {
+            &::before {
+                counter-increment: signaturescount;   
+                content: counter(signaturescount);   
+            }
             margin-bottom:5px;
             box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
             .title-container {
@@ -906,7 +912,13 @@ padding:1.5rem 0;
 
     .page-info {
         max-width: 66.666666%;
+        display: flex;
+        align-items: center;
 
+    }
+    .page-actions {
+        display: flex;
+        align-items: center;
     }
     .page-title {
         font-size:1.5rem;

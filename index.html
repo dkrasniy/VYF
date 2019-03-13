@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <!-- CSS -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+   <link rel="stylesheet" href="scss/custom.css">
+   <link rel="stylesheet" href="fonts/fonts.css">
+   <title>VXF Sitemap</title>
+
+   <style>
+     .sitemap ul {
+         list-style: none;
+         color:#333;
+         padding:0;
+         max-width: 25%;
+         padding-right:20px;
+      }
+      .sitemap ul:last-child {
+         padding-right:0;
+      }
+      .sitemap li a {
+         color: #333;
+         font-size: .9em;
+         font-family: 'Proxima Nova';
+         padding: 10px;
+         margin-bottom: 10px;
+         display: block;
+         background: white;
+         border-radius: 5px;
+         position: relative;
+         padding-right: 35px;
+         text-decoration: none;
+         transition: .15s ease all;
+      }
+      .sitemap li a:hover {
+         box-shadow: 0 6px 12px -2px rgba(202, 202, 202, 0.25), 0 3px 7px -3px rgba(0,0,0,.3);
+      }
+      .sitemap li.not-started a {
+         cursor: default;
+      }
+      .sitemap li.not-started a:hover {
+         box-shadow:none;
+      }
+      .d-flex ul {
+         flex:1;
+      }
+      .sitemap li a::before {
+         content: '';
+         height: 20px;
+         border-radius: 50%;
+         width: 20px;
+         font-size: 10px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         position: absolute;
+         font-family: "Font Awesome 5 Free";
+         font-weight: 900;
+         top: calc(50% - 7.5px);
+         right: 10px;
+      }
+      .sitemap li a::after {
+         font-size: 12px;
+         display: block;
+         color: #8898aa;
+         font-family: monospace;
+         font-weight: normal;
+      }
+      .sitemap li.completed a::before, .sitemap li.completed a::after {
+         color: #30B34E;
+      }
+      .sitemap li.not-started a::before, .sitemap li.not-started a::after {
+         color:#444;
+      }
+      .sitemap li.in-progress a::before, .sitemap li.in-progress a::after {
+         color: hsla(25, 96%, 52%, 1);
+      }
+      .sitemap  li.completed a::before {
+         background: hsla(134, 58%, 95%, 1);
+         content: '\f00c'; 
+      }
+      .sitemap  li.not-started a::before {
+         background: #f6f6f6;
+         content: '\f12a';
+        
+      }
+      .sitemap  li.in-progress a::before {
+         background: hsla(25, 96%, 97%, 1);
+         content: '\f70c';
+        
+      }
+      .sitemap  li.completed a::after {
+         content: 'Completed';
+      }
+      .sitemap  li.not-started a::after {
+         content: 'Not Started';
+      }
+      .sitemap  li.in-progress a::after {
+         content: 'In Progress';
+      }
+      .overall-progress span {
+         margin-left: 35px;
+         position: relative;
+         text-transform: uppercase;
+         font-size: 13px;
+         font-weight: bold;
+      }
+      .overall-progress span:before {
+         content: '';
+         width: 18px;
+         height: 18px;
+         font-size: 10px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         position: absolute;
+         font-family: "Font Awesome 5 Free";
+         font-weight: 900;
+         top: calc(50% - 9px);
+         left: -23px;
+         border-radius: 50%;
+         background: transparent!important;
+      }
+      span.pages-complete {
+         color: #30B34E;
+      }
+      span.pages-in-progress {
+         color: hsla(25, 96%, 52%, 1);
+      }
+      span.pages-complete::before {
+         background: hsla(134, 58%, 95%, 1);
+         content: '\f00c';
+         color: #30B34E;
+      }
+      span.pages-not-started::before {
+         background: #f6f6f6;
+         content: '\f12a';
+         color: #444;
+
+      }
+      span.pages-in-progress::before {
+         background: hsla(25, 96%, 97%, 1);
+         content: '\f70c';
+         color: hsla(25, 96%, 52%, 1);
+      }
+
+      
+    
+
+   </style>
+</head>
+
+<body class="theme-color-blue">
+   <header class="main-header navbar navbar-expand-md">
+      <div class="container">
+         <div class="logo-container">
+            <span style="
+               font-weight: bold;
+               font-size: 1.15rem;
+               color: #333;
+           ">Virtual Yellow Folder</span>
+            <!-- <img src="assets/logo/filled-color-h.svg" alt="Virtual Yellow Folder Logo"> -->
+         </div>
+         <nav class="top-navigation" id="main-header-nav" aria-labelledby="main-header-nav-label" role="navigation">
+            <div id="main-header-nav-label" class="main-header__nav-label sr-only">Main menu</div>
+
+            <ul class="mr-auto navbar-nav" role="list">
+               <li role="listitem"><a href="home.html"><i data-feather="home"></i> Inbox</a></li>
+               <li role="listitem"><a href="drafts.html"><i data-feather="file"></i></i> Drafts</a></li>
+               <li role="listitem"><a href="en-route.html"><i data-feather="map"></i> En Route</a></li>
+               <li role="listitem"><a href="completed.html"><i data-feather="check"></i> Completed</a></li>
+            </ul>
+         </nav>
+         <div class="user-account">
+            <a class=" dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">
+               Timothy Taylor
+            </a>
+            <div class="dropdown-menu">
+               <a class="dropdown-item" href="#">My Account</a>
+               <a class="dropdown-item" href="#">Settings</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="#">Sign Out</a>
+            </div>
+         </div>
+      </div>
+
+   </header>
+   <div class="page-header">
+      <div class="container">
+         <div class="page-info">
+               <div class="details">
+                  <h1 class="page-title">HTML Design Sitemap<span class="status-badge status-draft sitemap-page-count"></span></h1>
+               </div>
+         </div>
+         <div class="page-actions">
+                <div class="overall-progress">
+                     <span class="pages-complete"></span>
+                  <span class="pages-in-progress"></span>
+                  <span class="pages-not-started"></span>
+                </div>
+         </div>
+      </div>
+   </div>
+   <main>
+      <div class="container sitemap" style="padding-top:2em;">
+         <div class="folder-view">
+            <div class="folder-contents row display-flex d-flex">
+               
+               <ul>
+                  <b>Inbox (Dashboard)</b>
+                  <li class="completed"><a href="./home.html">Inbox (Empty State)</a></li>
+                  <li class="in-progress"><a href="./home-contains.html">Inbox (Contains Folders)</a></li>
+                  
+                  </li>
+               </ul>
+               <ul>
+                  <b>Drafts</b>
+                  <li class="completed"><a href="./drafts.html">Drafts (Empty State)</a></li>
+                  <li class="not-started"><a href="#">Drafts (Contains Folders)</a></li>
+                  <li class="in-progress"><a href="./draft-folder.html">Draft Folder (Empty State)</a></li>
+                  <li class="in-progress"><a href="./draft-folder-signing-ready.html">Draft Folder (Contains Documents)</a>
+                  </li>
+               </ul>
+               <ul>
+                  <b>En Route</b>
+                  <li class="completed"><a href="./en-route.html">En Route (Empty State)</a></li>
+                  <li class="not-started"><a href="#">En Route (Contains Folders)</a></li>
+                  </li>
+               </ul>
+               <ul>
+                  <b>Completed</b>
+                  <li class="completed"><a href="./drafts.html">Completed (Empty State)</a></li>
+                  <li class="not-started"><a href="#">Completed (Contains Folders)</a></li>
+                  </li>
+               </ul>
+            </div>
+          
+            <ul>
+                  <b>Login</b>
+                  <li class="completed"><a href="./login.html">Simple Login</a></li>
+                  <li class="not-started"><a href="">SSO Login</a></li>
+               </ul>
+         </div>
+      </div>
+   </main>
+
+
+
+   <!-- JavaScript -->
+   <script src="js/jquery-3.3.1.min.js"></script>
+   <script src="js/jquery-ui.min.js"></script>
+   <script src="bootstrap/js/popper.min.js"></script>
+   <script src="bootstrap/js/bootstrap.min.js"></script>
+   <script src="js/vxf.js"></script>
+
+   <script>
+      $('.pages-not-started').html($('.not-started').length + ' not started');
+      $('.pages-in-progress').html($('.in-progress').length + ' in progress');
+      $('.pages-complete').html($('.completed').length + ' complete');
+
+      $('.sitemap-page-count').html($(".sitemap ul li").length + ' pages')
+   </script>
+
+   <script src="https://unpkg.com/feather-icons"></script>
+</body>
+</html>

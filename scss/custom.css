@@ -8720,9 +8720,16 @@ label {
   justify-content: space-around;
   align-items: center;
 }
+.document-card .document-signatures {
+  counter-reset: signaturescount;
+}
 .document-card .document-signatures .signature-header-layout {
   margin-bottom: 5px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+}
+.document-card .document-signatures .signature-header-layout::before {
+  counter-increment: signaturescount;
+  content: counter(signaturescount);
 }
 .document-card .document-signatures .signature-header-layout .title-container {
   margin-left: 20px;
@@ -8919,6 +8926,12 @@ label {
 }
 .page-header .page-info {
   max-width: 66.666666%;
+  display: flex;
+  align-items: center;
+}
+.page-header .page-actions {
+  display: flex;
+  align-items: center;
 }
 .page-header .page-title {
   font-size: 1.5rem;
