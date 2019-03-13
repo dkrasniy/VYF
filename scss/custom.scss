@@ -872,8 +872,8 @@ label {
             color: $grey-6;
             font-size: .98rem;
             text-decoration: none;
-            padding: 1.25em 0;
-            border-bottom: 3px solid transparent;
+            padding: 1em 0;
+            
             display:flex;
             align-items: center;
             transition:.2s ease all;
@@ -887,14 +887,14 @@ label {
             }
           }
           &.active, &:hover{
-            
               a {
-                border-color: $primary!important;
                 color: $primary!important;
-             
-                  
               }
           }
+          &.active{
+            font-weight: bold;
+           }
+
     }
 
 }

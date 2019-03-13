@@ -8892,8 +8892,7 @@ label {
   color: #767676;
   font-size: 0.98rem;
   text-decoration: none;
-  padding: 1.25em 0;
-  border-bottom: 3px solid transparent;
+  padding: 1em 0;
   display: flex;
   align-items: center;
   transition: 0.2s ease all;
@@ -8907,8 +8906,10 @@ label {
   font-size: 0.85em;
 }
 .main-header li.active a, .main-header li:hover a {
-  border-color: #0874d9 !important;
   color: #0874d9 !important;
+}
+.main-header li.active {
+  font-weight: bold;
 }
 
 .main-content-container {
