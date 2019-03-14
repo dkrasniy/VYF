@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+      <link rel="stylesheet" href="scss/custom.css">
+      <link rel="stylesheet" href="fonts/fonts.css">
+      <title>Virtual Yellow Folder</title>
+   </head>
+   <body>
+
+      <main>
+         <nav class="side-navigation">
+            <div class="logo-container">
+               <img src="assets/logo/filled-color-h.svg" alt="Virtual Yellow Folder Logo">
+            </div>
+            <button type="button" class="btn btn-primary new-folder-button  btn-block" data-toggle="modal" data-target="#newFolderModal">New Folder</button> 
+            <ul role="list">
+               <li role="listitem" class="active"><a href="home.html">Inbox</a></li>
+               <li role="listitem"><a href="drafts.html">Drafts</a></li>
+               <li role="listitem"><a href="en-route.html">En Route</a></li>
+               <li role="listitem"><a href="completed.html">Completed</a></li>
+            </ul>
+            <div class="user-account btn-group dropup">
+               <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Timothy Taylor
+               <span>timothy.taylor@calpers.ca.gov</span>
+               <i class="fas fa-chevron-up"></i>
+               </button>
+               <div class="dropdown-menu">
+                     <a class="dropdown-item" href="#">My Account</a>
+                     <a class="dropdown-item" href="#">Settings</a>
+                     <div class="dropdown-divider"></div>
+                     <a class="dropdown-item" href="#">Sign Out</a>
+               </div>
+            </div>
+            
+         </nav>
+         <div class="content-wrapper">
+            <div class="folder-view">
+             <div class="folder-header">
+                <div class="folder-info">
+                   <h1>Travel Expense Folder<span class="status-badge status-draft">Draft</span></h1>
+                   <!-- <div class="folder-details">
+                      <ul>
+                         <li><span class="label">Created</span> 01/22/2019 3:12pm</li>
+                         <li><span class="label">Modified</span> 44 minutes ago</li>
+                      </ul>
+                   </div> -->
+                  </div>
+                <div class="folder-actions">
+                     <button type="button" class="btn btn-white mr-2" data-toggle="modal" data-target="#folderSettings">Edit</button> 
+                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#fileUploadModal">Upload Documents</button> 
+                </div>
+             </div>
+             <div class="folder-contents row">
+                  <div class="routing-slip col-4">
+                        <div class="routing-header">
+                             <img class="toggle-route-slip" src="assets/empty-states/route-icon.svg"/>
+                           <h2>Routing Slip</h2>
+                           <button type="button" class="icon-container toggle-route-slip">
+                                 <i class="fas fa-chevron-left"></i>
+                                 </button>
+                        </div>
+                        <div class="routing-slip-initials toggle-route-slip">
+                              <ul>
+                                 <li>PM</li>
+                                 <li>AS</li>
+                                 <li>TT</li>
+                              </ul>
+                           </div>
+                        <div class="routing-body">
+                             
+                              <div class="routing-slip-container ui-sortable" id="sortable">
+                                    <div class="routing-item routing-header ui-sortable-handle">
+                                       <div>Deliver To</div>
+                                       <div>Dept</div>
+                                       <div>Access</div>
+                                    </div>
+                                    <div class="routing-item ui-sortable-handle">
+                                       <div>Paul Makhnovskiy<span class="desc">Signing 2 documents</span></div>
+                                       <div>ESDD</div>
+                                       <div class="access"><div class="form-group user-access">
+                                             <label for="sel1" class="sr-only">Select list:</label>
+                                             <select class="form-control" id="sel1">
+                                               <option disabled>View</option>
+                                               <option selected>Sign</option>
+                                               <option>Edit</option>
+                                             </select>
+                                           </div></div>
+                                    </div>
+                                    <div class="routing-item ui-sortable-handle">
+                                       <div>Andrew Studer<span class="desc">Signing 1 document</span></div>
+                                       <div>ESDD</div>
+                                       <div class="access">
+                                             <div class="form-group user-access">
+                                                   <label for="sel1" class="sr-only">Select list:</label>
+                                                   <select class="form-control" id="sel1">
+                                                     <option>View</option>
+                                                     <option>Sign</option>
+                                                     <option>Edit</option>
+                                                   </select>
+                                                 </div>
+                                       </div>
+                                    </div>
+                                    <div class="routing-item ui-sortable-handle">
+                                       <div>Timothy Taylor<span class="desc">Viewing documents</span></div>
+                                       <div>ESDD</div>
+                                       <div class="sign-edit"><div class="form-group user-access">
+                                             <label for="sel1" class="sr-only">Select list:</label>
+                                             <select class="form-control" id="sel1">
+                                               <option>View</option>
+                                               <option>Sign</option>
+                                               <option selected>Edit</option>
+                                             </select>
+                                           </div></div>
+                                    </div>
+                                 
+                                    <div class="add-viewer-container">
+                                       <button type="button" class="btn btn-primary tertiary btn-sm">Add Viewer</button>
+                                    </div>
+                                    <div class="add-viewer-container">
+                                    <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#routeFolder">Route</button>
+                                    <p class="estimated-completion">Estimated Completion <b>4 days</b></p>
+                                       </div>
+                                    
+                                 </div>
+
+
+                     </div>
+                     </div>
+                   <div class="col-8 folder-items">
+                        <div class="accordion list" id="filesListing">
+                              <div class="document-card">
+                                 <a class="card-header" id="folderOne" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="false" aria-controls="collapseTwo">
+                                    <div class="icon-container file-icon" aria-label="Folder">
+                                       <i class="fas fa-file-pdf"></i>
+                                    </div>
+                                    <div class="title-container">
+                                       <h4 class="title document-title-2">IT Maintenance Renewal</h4>
+                                       <p class="original-file-name">it-maintenance-renewal.pdf<span class="uploader-name">Timothy Taylor</span></p>
+                                    </div>
+                                    <div class="accordion-expand-actions">
+                                       <button type="button" class="btn btn-white btn-sm btn-setup-signing">Setup Signing</button>
+                                       <button type="button" class="icon-container icon-sm ml-2">
+                                       <i class="fas fa-chevron-down"></i>
+                                       </button>
+                                    </div>
+                                 </a>
+                                 <div id="collapseOne" class="collapse" aria-labelledby="folderOne" data-parent="#filesListing">
+                                    <div class="card-body">
+                                      
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="document-card">
+                                 <a class="card-header" id="folderTwo" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
+                                    <div class="icon-container file-icon" aria-label="Folder">
+                                       <i class="fas fa-file-pdf"></i>
+                                    </div>
+                                    <div class="title-container">
+                                       <h4 class="title document-title-3">11-IT Budget Approval</h4>
+                                       <p class="original-file-name">021-Quote 1.pdf<span class="uploader-name">Timothy Taylor</span></p>
+                                    </div>
+                                    <div class="accordion-expand-actions">
+                                       <button type="button" class="btn btn-white btn-sm btn-setup-signing">Setup Signing</button>
+                                       <button type="button" class="icon-container icon-sm ml-2">
+                                       <i class="fas fa-chevron-down"></i>
+                                       </button>
+                                    </div>
+                                 </a>
+                                 <div id="collapseTwo" class="collapse" aria-labelledby="folderTwo"  data-parent="#filesListing">
+                                    <div class="card-body">
+                                      
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        
+                        </div>
+
+             </div>
+               
+         </div>
+      </main>
+
+
+      <!-- Folder Settings Modal -->
+      <div class="modal fade modal-wide" id="routeFolder" tabindex="-1" role="dialog" aria-labelledby="routeFolderLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="routeFolderLabel">Route Folder</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  
+                     <div class="icon-container">
+                        <i class="fas fa-times"></i>
+                  </div>
+                  </button>
+               </div>
+               <div class="modal-body">
+                    
+                  </div>
+                  <div class="modal-footer">
+                        <button type="button" class="btn btn-primary tertiary" data-dismiss="modal">Cancel</button> 
+                        <a href="home-contains.html" class="btn btn-primary">Route</a>
+                     </div>
+            </div>
+            </div>
+         </div>
+
+
+
+       <!-- Folder Settings Modal -->
+         <div class="modal fade modal-wide" id="folderSettings" tabindex="-1" role="dialog" aria-labelledby="folderSettingsLabel" aria-hidden="true">
+               <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="folderSettingsLabel">Travel Expense Folder</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     
+                        <div class="icon-container">
+                           <i class="fas fa-times"></i>
+                     </div>
+                     </button>
+                  </div>
+                  <div class="modal-body">
+                       <p>Created: 10 minutes ago</p>
+                       <button class="btn btn-danger tertiary">Delete Folder</button>
+                     </div>
+                     
+               </div>
+               </div>
+            </div>
+
+            <!-- File Upload Modal -->
+            <div class="modal fade modal-widest" id="fileUploadModal" tabindex="-1" role="dialog" aria-labelledby="fileUploadModalLabel" aria-hidden="true">
+               <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <div><h5 class="modal-title" id="fileUploadModalLabel">Upload Documents</h5>
+                     <p>Please provide a document title for each uploaded file. If document needs signing, click Setup Signing. You can modify this later.</p>
+                     </div>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     
+                        <div class="icon-container">
+                           <i class="fas fa-times"></i>
+                     </div>
+                     </button>
+                  </div>
+                  <div class="modal-body">
+                     
+
+                        <div class="accordion list" id="filesListing">
+                              <div class="document-card">
+                                  <a class="card-header" id="folderOne" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="false" aria-controls="collapseTwo">
+                                      <div class="icon-container file-icon" aria-label="Folder">
+                                          <i class="fas fa-file-pdf"></i>
+                                      </div>
+                                       
+                                       <div class="title-container">
+                                          <h4 class="title document-title-2 missing-document-name">No document name</h4>
+                                          <p class="original-file-name">01-Buck Slip.pdf</p>
+                                       </div>
+                                    
+                                      
+                                       <div class="accordion-expand-actions">
+                                          <button type="button" class="btn btn-white btn-sm btn-setup-signing">Setup Signing</button>
+                                          <button type="button" class="icon-container icon-sm ml-2">
+                                             <i class="fas fa-chevron-down"></i>
+                                          </button>
+                                       </div>
+                                  </a>
+                              
+                                  <div id="collapseOne" class="collapse" aria-labelledby="folderOne" data-parent="#filesListing">
+                                    <div class="card-body">
+                                          <div class="form-group">
+                                                <label for="folderName">Document Name</label>
+                                                <input type="text" class="form-control syncDocumentName" id="2" autofocus>
+                                             </div>
+                                             
+                                          
+                                 </div>
+                                  </div>
+                                </div>
+                                <div class="document-card">
+                                    <a class="card-header" id="folderTwo" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
+                                        <div class="icon-container file-icon" aria-label="Folder">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </div>
+                                         
+                                         <div class="title-container">
+                                            <h4 class="title document-title-3 missing-document-name">No document name</h4>
+                                            <p class="original-file-name">021-Quote 1.pdf</p>
+                                         </div>
+                                      
+                                        
+                                         <div class="accordion-expand-actions">
+                                            <button type="button" class="btn btn-white btn-sm btn-setup-signing">Setup Signing</button>
+                                            <button type="button" class="icon-container icon-sm ml-2">
+                                               <i class="fas fa-chevron-down"></i>
+                                            </button>
+                                         </div>
+                                    </a>
+                                
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="folderTwo"  data-parent="#filesListing">
+                                      <div class="card-body">
+                                            <div class="form-group">
+                                                  <label for="folderName">Document Name</label>
+                                                  <input type="text" class="form-control syncDocumentName" id="3" autofocus>
+                                               </div>
+                                               
+                                            
+                                   </div>
+                                    </div>
+                                  </div>
+                            </div>
+
+
+                     </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-primary tertiary" data-dismiss="modal">Add more files</button> 
+                     <a href="draft-folder-contains-files.html" class="btn btn-primary">Done</a>
+                  </div>
+               </div>
+               </div>
+            </div>
+
+
+      <!-- JavaScript -->
+      <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+      <script src="bootstrap/js/popper.min.js"></script>
+      <script src="bootstrap/js/bootstrap.min.js"></script>
+      
+      <script src="js/vxf.js"></script>
+
+
+      
+   </body>
+</html>

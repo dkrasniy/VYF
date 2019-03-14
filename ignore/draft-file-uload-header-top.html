@@ -1,0 +1,184 @@
+
+
+  <!doctype html>
+  <html lang="en">
+     <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <link rel="stylesheet" href="scss/custom.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <title>Virtual Yellow Folder</title>
+
+        <style>
+        #drop-area {
+       
+        }
+        #drop-area.highlight {
+          border-color: purple;
+        }
+        #fileElem {
+          display: none;
+        }
+</style>
+     </head>
+     <body class="header-top">
+           <main>
+              <nav class="side-navigation">
+                 <div class="logo-container">
+                    <img src="assets/logo/filled-color-h.svg" alt="Virtual Yellow Folder Logo">
+                 </div>
+                 <button type="button" class="btn btn-primary new-folder-button  btn-block" data-toggle="modal" data-target="#newFolderModal">New Folder</button> 
+                 <ul role="list">
+                    <li role="listitem" class="active"><a href="home.html">Inbox</a></li>
+                    <li role="listitem"><a href="drafts.html">Drafts</a></li>
+                    <li role="listitem"><a href="en-route.html">En Route</a></li>
+                    <li role="listitem"><a href="completed.html">Completed</a></li>
+                 </ul>
+                 <div class="user-account btn-group dropup">
+                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Timothy Taylor
+                    <span>timothy.taylor@calpers.ca.gov</span>
+                    <i class="fas fa-chevron-up"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                       <a class="dropdown-item" href="#">My Account</a>
+                       <a class="dropdown-item" href="#">Settings</a>
+                       <div class="dropdown-divider"></div>
+                       <a class="dropdown-item" href="#">Sign Out</a>
+                    </div>
+                 </div>
+              </nav>
+              <div class="content-wrapper">
+              <div class="folder-view">
+                 <div class="folder-header">
+                    <div class="folder-info">
+                       <h1>Travel Expense Folder<span class="status-badge status-draft">Draft</span></h1>
+                       <!-- <div class="folder-details">
+                          <ul>
+                             <li><span class="label">Created</span> 01/22/2019 3:12pm</li>
+                             <li><span class="label">Modified</span> 44 minutes ago</li>
+                          </ul>
+                          </div> -->
+                    </div>
+                    <div class="folder-actions">
+                       <button type="button" class="btn btn-white mr-2" data-toggle="modal" data-target="#folderEdit">Edit</button> 
+                       <button type="button" class="btn btn-primary" id="upload_documents">Upload Documents</button>                      
+                    </div>
+                 </div>
+                 <div class="folder-contents row">
+                  <div class="routing-slip col-4">
+                    <div class="routing-header">
+                         <img src="assets/empty-states/route-icon.svg"/>
+                       <h2>Routing Slip</h2>
+                       <div></div>
+                    </div>
+                    <div class="routing-body">
+                    <div class="empty-state">
+                       <h4>No Route Yet</h4>
+                       <p>Start by uploading your documents. We’ll generate a routing slip for you which you can modify later.</p>
+                    </div>
+                 </div>
+                 </div>
+                    <div class="col-8 folder-items"  id="drop-area">
+                        
+                           <form class="my-form">
+                              <input type="file" id="fileElem" multiple accept="application/pdf" onchange="handleFiles(this.files)">
+                              <label class="button sr-only" for="fileElem">Select files to upload</label>
+                           </form>
+                           <progress id="progress-bar" max=100 value=0></progress>
+                           <div class="accordion list" id="filesListing"></div>
+                        
+                            
+                       <div class="empty-state-x">
+                          <img src="assets/empty-states/newfolder.svg" alt="Folder with upload icon"/>
+                          <h2>Upload Documents</h2>
+                          <p>Start by dropping your files here. We’ll generate a routing slip for you which you can modify later.</p>
+                        </div>
+
+                        <div class="drop-files-highlight-container">
+                           <h3 class="drop-instruction-text">Drop files to instatly upload them to <br/><b>Travel Expense Folder</b></h3>
+                     </div>
+                    </div>
+                 </div>
+             
+               </div>
+               
+            </div>
+           </main>
+
+
+
+
+           <!-- Folder Settings Modal -->
+         <div class="modal fade modal-wide" id="folderEdit" tabindex="-1" role="dialog" aria-labelledby="folderEditLabel" aria-hidden="true">
+               <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="folderEditLabel">Travel Expense Folder</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     
+                        <div class="icon-container">
+                           <i class="fas fa-times"></i>
+                     </div>
+                     </button>
+                  </div>
+                  <div class="modal-body">
+                       <p>Created: 10 minutes ago</p>
+                       <button class="btn btn-danger tertiary">Delete Folder</button>
+                     </div>
+                     
+               </div>
+               </div>
+            </div>
+
+      
+           <!-- JavaScript -->
+           <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+           <script src="bootstrap/js/popper.min.js"></script>
+           <script src="bootstrap/js/bootstrap.min.js"></script>
+           <script src="js/vxf.js"></script>
+           <script src="js/file-uploader-vxf.js"></script>
+
+           <script>
+               function addUploadedFileToFolder(file,trackID, i) {
+                  let uploadedDocument = document.createElement("div");
+                  uploadedDocument.setAttribute("upload-progress-id", trackID);
+                  uploadedDocument.classList.add("document-card")
+                  uploadedDocument.innerHTML = (
+                     '<a class="card-header" id="doc'+trackID +'" data-toggle="collapse" href="#collapse'+trackID +'" role="button" aria-expanded="false" aria-controls="collapse'+trackID +'">'+
+                     '   <div class="icon-container file-icon" aria-label="Folder">'+
+                     '       <i class="fas fa-file-pdf"></i>'+
+                     '   </div>'+
+                     '   <div class="title-container">'+
+                     '       <h4 class="missing-document-name title document-title-' + trackID +'">Please provide document name</h4>'+
+                     '       <p class="original-file-name">' +file.name + '<span class="uploader-name">Timothy Taylor</span></p>'+
+                     '   </div>'+
+                     '   <div class="accordion-expand-actions">'+
+                     '       <button type="button" data-setup-signing-id="'+trackID+'" class="btn btn-white btn-sm btn-setup-signing">Setup Signing</button>'+
+                     '       <div class="icon-sm ml-2 mr-1 chevron-expand-collapse">'+
+                     '       <i class="fas fa-chevron-down"></i>'+
+                     '       </div>'+
+                     '   </div>'+
+                     ' </a>'+
+                     ' <div id="collapse'+trackID +'" class="collapse" aria-labelledby="document'+trackID +'" data-parent="#filesListing">'+
+                     '   <div class="card-body">'+
+                     '   <div class="position-relative form-group float-labels">' +
+                     '     <label for="'+trackID+'">Document Name</label>'+
+                      '    <input type="text" class="form-control syncDocumentName" id="' + trackID +'"></div>'+
+                     '   </div>'+
+                     ' </div>'
+                  
+                  );
+                  document.getElementById("filesListing").appendChild(uploadedDocument);
+               }
+            </script>
+
+
+
+        </body>
+  </html>
+  
+  
