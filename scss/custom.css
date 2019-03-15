@@ -8338,6 +8338,9 @@ label {
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
 }
+.btn.padding-comfy {
+  padding: 0.6rem 1rem;
+}
 
 .btn:hover {
   -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.09);
@@ -8619,7 +8622,7 @@ label {
 
 .alert .alert-content {
   color: #767676;
-  padding-left: 0.5em;
+  padding-left: 0.75em;
 }
 .alert .alert-content p {
   margin-top: 0.15em;

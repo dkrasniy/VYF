@@ -175,6 +175,9 @@ label {
     transition: none;
     -webkit-box-shadow: $boxShadowSm;
             box-shadow: $boxShadowSm;
+    &.padding-comfy {
+        padding: 0.6rem 1rem; 
+    }
 }
 .btn:hover {
     -webkit-box-shadow: $boxShadowHover;
@@ -479,7 +482,7 @@ label {
 
 .alert .alert-content {
     color:$grey-6;
-    padding-left: .5em;
+    padding-left: .75em;
     p {
         margin-top:.15em;
         margin-bottom: .5em;
