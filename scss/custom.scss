@@ -491,6 +491,7 @@ label {
         background-color:#fff;
         border-radius: $borderRadius;
        border-bottom:none;
+       cursor: pointer;
        
         .icon-container {
             height:40px;
@@ -564,9 +565,9 @@ label {
        
     }
 
-    overflow: hidden;
+  
     .card-header {
-        padding:.5em .75em;
+        padding: .75em;
         .title-container {
             grid-column-start: 2;
             grid-column-end: 5;
@@ -2140,3 +2141,21 @@ legend {
     font-size: 1.15rem;
     color: #333;
 }
+
+.dropdown-menu {
+    background: #ffffff;
+    border: 0;
+    box-shadow: 1px 2px 8px 1px rgba(0, 0, 0, 0.08);
+}
+.dropdown-item {
+    padding: 0.45rem 1.5rem;
+}
+.document-expand-menu 
+{.no-caret
+    {
+        &:after {
+            content: none;
+    }
+    }
+}
+    

@@ -8631,6 +8631,7 @@ label {
   background-color: #fff;
   border-radius: 0.35em;
   border-bottom: none;
+  cursor: pointer;
 }
 .folder-card .card-header .icon-container, .document-card .card-header .icon-container {
   height: 40px;
@@ -8663,9 +8664,6 @@ label {
   color: #F0B429;
 }
 
-.document-card {
-  overflow: hidden;
-}
 .document-card .sign-setup-ready .signatures {
   align-items: center;
   justify-content: center;
@@ -8695,7 +8693,7 @@ label {
   transition: 0.2s ease all;
 }
 .document-card .card-header {
-  padding: 0.5em 0.75em;
+  padding: 0.75em;
 }
 .document-card .card-header .title-container {
   grid-column-start: 2;
@@ -10030,6 +10028,20 @@ legend {
   font-weight: bold;
   font-size: 1.15rem;
   color: #333;
+}
+
+.dropdown-menu {
+  background: #ffffff;
+  border: 0;
+  box-shadow: 1px 2px 8px 1px rgba(0, 0, 0, 0.08);
+}
+
+.dropdown-item {
+  padding: 0.45rem 1.5rem;
+}
+
+.document-expand-menu .no-caret:after {
+  content: none;
 }
 
 /*# sourceMappingURL=custom.css.map */
