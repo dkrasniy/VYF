@@ -54,3 +54,7 @@ function checkFolderStatus () {
     }
 }
 
+
+// $('.document-expand-menu .dropdown-item').on("click", function(event){
+//     event.stopPropagation();
+// })

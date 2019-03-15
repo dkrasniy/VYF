@@ -8434,6 +8434,9 @@ label {
   border-radius: 0.35em;
   box-shadow: none;
 }
+.form-control:focus {
+  box-shadow: 0 0 0 2px #0874d9;
+}
 
 /* --------- MODALS --------- */
 .modal.modal-wide .modal-dialog {
