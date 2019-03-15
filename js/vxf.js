@@ -4,7 +4,7 @@ $(document).ready(function(){
 });
 
 $(document.body).on("input propertychange",'.float-labels input', function () {
-    console.log(this)
+
     if (!this.value) {
         $(this).removeClass('float-true');
         $(this).prev().removeClass('float-true');

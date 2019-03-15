@@ -1,66 +1,101 @@
 <!doctype html>
 <html lang="en">
-   <head>
-      <!-- Required meta tags -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <!-- CSS -->
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-      <link rel="stylesheet" href="../scss/custom.css">
-      <link rel="stylesheet" href="../fonts/fonts.css">
-      <title>Components - Virtual Yellow Folder</title>
-   
-   </head>
-   <body style="margin: 0 auto; max-width:900px; padding:1em;">
-      <h2>Alerts</h2>
-     
-      <div class="alert alert-danger" role="alert">
-            <div class="icon-container-ambient">
-               <div class="icon-container"> <i class="fas alert-icon"></i> </div>
-            </div>
-            <div class="alert-content">
-               <h4 class="alert-heading">Warning Danger</h4>
-               <p>An error has occurred with routing your folder. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet erat ut pulvinar finibus.</p>
+
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <!-- CSS -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+   <link rel="stylesheet" href="../scss/custom.css">
+   <link rel="stylesheet" href="../fonts/fonts.css">
+   <title>Components - Virtual Yellow Folder</title>
+
+</head>
+
+<body style="margin: 0 auto; max-width:900px; padding:1em;">
+   <h2>Alerts single line</h2>
+
+   <div class="alert alert-danger margin-bottom-2 align-items-center" role="alert">
+      <div class="icon-container-ambient" style="font-size:10px">
+         <div class="icon-container"><i class="fas alert-icon"></i></div>
+      </div>
+      <div class="alert-content">
+         <h4 class="alert-heading">Oh no! We were unable to login you in.</h4>
+      </div>
+   </div>
+   <div class="alert alert-success margin-bottom-2 align-items-center" role="alert">
+         <div class="icon-container-ambient" style="font-size:10px">
+            <div class="icon-container"><i class="fas alert-icon"></i></div>
+         </div>
+         <div class="alert-content">
+            <h4 class="alert-heading">Success! You've been logged out.</h4>
          </div>
       </div>
-      <div class="alert alert-success" role="alert">
-            <div class="icon-container-ambient">
-               <div class="icon-container"> <i class="fas alert-icon"></i> </div>
+      <div class="alert alert-warning margin-bottom-2 align-items-center" role="alert">
+            <div class="icon-container-ambient" style="font-size:10px">
+               <div class="icon-container"><i class="fas alert-icon"></i></div>
             </div>
             <div class="alert-content">
-               <h4 class="alert-heading">Success Message</h4>
-               <p>An error has occurred with routing your folder. Ut in mi in elit vulputate finibus. Proin rutrum tincidunt felis vel placerat. </p>
-         </div>
-      </div>
-      <div class="alert alert-warning" role="alert">
-            <div class="icon-container-ambient">
-               <div class="icon-container"> <i class="fas alert-icon"></i> </div>
+               <h4 class="alert-heading">Try using a more secure name.</h4>
             </div>
-            <div class="alert-content">
-               <h4 class="alert-heading">Be Careful</h4>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet erat ut pulvinar finibus. Ut in mi in elit vulputate finibus. Proin rutrum tincidunt felis vel placerat. </p>
          </div>
+
+
+
+   <h2>Alerts with content</h2>
+
+   <div class="alert alert-danger" role="alert">
+      <div class="icon-container-ambient">
+         <div class="icon-container"> <i class="fas alert-icon"></i> </div>
       </div>
+      <div class="alert-content">
+         <h4 class="alert-heading">Warning Danger</h4>
+         <p>An error has occurred with routing your folder. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Maecenas aliquet erat ut pulvinar finibus.</p>
+      </div>
+   </div>
+   <div class="alert alert-success" role="alert">
+      <div class="icon-container-ambient">
+         <div class="icon-container"> <i class="fas alert-icon"></i> </div>
+      </div>
+      <div class="alert-content">
+         <h4 class="alert-heading">Success Message</h4>
+         <p>An error has occurred with routing your folder. Ut in mi in elit vulputate finibus. Proin rutrum tincidunt
+            felis vel placerat. </p>
+      </div>
+   </div>
+   <div class="alert alert-warning" role="alert">
+      <div class="icon-container-ambient">
+         <div class="icon-container"> <i class="fas alert-icon"></i> </div>
+      </div>
+      <div class="alert-content">
+         <h4 class="alert-heading">Be Careful</h4>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet erat ut pulvinar finibus. Ut in mi
+            in elit vulputate finibus. Proin rutrum tincidunt felis vel placerat. </p>
+      </div>
+   </div>
 
 
-      
-      
 
-      
-   
-      <!-- JavaScript -->
-      <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
-      <script src="../bootstrap/js/bootstrap.min.js"></script>
-      <script>
-         var matches = document.querySelectorAll("div.section-to-code");
-         //console.log(matches.length)
-         for(i = 0; i < matches.length; i++){
-            let innerSection = (matches[i]);
-            var div = document.createElement("div");
-            div.innerHTML = "<code>" + innerSection.innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/>/g, '<&gt;>') + "</code>"; 
-            div.classList.add("code-code");
-            innerSection.appendChild(div)
-         }
-      </script>
-   </body>
+
+
+
+
+   <!-- JavaScript -->
+   <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+   <script src="../bootstrap/js/bootstrap.min.js"></script>
+   <script>
+      var matches = document.querySelectorAll("div.section-to-code");
+      //console.log(matches.length)
+      for (i = 0; i < matches.length; i++) {
+         let innerSection = (matches[i]);
+         var div = document.createElement("div");
+         div.innerHTML = "<code>" + innerSection.innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/>/g, '<&gt;>') + "</code>";
+         div.classList.add("code-code");
+         innerSection.appendChild(div)
+      }
+   </script>
+</body>
+
 </html>

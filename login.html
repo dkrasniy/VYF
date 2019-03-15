@@ -27,9 +27,21 @@
                   <div class="col-12 col-lg-6">
                      <div class="login-outer-container ">
                         <div class="login-form-container">
+
+                           <!--Danger warning alert-->
+                           <div class="alert alert-danger margin-bottom-2 align-items-center" role="alert">
+                              <div class="icon-container-ambient" style="font-size:10px">
+                                 <div class="icon-container"><i class="fas alert-icon"></i></div>
+                              </div>
+                              <div class="alert-content">
+                                    <h4 class="alert-heading">Oh no! We were unable to login you in.</h4>
+                              </div>
+                           </div>
+                           
+                           
                            <h1>Virtual Yellow Folder</h1>
                            <p class="instructional-text">Please sign in</p>
-                           <form>
+                           <form id="loginForm">
                               <div class="position-relative form-group float-labels">
                                  <label for="loginUsername" class="float-label">Username</label>
                                  <input autocomplete="username" id="loginUsername" name="username" type="text" class="form-control" value="">
@@ -39,7 +51,8 @@
                                  <input autocomplete="current-password" id="loginPassword" name="password" type="password" class="form-control" value="">
                                
                               </div>
-                              <a value="Login" class="btn btn-primary btn-block" href="home.html">Login</a>
+                              
+                              <button value="Login" type="submit" class="btn btn-primary btn-block" >Login</button>
                            </form>
                         </div>
                         
@@ -52,6 +65,21 @@
       <!-- JavaScript -->
       <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
       <script src="bootstrap/js/bootstrap.min.js"></script>
+      <script src="js/feather.min.js"></script>
       <script src="js/vxf.js"></script>
+      
+      <script>
+         //disable submit button if one of fields is empty
+         $(document.body).on("input propertychange", '#loginForm input', function (e) {
+            var username = $("#loginUsername").val();
+            var password = $("#loginPassword").val();
+            if(username == '' || password == ''){
+               ($(':input[type="submit"]').prop('disabled', true)) 
+               return;
+            }else {
+               ($(':input[type="submit"]').prop('disabled', false));
+            } 
+         });
+      </script>
    </body>
 </html>

@@ -8325,6 +8325,10 @@ label {
     max-width: 1220px;
   }
 }
+.margin-bottom-2 {
+  margin-bottom: 2em;
+}
+
 .btn {
   font-weight: 600;
   padding: 0.4rem 1rem;
@@ -8505,8 +8509,9 @@ label {
 }
 
 .icon-container-ambient {
+  font-size: 14px;
   display: inline-block;
-  padding: 6px;
+  padding: 0.35em;
   border-radius: 50%;
 }
 .icon-container-ambient.danger {
@@ -8518,8 +8523,8 @@ label {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 2em;
+  height: 2em;
   border: none;
   background: #f7f7f7;
   color: #555;
@@ -8533,8 +8538,8 @@ label {
   color: #fff;
 }
 .icon-container.icon-sm {
-  width: 30px !important;
-  height: 30px !important;
+  width: 1.8em !important;
+  height: 1.8em !important;
 }
 
 .alert {
@@ -8544,16 +8549,29 @@ label {
   background: #FFF;
   display: flex;
   align-items: flex-start;
-  padding: 1.25em;
+  padding: 1em;
+}
+.alert.align-items-center {
+  align-items: center;
+}
+.alert.alert-danger {
+  background-color: #ffffff;
+  border-color: #E02200;
+  color: #E02200;
+}
+.alert.alert-success {
+  background-color: #ffffff;
+  border-color: #2CA52C;
+  color: #2CA52C;
 }
 .alert .alert-heading {
-  font-weight: 600;
-  margin-bottom: 0.15em;
-  font-size: 1.25em;
+  font-weight: bold;
+  margin-bottom: 0;
+  font-size: 1em;
 }
 .alert .icon-container {
-  font-size: 14px;
-  border: 3px solid;
+  font-size: 1em;
+  border: 0.18em solid;
   background: white;
 }
 
@@ -8601,9 +8619,10 @@ label {
 
 .alert .alert-content {
   color: #767676;
-  padding-left: 1.25em;
+  padding-left: 0.5em;
 }
 .alert .alert-content p {
+  margin-top: 0.15em;
   margin-bottom: 0.5em;
 }
 
