@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <link rel="stylesheet" href="scss/custom.css">
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <title>Virtual Yellow Folder</title>
+</head>
+
+<body>
+
+  <header class="main-header navbar navbar-expand-md">
+    <div class="container">
+      <div class="logo-container">
+        <span class="app-title">Virtual Yellow Folder</span>
+        <!-- <img src="assets/logo/filled-color-h.svg" alt="Virtual Yellow Folder Logo"> -->
+      </div>
+      <nav class="top-navigation" id="main-header-nav" aria-labelledby="main-header-nav-label" role="navigation">
+        <div id="main-header-nav-label" class="main-header__nav-label sr-only">Main menu</div>
+        <ul class="mr-auto navbar-nav" role="list">
+          <li role="listitem"><a href="home.html"><i data-feather="home"></i> Inbox</a></li>
+          <li role="listitem" class="active"><a href="drafts.html"><i data-feather="file"></i></i> Drafts</a></li>
+          <li role="listitem"><a href="en-route.html"><i data-feather="map"></i> En Route</a></li>
+          <li role="listitem"><a href="completed.html"><i data-feather="check"></i> Completed</a></li>
+        </ul>
+      </nav>
+      <div class="dropdown user-account-dropdown">
+        <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">Timothy Taylor</a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+          <div class="user-info-overview">
+            <h6 class="name">Timothy Taylor</h6>
+            <p class="user-email">timothy.taylor@calpers.ca.gov</p>
+          </div>
+          <a class="dropdown-item" href="#"><i data-feather="user"></i> My Account</a>
+          <a class="dropdown-item" href="#"><i data-feather="settings"></i>Preferences</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i>Sign Out</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="./index.html"><i data-feather="git-merge"></i>Prototype Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <div class="page-info">
+          <div class="has-icon">
+            <div class="details">
+              <h1 class="page-title">Drafts (3)</h1>
+            </div>
+          </div>
+        </div>
+        <div class="page-actions">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newFolderModal">Create
+            New Folder</button>
+        </div>
+      </div>
+    </div>
+    <div class="container main-content-container">
+      <div id="folder-list-sortable-searchable">
+
+        <input class="search form-control float-right-folder-search col-md-3 ml-auto mb-4" placeholder="Search" />
+ 
+        <div class="card-listing-header span-table-labels">
+          <span class="sort" data-sort="listjs-title">Folder Name</span>
+          <span class="sort" data-sort="listjs-contents">Contents</span>
+          <span class="sort" data-sort="listjs-createdon">Created</span>
+        </div>
+        <div class="list">
+          <div class="folder-card">
+            <a class="card-header" role="button" href="#">
+              <div class="folder-title">
+                <div class="icon-container" aria-label="Folder">
+                  <i class="fas fa-folder"></i>
+                </div>
+                <h4 class="listjs-title">Travel Expense Folder</h4>
+              </div>
+              <p class="listjs-contents">6 Documents</p>
+              <p class="listjs-createdon">30 minutes ago</p>
+            </a>
+          </div>
+          <div class="folder-card">
+              <a class="card-header" role="button" href="#">
+                <div class="folder-title">
+                  <div class="icon-container" aria-label="Folder">
+                    <i class="fas fa-folder"></i>
+                  </div>
+                  <h4 class="listjs-title">Approval Proccess</h4>
+                </div>
+                <p class="listjs-contents">13 Documents</p>
+                <p class="listjs-createdon">4 days ago</p>
+              </a>
+            </div>
+
+        </div>
+       
+        </div>
+      </div>
+  
+    
+  
+  </main>
+
+
+  <!-- New Folder Modal -->
+  <div class="modal fade modal-wide" id="newFolderModal" tabindex="-1" role="dialog" aria-labelledby="newFolderModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newFolderModalLabel">Create New Folder</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+            <div class="icon-container">
+              <i class="fas fa-times"></i>
+            </div>
+          </button>
+
+
+
+
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="folderName">Folder Name</label>
+            <input type="text" class="form-control" id="folderName">
+          </div>
+          <div class="form-group">
+            <label for="folderDescription">Description</label>
+            <textarea class="form-control" id="folderDescription" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <div class="color-picker-container">
+              <input type="radio" name="color" value="grey" id="grey">
+              <label class="color-option grey" for="grey"></label>
+              <input type="radio" name="color" value="yellow" id="yellow">
+              <label class="color-option yellow" for="yellow"></label>
+              <input type="radio" name="color" value="blue" id="blue">
+              <label class="color-option blue" for="blue"></label>
+              <input type="radio" name="color" value="green" id="green">
+              <label class="color-option green" for="green"></label>
+              <input type="radio" name="color" value="orange" id="orange">
+              <label class="color-option orange" for="orange"></label>
+              <input type="radio" name="color" value="red" id="red">
+              <label class="color-option red" for="red"></label>
+              <input type="radio" name="color" value="purple" id="purple">
+              <label class="color-option purple" for="purple"></label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary tertiary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">Create Folder</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript -->
+  <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+  <script src="bootstrap/js/popper.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/feather.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script src="js/vxf.js"></script>
+
+  <script>
+      var options = {
+          valueNames: [ 'listjs-title', 'listjs-contents', 'listjs-createdon' ]
+      };
+
+      var folderList = new List('folder-list-sortable-searchable', options);
+      console.log(folderList)
+</script>
+    
+
+
+</body>
+
+</html>

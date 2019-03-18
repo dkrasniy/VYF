@@ -157,7 +157,7 @@ label {
 
 @media (min-width: 1200px) {
     .container {
-        max-width: 1220px;
+        max-width: 1160px;
     }
 }
 .margin-bottom-2 {
@@ -510,36 +510,7 @@ label {
     border:none;
     border-radius: $borderRadius;
     background:#FFF;
-    
-    .card-header {
-        padding: 1em;
-        display: grid;
-        grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
-        align-items: center;
-        transition: 0.2s ease all;
-        background-color:#fff;
-        border-radius: $borderRadius;
-       border-bottom:none;
-       cursor: pointer;
-       
-        .icon-container {
-            height:40px;
-            width:40px;
-        }
-        .title {
-                margin: 0;
-                font-weight: 600;
-                color: #444;
-                font-size: 1rem;
-        }
-        p {
-            color: #666;
-            margin: 0;
-            font-size: 14px;
-            text-align: left;
-        }
-       
-    }
+  
     a[aria-expanded="true"] {
         .chevron-expand-collapse i {
             transform:rotate(180deg);
@@ -551,6 +522,60 @@ label {
     }
     .card-body {
         background:#F8F8F8;
+    }
+}
+  
+.span-table-labels span {
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+
+.card-header, .card-listing-header {
+    display: grid;
+    grid-template-columns:  2fr 1fr 1fr 1fr 1fr;
+} .card-listing-header {
+    padding: 0 1em;
+}
+.document-card .card-header {
+    grid-template-columns:  .5fr 2fr 1fr 1fr 1fr 1fr;
+    h4 {
+        margin: 0;
+        font-weight: 600;
+        color: $grey-3;
+        font-size: 1rem;
+    }
+}
+
+.card-header {
+    padding: 1em;
+    align-items: center;
+    transition: 0.2s ease all;
+    background-color:#fff;
+    border-radius: $borderRadius!important;
+    border-bottom:none;
+    cursor: pointer;
+
+    .folder-title {
+        display: flex;
+        align-items: center;
+        h4 {
+            margin: 0;
+            font-weight: 600;
+            color: $grey-3;
+            font-size: 1rem;
+            margin-left:10px
+        }
+    }
+    .icon-container {
+        height:40px;
+        width:40px;
+    }
+
+    p {
+        color: #666;
+        margin: 0;
+        font-size: 14px;
+        text-align: left;
     }
 }
 
@@ -929,8 +954,9 @@ label {
 
 }
 .main-content-container {
-padding:1.5rem 0;
+    padding: 30px 15px;
 }
+
 .page-header {
     box-shadow: rgba(0, 0, 0, 0.03) 0px 2px 4px 0px;
     margin-top: 0em;

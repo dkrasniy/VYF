@@ -8322,7 +8322,7 @@ label {
 }
 @media (min-width: 1200px) {
   .container {
-    max-width: 1220px;
+    max-width: 1160px;
   }
 }
 .margin-bottom-2 {
@@ -8647,33 +8647,6 @@ label {
   border-radius: 0.35em;
   background: #FFF;
 }
-.folder-card .card-header, .document-card .card-header {
-  padding: 1em;
-  display: grid;
-  grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
-  align-items: center;
-  transition: 0.2s ease all;
-  background-color: #fff;
-  border-radius: 0.35em;
-  border-bottom: none;
-  cursor: pointer;
-}
-.folder-card .card-header .icon-container, .document-card .card-header .icon-container {
-  height: 40px;
-  width: 40px;
-}
-.folder-card .card-header .title, .document-card .card-header .title {
-  margin: 0;
-  font-weight: 600;
-  color: #444;
-  font-size: 1rem;
-}
-.folder-card .card-header p, .document-card .card-header p {
-  color: #666;
-  margin: 0;
-  font-size: 14px;
-  text-align: left;
-}
 .folder-card a[aria-expanded=true] .chevron-expand-collapse i, .document-card a[aria-expanded=true] .chevron-expand-collapse i {
   transform: rotate(180deg);
 }
@@ -8682,6 +8655,61 @@ label {
 }
 .folder-card .card-body, .document-card .card-body {
   background: #F8F8F8;
+}
+
+.span-table-labels span {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.card-header, .card-listing-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+}
+
+.card-listing-header {
+  padding: 0 1em;
+}
+
+.document-card .card-header {
+  grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+}
+.document-card .card-header h4 {
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+.card-header {
+  padding: 1em;
+  align-items: center;
+  transition: 0.2s ease all;
+  background-color: #fff;
+  border-radius: 0.35em !important;
+  border-bottom: none;
+  cursor: pointer;
+}
+.card-header .folder-title {
+  display: flex;
+  align-items: center;
+}
+.card-header .folder-title h4 {
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+.card-header .icon-container {
+  height: 40px;
+  width: 40px;
+}
+.card-header p {
+  color: #666;
+  margin: 0;
+  font-size: 14px;
+  text-align: left;
 }
 
 .icon-container.signature-icon {
@@ -8936,7 +8964,7 @@ label {
 }
 
 .main-content-container {
-  padding: 1.5rem 0;
+  padding: 30px 15px;
 }
 
 .page-header {
