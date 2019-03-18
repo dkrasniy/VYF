@@ -8744,6 +8744,7 @@ label {
   position: relative;
   display: flex;
   align-items: center;
+  padding-right: 0;
 }
 .search-container svg {
   position: absolute;
