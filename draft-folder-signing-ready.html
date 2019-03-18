@@ -211,8 +211,8 @@
                                     </a>
                                   
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                      <a class="dropdown-item" data-toggle="modal" data-target="#folderEdit">Rename</a>
-                                      <a class="dropdown-item" href="#">Delete...</a>
+                                      <a class="dropdown-item" data-toggle="modal" data-target="#documentRename">Rename</a>
+                                      <a class="dropdown-item" data-toggle="modal" data-target="#documentDelete">Delete...</a>
                                       <a class="dropdown-item" href="#">Download</a>
                                       <a class="dropdown-item" href="#">Version History</a>
                                     </div>
@@ -392,6 +392,69 @@
       </div>
    </div>
 
+
+      <!-- Rename Document -->
+      <div class="modal fade" id="documentRename" tabindex="-1" role="dialog" aria-labelledby="documentRenameLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="documentRenameLabel">Rename Document</h5>
+
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <div class="icon-container">
+                     <i class="fas fa-times"></i>
+                  </div>
+               </button>
+            </div>
+            <div class="modal-body">
+
+               <div class="form-group">
+                  <label for="viewerName">Document Name</label>
+                  <input type="text" class="form-control" id="viewerName" value="Buck Slip">
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-primary tertiary" data-dismiss="modal">Cancel</button>
+               <button class="btn btn-primary">Rename</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   
+      <!-- Delete Document -->
+      <div class="modal fade" id="documentDelete" tabindex="-1" role="dialog" aria-labelledby="documentDeleteLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="documentDeleteLabel">Delete Document</h5>
+
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <div class="icon-container">
+                     <i class="fas fa-times"></i>
+                  </div>
+               </button>
+            </div>
+            <div class="modal-body">
+                        <div class="alert alert-danger" role="alert">
+                                    <div class="icon-container-ambient">
+                                       <div class="icon-container"> <i class="fas alert-icon"></i> </div>
+                                    </div>
+                                    <div class="alert-content">
+                                       <h4 class="alert-heading">Warning Danger</h4>
+                                       <p>Are you sure you want to delete document x from folder name?</p>
+                                    </div>
+                                 </div>
+
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-danger tertiary" data-dismiss="modal">Cancel</button>
+               <button class="btn btn-danger">Delete Document</a>
+            </div>
+         </div>
+      </div>
+   </div>
 
    <!-- Add Viewer Modal -->
    <div class="modal fade" id="addViewer" tabindex="-1" role="dialog" aria-labelledby="addViewerLabel"

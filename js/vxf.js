@@ -55,6 +55,9 @@ function checkFolderStatus () {
 }
 
 
-// $('.document-expand-menu .dropdown-item').on("click", function(event){
-//     event.stopPropagation();
-// })
+$(document.body).on("click", ".document-expand-menu .dropdown-item", function(event){
+    event.stopPropagation();
+    var thisModal = $(this).attr('data-target');
+    $(thisModal).modal('show');
+
+})
