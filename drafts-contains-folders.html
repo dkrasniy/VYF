@@ -67,7 +67,11 @@
     <div class="container main-content-container">
       <div id="folder-list-sortable-searchable">
 
-        <input class="search form-control float-right-folder-search col-md-3 ml-auto mb-4" placeholder="Search" />
+        <div class="search-container  col-md-3 ml-auto mb-2">
+            <i data-feather="search"></i>
+            <input class="search form-control float-right-folder-search" placeholder="Search" />
+           
+        </div>
  
         <div class="card-listing-header span-table-labels">
           <span class="sort" data-sort="listjs-title">Folder Name</span>
@@ -179,7 +183,16 @@
       };
 
       var folderList = new List('folder-list-sortable-searchable', options);
-      console.log(folderList)
+      
+      var noItems = $('<p id="no-items-found" style="text-align:center; padding:3em 0;">No folders .</li>');
+
+      folderList.on('updated', function(list) {
+        if (list.matchingItems.length == 0) {
+          $(list.list).append(noItems);
+        } else {
+          noItems.detach();
+        }
+      });
 </script>
     
 
