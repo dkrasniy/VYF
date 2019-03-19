@@ -504,6 +504,8 @@ label {
         margin-bottom: .5em;
     }
 }
+
+
 .folder-card, .document-card {
     margin-bottom:.5em;
     box-shadow: $boxShadowSm;
@@ -536,7 +538,8 @@ label {
 } .card-listing-header {
     padding: 0 1em;
 }
-.document-card .card-header {
+.document-card .card-header,.grid-layout-document {
+    display: grid;
     grid-template-columns:  .5fr 2fr 1fr 1fr 1fr 1fr;
     h4 {
         margin: 0;
@@ -658,9 +661,7 @@ line-height: 1.5;
 .document-card {
     .sign-setup-ready {
         .signatures {
-            align-items: center;
-            justify-content: center;
-            display:flex;
+            display: flex;
             .signature-icon {
                 
                 height: 30px;
@@ -668,14 +669,17 @@ line-height: 1.5;
                 margin-right: 10px;
             }
             .signatures-text {
-                font-size: 12px;
-                display: block;
+                align-items: center;
+                display: flex;
+                font-size: 13px;
                 color:$grey-6;
                 .signatures-count {
+                    
+                    &:after {
+                        content: "\00a0"; // adds a space
+                    }
                     font-weight: bold;
-                    display: block;
                     color: $yellow;
-                    font-size:14px;
                     line-height: 1;
                 }
             }
@@ -750,10 +754,9 @@ line-height: 1.5;
         }
     }
     .document-details {
-        margin: -1.25rem;
+        
         background: #fff;
-        margin-bottom: 1.25rem;
-        box-shadow: rgba(0, 0, 0, 0.03) 0px 2px 4px 0px;    
+        border-radius: 0 0 $borderRadius $borderRadius;
         input {
             background:$bg-color;
         }
@@ -766,10 +769,11 @@ line-height: 1.5;
             font-size: .9rem;
         }
         .document-details-row {
-            margin-right: 15px;
-            margin-left: 15px;
+            margin-right: 0;
+            margin-left: 0;
             border-top: 1px solid rgba(0, 0, 0, 0.05);
-            padding: .75em 0;
+            padding-top: .75em;
+            margin-top: .75em;
         }
     }
     
@@ -1063,8 +1067,8 @@ line-height: 1.5;
 .status-badge {
     margin-left: 10px;
     font-size: 13px;
-    padding: 5px 10px;
-    border-radius: $borderRadius;
+    padding: 5px 15px;
+    border-radius: 1em;
     text-transform: uppercase;
    &.status-draft {
     background: #f6f6f6;
@@ -1395,6 +1399,7 @@ line-height: 1.5;
         max-width: 100%;
     }
 
+
     .folder-header {
         display: flex;
         justify-content: space-between; 
@@ -1460,8 +1465,13 @@ line-height: 1.5;
         }
 
     }
+    
     .routing-slip {
-        overflow: hidden;
+        .routing-slip-thead {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: .8em!important;
+        }
         border-radius: $borderRadius;
         box-shadow: $boxShadow;
         // border:$onePxBorder;

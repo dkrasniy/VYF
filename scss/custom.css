@@ -8671,10 +8671,11 @@ label {
   padding: 0 1em;
 }
 
-.document-card .card-header {
+.document-card .card-header, .grid-layout-document {
+  display: grid;
   grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
 }
-.document-card .card-header h4 {
+.document-card .card-header h4, .grid-layout-document h4 {
   margin: 0;
   font-weight: 600;
   color: #333;
@@ -8794,8 +8795,6 @@ label {
 }
 
 .document-card .sign-setup-ready .signatures {
-  align-items: center;
-  justify-content: center;
   display: flex;
 }
 .document-card .sign-setup-ready .signatures .signature-icon {
@@ -8804,16 +8803,18 @@ label {
   margin-right: 10px;
 }
 .document-card .sign-setup-ready .signatures .signatures-text {
-  font-size: 12px;
-  display: block;
+  align-items: center;
+  display: flex;
+  font-size: 13px;
   color: #767676;
 }
 .document-card .sign-setup-ready .signatures .signatures-text .signatures-count {
   font-weight: bold;
-  display: block;
   color: #F0B429;
-  font-size: 14px;
   line-height: 1;
+}
+.document-card .sign-setup-ready .signatures .signatures-text .signatures-count:after {
+  content: " ";
 }
 .document-card .chevron-expand-collapse {
   color: #666;
@@ -8866,10 +8867,8 @@ label {
   padding: 2em;
 }
 .document-card .document-details {
-  margin: -1.25rem;
   background: #fff;
-  margin-bottom: 1.25rem;
-  box-shadow: rgba(0, 0, 0, 0.03) 0px 2px 4px 0px;
+  border-radius: 0 0 0.35em 0.35em;
 }
 .document-card .document-details input {
   background: #f4f4f4;
@@ -8883,10 +8882,11 @@ label {
   font-size: 0.9rem;
 }
 .document-card .document-details .document-details-row {
-  margin-right: 15px;
-  margin-left: 15px;
+  margin-right: 0;
+  margin-left: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 0.75em 0;
+  padding-top: 0.75em;
+  margin-top: 0.75em;
 }
 
 /* --------------------------------
@@ -9077,8 +9077,8 @@ label {
 .status-badge {
   margin-left: 10px;
   font-size: 13px;
-  padding: 5px 10px;
-  border-radius: 0.35em;
+  padding: 5px 15px;
+  border-radius: 1em;
   text-transform: uppercase;
 }
 .status-badge.status-draft {
@@ -9418,12 +9418,16 @@ label {
   font-weight: 600;
 }
 .folder-view .routing-slip {
-  overflow: hidden;
   border-radius: 0.35em;
   box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.05);
   background: #fff;
   height: 100%;
   padding: 0;
+}
+.folder-view .routing-slip .routing-slip-thead {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8em !important;
 }
 .folder-view .routing-slip .routing-slip-initials {
   opacity: 0;

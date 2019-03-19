@@ -25,522 +25,538 @@
 </head>
 
 <body>
-   <header class="main-header navbar navbar-expand-md">
-      <div class="container">
-         <div class="logo-container">
-            <span class="app-title">Virtual Yellow Folder</span>
-            <!-- <img src="assets/logo/filled-color-h.svg" alt="Virtual Yellow Folder Logo"> -->
-         </div>
-         <nav class="top-navigation" id="main-header-nav" aria-labelledby="main-header-nav-label" role="navigation">
-            <div id="main-header-nav-label" class="main-header__nav-label sr-only">Main menu</div>
-            <ul class="mr-auto navbar-nav" role="list">
-               <li role="listitem" class="active"><a href="home.html"><i data-feather="home"></i> Inbox</a></li>
-               <li role="listitem"><a href="drafts.html"><i data-feather="file"></i></i> Drafts</a></li>
-               <li role="listitem"><a href="en-route.html"><i data-feather="map"></i> En Route</a></li>
-               <li role="listitem"><a href="completed.html"><i data-feather="check"></i> Completed</a></li>
-            </ul>
-         </nav>
-         <div class="dropdown user-account-dropdown">
-            <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">Timothy Taylor</a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-               <div class="user-info-overview">
-                  <h6 class="name">Timothy Taylor</h6>
-                  <p class="user-email">timothy.taylor@calpers.ca.gov</p>
-               </div>
-               <a class="dropdown-item" href="#"><i data-feather="user"></i> My Account</a>
-               <a class="dropdown-item" href="#"><i data-feather="settings"></i>Preferences</a>
-               <div class="dropdown-divider"></div>
-               <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i>Sign Out</a>
+      <header class="main-header navbar navbar-expand-md">
+            <div class="container">
+                  <div class="logo-container">
+                        <span class="app-title">Virtual Yellow Folder</span>
+                        <!-- <img src="assets/logo/filled-color-h.svg" alt="Virtual Yellow Folder Logo"> -->
+                  </div>
+                  <nav class="top-navigation" id="main-header-nav" aria-labelledby="main-header-nav-label" role="navigation">
+                        <div id="main-header-nav-label" class="main-header__nav-label sr-only">Main menu</div>
+                        <ul class="mr-auto navbar-nav" role="list">
+                              <li role="listitem" class="active"><a href="home.html"><i data-feather="home"></i> Inbox</a></li>
+                              <li role="listitem"><a href="drafts.html"><i data-feather="file"></i></i> Drafts</a></li>
+                              <li role="listitem"><a href="en-route.html"><i data-feather="map"></i> En Route</a></li>
+                              <li role="listitem"><a href="completed.html"><i data-feather="check"></i> Completed</a></li>
+                        </ul>
+                  </nav>
+                  <div class="dropdown user-account-dropdown">
+                        <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">Timothy Taylor</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                              <div class="user-info-overview">
+                                    <h6 class="name">Timothy Taylor</h6>
+                                    <p class="user-email">timothy.taylor@calpers.ca.gov</p>
+                              </div>
+                              <a class="dropdown-item" href="#"><i data-feather="user"></i> My Account</a>
+                              <a class="dropdown-item" href="#"><i data-feather="settings"></i>Preferences</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i>Sign Out</a>
+                        </div>
+                  </div>
             </div>
-         </div>
+      </header>
+
+
+
+      <main>
+            <div class="page-header">
+                  <div class="container">
+                        <div class="page-info">
+                              <div class="has-icon">
+                                    <!-- <i class="fas fa-folder"></i> -->
+                                    <div class="details">
+                                          <h1 class="page-title">Travel Expense Folder<span class="status-badge status-draft">Draft</span>
+                                          </h1>
+                                          <p class="page-description">No folder description provided.</p>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="page-actions">
+                              <button type="button" class="btn btn-white mr-2" data-toggle="modal" data-target="#folderEdit"
+                                    onclick="this.blur();">Edit</button>
+                              <button type="button" class="btn btn-primary" id="upload_documents">Upload Documents</button>
+                        </div>
+                  </div>
+            </div>
+            <div class="container main-content-container">
+                  <div class="folder-view">
+                        <div class="folder-contents row">
+                              <div class="routing-slip col-4">
+                                    <div class="routing-header">
+                                          <img src="assets/empty-states/route-icon.svg" />
+                                          <h2>Routing Slip</h2>
+                                          <button type="button" class="icon-container toggle-route-slip">
+                                                <i class="fas fa-chevron-left"></i>
+                                          </button>
+                                    </div>
+                                    <div class="routing-slip-initials">
+                                          <ul>
+                                                <li>PM</li>
+                                                <li>AS</li>
+                                                <li>TT</li>
+                                          </ul>
+                                    </div>
+                                    <div class="routing-body">
+                                          <div class="routing-slip-container ui-sortable" id="sortable">
+                                                <div class="routing-item routing-slip-thead ui-sortable-handle">
+
+                                                      <div>Deliver To</div>
+                                                      <div>Dept</div>
+                                                      <div>Access</div>
+                                                      <div></div>
+                                                </div>
+                                                <div id="sortable">
+                                                      <div class="routing-item ui-sortable-handle">
+
+                                                            <div class="routing-item-deliver-to-name">Paul Makhnovskiy<span
+                                                                        class="desc">Signing 2
+                                                                        documents</span></div>
+                                                            <div>ESDD</div>
+                                                            <div class="access">
+                                                                  <div class="form-group user-access">
+                                                                        <label for="sel1" class="sr-only">Select list:</label>
+                                                                        <select class="form-control" id="sel1">
+                                                                              <option disabled>View</option>
+                                                                              <option selected>Sign</option>
+                                                                              <option>Edit</option>
+                                                                        </select>
+                                                                  </div>
+                                                            </div>
+                                                            <div class="sortable-draggable"><i data-feather="menu"></i></div>
+                                                      </div>
+                                                      <div class="routing-item ui-sortable-handle">
+
+                                                            <div class="routing-item-deliver-to-name">Andrew Studer<span
+                                                                        class="desc">Signing 1
+                                                                        document</span></div>
+                                                            <div>ESDD</div>
+                                                            <div class="access">
+                                                                  <div class="form-group user-access">
+                                                                        <label for="sel1" class="sr-only">Select list:</label>
+                                                                        <select class="form-control" id="sel1">
+                                                                              <option>View</option>
+                                                                              <option>Sign</option>
+                                                                              <option>Edit</option>
+                                                                        </select>
+                                                                  </div>
+                                                            </div>
+                                                            <div class="sortable-draggable"><i data-feather="menu"></i></div>
+                                                      </div>
+                                                      <div class="routing-item ui-sortable-handle">
+
+                                                            <div>Timothy Taylor<span class="desc">Viewing documents</span></div>
+                                                            <div>ESDD</div>
+                                                            <div class="sign-edit">
+                                                                  <div class="form-group user-access">
+                                                                        <label for="sel1" class="sr-only">Select list:</label>
+                                                                        <select class="form-control" id="sel1">
+                                                                              <option>View</option>
+                                                                              <option>Sign</option>
+                                                                              <option selected>Edit</option>
+                                                                        </select>
+                                                                  </div>
+                                                            </div>
+                                                            <div class="sortable-draggable"><i data-feather="menu"></i></div>
+                                                      </div>
+                                                </div>
+                                                <div class="add-viewer-container">
+                                                      <button type="button" class="btn btn-primary tertiary btn-sm"
+                                                            data-toggle="modal" data-target="#addViewer">Add Viewer</button>
+                                                </div>
+                                                <div class="add-viewer-container">
+                                                      <button class="btn btn-primary btn-block" data-toggle="modal"
+                                                            data-target="#routeFolder">Route</button>
+                                                      <p class="estimated-completion">Estimated Completion <b>4 days</b></p>
+                                                </div>
+
+                                          </div>
+                                    </div>
+                              </div>
+                              <div class="col-8 folder-items" id="drop-area">
+                                    <form class="my-form">
+                                          <input type="file" id="fileElem" multiple accept="application/pdf" onchange="handleFiles(this.files)">
+                                          <label class="button sr-only" for="fileElem">Select files to upload</label>
+                                    </form>
+                                    <progress id="progress-bar" max=100 value=0></progress>
+                                    <div class="accordion list" id="filesListing">
+
+                                          <div upload-progress-id="8jqh25" class="document-card">
+                                                <div class="document-header card-header collapsed d-block" id="doc8jqh25"
+                                                      data-toggle="collapse" href="#collapse8jqh25" role="button"
+                                                      aria-expanded="false" aria-controls="collapse8jqh25">
+                                                      
+                                                      <div class="grid-layout-document">
+
+                                                     <div class="icon-container file-icon" aria-label="Folder"> <i class="fas fa-file-pdf"></i>
+                                                      </div>
+                                                      <div class="title-container">
+                                                            <h4 class="title document-title-8jqh25">Buck Slip</h4>
+                                                            <p class="original-file-name">01-Buck Slip.pdf<span class="uploader-name">Timothy
+                                                                        Taylor</span></p>
+                                                      </div>
+                                                      <div class="accordion-expand-actions">
+                                                                  <a class="btn btn-default btn-sm">View Document</a>
+                                                            
+                                                      
+                                                           
+                                                            <div class="dropdown document-expand-menu">
+                                                                  <a class="dropdown-toggle no-caret " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                                                        aria-haspopup="true" aria-expanded="false">
+                                                                        <i data-feather="more-vertical"></i>
+                                                                  </a>
+                                                      
+                                                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#documentRename">Rename</a>
+                                                                        <a class="dropdown-item color-red" href="#" data-toggle="modal" data-target="#documentDelete">Delete...</a>
+                                                                        <a class="dropdown-item" href="#">Download</a>
+                                                                        <a class="dropdown-item" href="#">Version History</a>
+                                                                  </div>
+                                                            </div>
+                                                      
+                                                      </div>
+                                                      </div>
+                                                      <div class="document-details">
+                                                                  <div class="row document-details-row">
+                                                                        <div class="col-12 col-md-6">
+                                                                              <div class="sign-setup-ready">
+                                                                                    <div class="signatures">
+                                                                                          <div class="icon-container signature-icon" aria-label="6 Signatures"><i class="fas fa-signature"></i></div>
+                                                                                          <span class="signatures-text"><span class="signatures-count">6 signatures</span>from 2 approvers
+                                                                                          </span>
+                                                                                    </div>
+                                                                              </div>
+                                                            
+                                                            
+                                                                        </div>
+                                                                        <div class="col-12 col-md-6">
+                                                                              <div class="icon-sm ml-2 mr-1 chevron-expand-collapse">
+                                                                                    <i class="fas fa-chevron-down"></i>
+                                                                              </div>
+                                                                        </div>
+                                                            
+                                                                  </div>
+                                                            </div>
+
+
+                                                </div>
+                                                
+                                                <div id="collapse8jqh25" class="collapse" aria-labelledby="document8jqh25"
+                                                      data-parent="#filesListing">
+                                                      <div class="card-body">
+
+                                                            <div class="document-signatures">
+                                                                        <label>File Settings</label>
+                                                                        <div class="custom-checkbox">
+                                                                              <input type="checkbox" id="doc-view-only-signers" class="checkbox-filter" value="Only visible to signers">
+                                                                              <label for="doc-view-only-signers">Only visible to signers</label>
+                                                                        </div>
+
+
+
+                                                                  <div class="card-header signature-header-layout">
+                                                                        <div class="icon-container signature-icon"
+                                                                              aria-label="Signautre">
+                                                                              <i class="fas fa-signature"></i>
+                                                                        </div>
+                                                                        <div class="title-container">
+                                                                              <h4 class="title">Andrew Studer</h4>
+                                                                              <p class="original-file-name">5
+                                                                                    signatures required</p>
+                                                                        </div>
+                                                                        <div class="accordion-expand-actions justify-content-end">
+                                                                              <button type="button" class="icon-sm icon-container "
+                                                                                    aria-label="Close">
+                                                                                    <i class="fas fa-trash"></i>
+                                                                              </button>
+                                                                        </div>
+                                                                  </div>
+                                                                  <div class="card-header signature-header-layout">
+                                                                        <div class="icon-container signature-icon"
+                                                                              aria-label="Signautre">
+                                                                              <i class="fas fa-signature"></i>
+                                                                        </div>
+                                                                        <div class="title-container">
+                                                                              <h4 class="title">Paul Makhnovskiy</h4>
+                                                                              <p class="original-file-name">1 signature
+                                                                                    required</p>
+                                                                        </div>
+                                                                        <div class="accordion-expand-actions justify-content-end">
+                                                                              <button type="button" class="icon-sm icon-container "
+                                                                                    aria-label="Close">
+                                                                                    <i class="fas fa-trash"></i>
+                                                                              </button>
+                                                                        </div>
+                                                                  </div>
+                                                                  Sign the document in any order
+                                                                  <div class="custom-switch">
+                                                                        <input type="checkbox" id="switchCheckbox1">
+                                                                        <label aria-hidden="true" for="switchCheckbox1">On</label>
+                                                                        <div aria-hidden="true" class="switch__marker"></div>
+                                                                  </div>
+
+
+
+
+
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+
+                                    </div>
+
+
+                                    <div class="empty-state-x">
+                                          <img src="assets/empty-states/newfolder.svg" alt="Folder with upload icon" />
+                                          <h2>Upload Documents</h2>
+                                          <p>Start by dropping your files here. We’ll generate a routing slip for you
+                                                which you can modify
+                                                later.</p>
+                                    </div>
+
+                                    <div class="drop-files-highlight-container">
+                                          <h3 class="drop-instruction-text">Drop files to instatly upload them to <br /><b>Travel
+                                                      Expense
+                                                      Folder</b></h3>
+                                    </div>
+                              </div>
+                        </div>
+
+                  </div>
+
+            </div>
+      </main>
+
+
+
+
+      <!-- Folder Settings Modal -->
+      <div class="modal fade modal-wide" id="folderEdit" tabindex="-1" role="dialog" aria-labelledby="folderEditLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                        <div class="modal-header">
+                              <h5 class="modal-title" id="folderEditLabel">Folder Details</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                                    <div class="icon-container">
+                                          <i class="fas fa-times"></i>
+                                    </div>
+                              </button>
+                        </div>
+                        <div class="modal-body">
+                              <div class="form-group">
+                                    <label for="folderName">Folder Name</label>
+                                    <input type="text" class="form-control" id="folderName" value="Travel Expense Folder">
+                              </div>
+                              <div class="form-group">
+                                    <label for="folderDescription">Description</label>
+                                    <textarea class="form-control" id="folderDescription" rows="3"></textarea>
+                              </div>
+                              <div class="form-group">
+
+
+                                    <fieldset>
+                                          <legend>Folder Color</legend>
+                                          <div class="color-picker-container">
+
+                                                <input type="radio" name="color" value="grey" id="grey">
+                                                <label class="color-option grey" for="grey"></label>
+                                                <input type="radio" name="color" value="yellow" id="yellow">
+                                                <label class="color-option yellow" for="yellow"></label>
+                                                <input type="radio" name="color" value="blue" id="blue" checked>
+                                                <label class="color-option blue" for="blue"></label>
+                                                <input type="radio" name="color" value="green" id="green">
+                                                <label class="color-option green" for="green"></label>
+                                                <input type="radio" name="color" value="orange" id="orange">
+                                                <label class="color-option orange" for="orange"></label>
+                                                <input type="radio" name="color" value="red" id="red">
+                                                <label class="color-option red" for="red"></label>
+                                                <input type="radio" name="color" value="purple" id="purple">
+                                                <label class="color-option purple" for="purple"></label>
+                                          </div>
+                                    </fieldset>
+
+
+                              </div>
+
+                              <div class="folder-specs">
+                                    <div class="folder-spec"><b>Created</b> 10/22/2019 4:21pm</div>
+                                    <div class="folder-spec"><b>Modified</b> 31 minutes ago</div>
+                                    <div class="folder-spec"><b>Owner</b> Timothy Taylor</div>
+                              </div>
+
+
+                        </div>
+                        <div class="modal-footer justify-content-space-between">
+                              <div>
+                                    <button class="btn btn-danger tertiary">Delete Folder</button>
+                              </div>
+                              <div>
+                                    <button type="button" class="btn btn-primary tertiary" data-dismiss="modal">Cancel</button>
+                                    <button class="btn btn-primary" disabled>Save</button>
+                              </div>
+                        </div>
+                  </div>
+            </div>
       </div>
-   </header>
-
-
-
-   <main>
-      <div class="page-header">
-         <div class="container">
-            <div class="page-info">
-               <div class="has-icon">
-                  <!-- <i class="fas fa-folder"></i> -->
-                  <div class="details">
-                     <h1 class="page-title">Travel Expense Folder<span class="status-badge status-draft">Draft</span>
-                     </h1>
-                     <p class="page-description">No folder description provided.</p>
-                  </div>
-               </div>
-            </div>
-            <div class="page-actions">
-               <button type="button" class="btn btn-white mr-2" data-toggle="modal" data-target="#folderEdit"
-                  onclick="this.blur();">Edit</button>
-               <button type="button" class="btn btn-primary" id="upload_documents">Upload Documents</button>
-            </div>
-         </div>
-      </div>
-      <div class="container main-content-container">
-         <div class="folder-view">
-            <div class="folder-contents row">
-               <div class="routing-slip col-4">
-                  <div class="routing-header">
-                     <img src="assets/empty-states/route-icon.svg" />
-                     <h2>Routing Slip</h2>
-                     <button type="button" class="icon-container toggle-route-slip">
-                        <i class="fas fa-chevron-left"></i>
-                     </button>
-                  </div>
-                  <div class="routing-slip-initials">
-                     <ul>
-                        <li>PM</li>
-                        <li>AS</li>
-                        <li>TT</li>
-                     </ul>
-                  </div>
-                  <div class="routing-body">
-                     <div class="routing-slip-container ui-sortable" id="sortable">
-                        <div class="routing-item routing-slip-thead ui-sortable-handle">
-
-                           <div>Deliver To</div>
-                           <div>Dept</div>
-                           <div>Access</div>
-                           <div></div>
-                        </div>
-                        <div id="sortable">
-                           <div class="routing-item ui-sortable-handle">
-
-                              <div class="routing-item-deliver-to-name">Paul Makhnovskiy<span class="desc">Signing 2
-                                    documents</span></div>
-                              <div>ESDD</div>
-                              <div class="access">
-                                 <div class="form-group user-access">
-                                    <label for="sel1" class="sr-only">Select list:</label>
-                                    <select class="form-control" id="sel1">
-                                       <option disabled>View</option>
-                                       <option selected>Sign</option>
-                                       <option>Edit</option>
-                                    </select>
-                                 </div>
-                              </div>
-                              <div class="sortable-draggable"><i data-feather="menu"></i></div>
-                           </div>
-                           <div class="routing-item ui-sortable-handle">
-
-                              <div class="routing-item-deliver-to-name">Andrew Studer<span class="desc">Signing 1
-                                    document</span></div>
-                              <div>ESDD</div>
-                              <div class="access">
-                                 <div class="form-group user-access">
-                                    <label for="sel1" class="sr-only">Select list:</label>
-                                    <select class="form-control" id="sel1">
-                                       <option>View</option>
-                                       <option>Sign</option>
-                                       <option>Edit</option>
-                                    </select>
-                                 </div>
-                              </div>
-                              <div class="sortable-draggable"><i data-feather="menu"></i></div>
-                           </div>
-                           <div class="routing-item ui-sortable-handle">
-
-                              <div>Timothy Taylor<span class="desc">Viewing documents</span></div>
-                              <div>ESDD</div>
-                              <div class="sign-edit">
-                                 <div class="form-group user-access">
-                                    <label for="sel1" class="sr-only">Select list:</label>
-                                    <select class="form-control" id="sel1">
-                                       <option>View</option>
-                                       <option>Sign</option>
-                                       <option selected>Edit</option>
-                                    </select>
-                                 </div>
-                              </div>
-                              <div class="sortable-draggable"><i data-feather="menu"></i></div>
-                           </div>
-                        </div>
-                        <div class="add-viewer-container">
-                           <button type="button" class="btn btn-primary tertiary btn-sm" data-toggle="modal"
-                              data-target="#addViewer">Add Viewer</button>
-                        </div>
-                        <div class="add-viewer-container">
-                           <button class="btn btn-primary btn-block" data-toggle="modal"
-                              data-target="#routeFolder">Route</button>
-                           <p class="estimated-completion">Estimated Completion <b>4 days</b></p>
-                        </div>
-
-                     </div>
-                  </div>
-               </div>
-               <div class="col-8 folder-items" id="drop-area">
-
-                  <form class="my-form">
-                     <input type="file" id="fileElem" multiple accept="application/pdf"
-                        onchange="handleFiles(this.files)">
-                     <label class="button sr-only" for="fileElem">Select files to upload</label>
-                  </form>
-                  <progress id="progress-bar" max=100 value=0></progress>
-                  <div class="accordion list" id="filesListing">
-
-                     <div upload-progress-id="8jqh25" class="document-card">
-                        <div class="document-header card-header collapsed" id="doc8jqh25" data-toggle="collapse" href="#collapse8jqh25"
-                           role="button" aria-expanded="false" aria-controls="collapse8jqh25">
-                           <div class="icon-container file-icon" aria-label="Folder"> <i class="fas fa-file-pdf"></i>
-                           </div>
-                           <div class="title-container">
-                              <h4 class="title document-title-8jqh25">Buck Slip</h4>
-                              <p class="original-file-name">01-Buck Slip.pdf<span class="uploader-name">Timothy
-                                    Taylor</span></p>
-                           </div>
-                           <div class="accordion-expand-actions">
-                              <div class="sign-setup-ready">
-                                 <div class="signatures">
-                                    <span class="signatures-text"><span class="signatures-count"><i
-                                          class="fas fa-signature"></i> 6 signatures</span>from
-                                       2 approvers</p>
-                                 </div>
-                              </div>
-
-                              <div class="icon-sm ml-2 mr-1 chevron-expand-collapse">
-                                 <i class="fas fa-chevron-down"></i>
-                                
-                              </div>
-                              <div class="dropdown document-expand-menu">
-                                    <a class="dropdown-toggle no-caret " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                          <i data-feather="more-vertical"></i>
-                                    </a>
-                                  
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                      <a class="dropdown-item" data-toggle="modal" data-target="#documentRename">Rename</a>
-                                      <a class="dropdown-item" data-toggle="modal" data-target="#documentDelete">Delete...</a>
-                                      <a class="dropdown-item" href="#">Download</a>
-                                      <a class="dropdown-item" href="#">Version History</a>
-                                    </div>
-                                  </div>
-                             
-                           </div>
-                           
-                           
-                              </div>
-                        <div id="collapse8jqh25" class="collapse" aria-labelledby="document8jqh25"
-                           data-parent="#filesListing">
-                           <div class="card-body">
-                              <div class="document-details">
-                                 <div class="row document-details-row">
-                                   
-                                    <div class="col-12 col-md-6">
-                                       <label>File Settings</label>
-                                       <div class="custom-checkbox">
-                                          <input type="checkbox" id="doc-viewable-8jqh25" class="checkbox-filter"
-                                             value="Only visible to signers">
-                                          <label for="doc-viewable-8jqh25">Only visible to signers</label>
-                                       </div>
-                                       <!-- <a href="#" class="color-red font-size-xs">Remove file</a> -->
-
-                                    </div>
-
-                                 </div>
-                              </div>
-                              <div class="document-signatures">
-
-
-
-
-                                 <div class="card-header signature-header-layout">
-                                    <div class="icon-container signature-icon" aria-label="Signautre">
-                                       <i class="fas fa-signature"></i>
-                                    </div>
-                                    <div class="title-container">
-                                       <h4 class="title">Andrew Studer</h4>
-                                       <p class="original-file-name">5 signatures required</p>
-                                    </div>
-                                    <div class="accordion-expand-actions justify-content-end">
-                                       <button type="button" class="icon-sm icon-container " aria-label="Close">
-                                          <i class="fas fa-trash"></i>
-                                       </button>
-                                    </div>
-                                 </div>
-                                 <div class="card-header signature-header-layout">
-                                    <div class="icon-container signature-icon" aria-label="Signautre">
-                                       <i class="fas fa-signature"></i>
-                                    </div>
-                                    <div class="title-container">
-                                       <h4 class="title">Paul Makhnovskiy</h4>
-                                       <p class="original-file-name">1 signature required</p>
-                                    </div>
-                                    <div class="accordion-expand-actions justify-content-end">
-                                       <button type="button" class="icon-sm icon-container " aria-label="Close">
-                                          <i class="fas fa-trash"></i>
-                                       </button>
-                                    </div>
-                                 </div>
-                                 Sign the document in any order
-                                 <div class="custom-switch">
-                                    <input type="checkbox" id="switchCheckbox1">
-                                    <label aria-hidden="true" for="switchCheckbox1">On</label>
-                                    <div aria-hidden="true" class="switch__marker"></div>
-                                 </div>
-
-
-
-
-
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-
-                  </div>
-
-
-                  <div class="empty-state-x">
-                     <img src="assets/empty-states/newfolder.svg" alt="Folder with upload icon" />
-                     <h2>Upload Documents</h2>
-                     <p>Start by dropping your files here. We’ll generate a routing slip for you which you can modify
-                        later.</p>
-                  </div>
-
-                  <div class="drop-files-highlight-container">
-                     <h3 class="drop-instruction-text">Drop files to instatly upload them to <br /><b>Travel Expense
-                           Folder</b></h3>
-                  </div>
-               </div>
-            </div>
-
-         </div>
-
-      </div>
-   </main>
-
-
-
-
-   <!-- Folder Settings Modal -->
-   <div class="modal fade modal-wide" id="folderEdit" tabindex="-1" role="dialog" aria-labelledby="folderEditLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-         <div class="modal-content">
-            <div class="modal-header">
-               <h5 class="modal-title" id="folderEditLabel">Folder Details</h5>
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-
-                  <div class="icon-container">
-                     <i class="fas fa-times"></i>
-                  </div>
-               </button>
-            </div>
-            <div class="modal-body">
-               <div class="form-group">
-                  <label for="folderName">Folder Name</label>
-                  <input type="text" class="form-control" id="folderName" value="Travel Expense Folder">
-               </div>
-               <div class="form-group">
-                  <label for="folderDescription">Description</label>
-                  <textarea class="form-control" id="folderDescription" rows="3"></textarea>
-               </div>
-               <div class="form-group">
-
-
-                  <fieldset>
-                     <legend>Folder Color</legend>
-                     <div class="color-picker-container">
-
-                        <input type="radio" name="color" value="grey" id="grey">
-                        <label class="color-option grey" for="grey"></label>
-                        <input type="radio" name="color" value="yellow" id="yellow">
-                        <label class="color-option yellow" for="yellow"></label>
-                        <input type="radio" name="color" value="blue" id="blue" checked>
-                        <label class="color-option blue" for="blue"></label>
-                        <input type="radio" name="color" value="green" id="green">
-                        <label class="color-option green" for="green"></label>
-                        <input type="radio" name="color" value="orange" id="orange">
-                        <label class="color-option orange" for="orange"></label>
-                        <input type="radio" name="color" value="red" id="red">
-                        <label class="color-option red" for="red"></label>
-                        <input type="radio" name="color" value="purple" id="purple">
-                        <label class="color-option purple" for="purple"></label>
-                     </div>
-                  </fieldset>
-
-
-               </div>
-
-               <div class="folder-specs">
-                  <div class="folder-spec"><b>Created</b> 10/22/2019 4:21pm</div>
-                  <div class="folder-spec"><b>Modified</b> 31 minutes ago</div>
-                  <div class="folder-spec"><b>Owner</b> Timothy Taylor</div>
-               </div>
-
-
-            </div>
-            <div class="modal-footer justify-content-space-between">
-               <div>
-                  <button class="btn btn-danger tertiary">Delete Folder</button>
-               </div>
-               <div>
-                  <button type="button" class="btn btn-primary tertiary" data-dismiss="modal">Cancel</button>
-                  <button class="btn btn-primary" disabled>Save</button>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
 
 
       <!-- Rename Document -->
       <div class="modal fade" id="documentRename" tabindex="-1" role="dialog" aria-labelledby="documentRenameLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-         <div class="modal-content">
-            <div class="modal-header">
-               <h5 class="modal-title" id="documentRenameLabel">Rename Document</h5>
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                        <div class="modal-header">
+                              <h5 class="modal-title" id="documentRenameLabel">Rename Document</h5>
 
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <div class="icon-container">
-                     <i class="fas fa-times"></i>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <div class="icon-container">
+                                          <i class="fas fa-times"></i>
+                                    </div>
+                              </button>
+                        </div>
+                        <div class="modal-body">
+
+                              <div class="form-group">
+                                    <label for="viewerName">Document Name</label>
+                                    <input type="text" class="form-control" id="viewerName" value="Buck Slip">
+                              </div>
+                        </div>
+                        <div class="modal-footer">
+                              <button type="button" class="btn btn-primary tertiary" data-dismiss="modal">Cancel</button>
+                              <button class="btn btn-primary">Rename</a>
+                        </div>
                   </div>
-               </button>
             </div>
-            <div class="modal-body">
-
-               <div class="form-group">
-                  <label for="viewerName">Document Name</label>
-                  <input type="text" class="form-control" id="viewerName" value="Buck Slip">
-               </div>
-            </div>
-            <div class="modal-footer">
-               <button type="button" class="btn btn-primary tertiary" data-dismiss="modal">Cancel</button>
-               <button class="btn btn-primary">Rename</a>
-            </div>
-         </div>
       </div>
-   </div>
-   
+
       <!-- Delete Document -->
       <div class="modal fade" id="documentDelete" tabindex="-1" role="dialog" aria-labelledby="documentDeleteLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-         <div class="modal-content">
-            <div class="modal-header">
-               <h5 class="modal-title" id="documentDeleteLabel">Delete Document</h5>
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                        <div class="modal-header">
+                              <h5 class="modal-title" id="documentDeleteLabel">Delete Document</h5>
 
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <div class="icon-container">
-                     <i class="fas fa-times"></i>
-                  </div>
-               </button>
-            </div>
-            <div class="modal-body">
-                        <div class="alert alert-danger" role="alert">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <div class="icon-container">
+                                          <i class="fas fa-times"></i>
+                                    </div>
+                              </button>
+                        </div>
+                        <div class="modal-body">
+                              <div class="alert alert-danger" role="alert">
                                     <div class="icon-container-ambient">
-                                       <div class="icon-container"> <i class="fas alert-icon"></i> </div>
+                                          <div class="icon-container"> <i class="fas alert-icon"></i> </div>
                                     </div>
                                     <div class="alert-content">
-                                       <h4 class="alert-heading">Warning Danger</h4>
-                                       <p>Are you sure you want to delete document x from folder name?</p>
+                                          <h4 class="alert-heading">Warning Danger</h4>
+                                          <p>Are you sure you want to delete document x from folder name?</p>
                                     </div>
-                                 </div>
+                              </div>
 
-            </div>
-            <div class="modal-footer">
-               <button type="button" class="btn btn-danger tertiary" data-dismiss="modal">Cancel</button>
-               <button class="btn btn-danger">Delete Document</a>
-            </div>
-         </div>
-      </div>
-   </div>
-
-   <!-- Add Viewer Modal -->
-   <div class="modal fade" id="addViewer" tabindex="-1" role="dialog" aria-labelledby="addViewerLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-         <div class="modal-content">
-            <div class="modal-header">
-               <h5 class="modal-title" id="addViewerLabel">Add Viewer</h5>
-
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <div class="icon-container">
-                     <i class="fas fa-times"></i>
+                        </div>
+                        <div class="modal-footer">
+                              <button type="button" class="btn btn-danger tertiary" data-dismiss="modal">Cancel</button>
+                              <button class="btn btn-danger">Delete Document</a>
+                        </div>
                   </div>
-               </button>
             </div>
-            <div class="modal-body">
-
-               <div class="form-group">
-                  <label for="viewerName">Viewer Name</label>
-                  <input type="text" class="form-control" id="viewerName">
-               </div>
-            </div>
-            <div class="modal-footer">
-               <button type="button" class="btn btn-primary tertiary" data-dismiss="modal">Cancel</button>
-               <button class="btn btn-primary">Add Viewer</a>
-            </div>
-         </div>
       </div>
-   </div>
+
+      <!-- Add Viewer Modal -->
+      <div class="modal fade" id="addViewer" tabindex="-1" role="dialog" aria-labelledby="addViewerLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                        <div class="modal-header">
+                              <h5 class="modal-title" id="addViewerLabel">Add Viewer</h5>
+
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <div class="icon-container">
+                                          <i class="fas fa-times"></i>
+                                    </div>
+                              </button>
+                        </div>
+                        <div class="modal-body">
+
+                              <div class="form-group">
+                                    <label for="viewerName">Viewer Name</label>
+                                    <input type="text" class="form-control" id="viewerName">
+                              </div>
+                        </div>
+                        <div class="modal-footer">
+                              <button type="button" class="btn btn-primary tertiary" data-dismiss="modal">Cancel</button>
+                              <button class="btn btn-primary">Add Viewer</a>
+                        </div>
+                  </div>
+            </div>
+      </div>
 
 
-   <!-- JavaScript -->
+      <!-- JavaScript -->
 
-   <script src="js/jquery-3.3.1.min.js"></script>
-   <script src="js/jquery-ui.min.js"></script>
-   <script src="bootstrap/js/popper.min.js"></script>
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/jquery-ui.min.js"></script>
+      <script src="bootstrap/js/popper.min.js"></script>
 
-   <script src="bootstrap/js/bootstrap.min.js"></script>
+      <script src="bootstrap/js/bootstrap.min.js"></script>
 
-   <script src="js/vxf.js"></script>
+      <script src="js/vxf.js"></script>
 
-   <script src="js/file-uploader-vxf.js"></script>
+      <script src="js/file-uploader-vxf.js"></script>
 
-   <script>
-      function addUploadedFileToFolder(file, trackID, i) {
-         let uploadedDocument = document.createElement("div");
-         uploadedDocument.setAttribute("upload-progress-id", trackID);
-         uploadedDocument.classList.add("document-card")
-         uploadedDocument.innerHTML = (
-            '<a class="card-header" id="doc' + trackID + '" data-toggle="collapse" href="#collapse' + trackID + '" role="button" aria-expanded="false" aria-controls="collapse' + trackID + '">' +
-            '   <div class="icon-container file-icon" aria-label="Folder">' +
-            '       <i class="fas fa-file-pdf"></i>' +
-            '   </div>' +
-            '   <div class="title-container">' +
-            '       <h4 class="missing-document-name title document-title-' + trackID + '">Please provide document name</h4>' +
-            '       <p class="original-file-name">' + file.name + '<span class="uploader-name">Timothy Taylor</span></p>' +
-            '   </div>' +
-            '   <div class="accordion-expand-actions">' +
-            '       <button type="button" data-setup-signing-id="' + trackID + '" class="btn btn-white btn-sm btn-setup-signing">Setup Signing</button>' +
-            '       <div class="icon-sm ml-2 mr-1 chevron-expand-collapse">' +
-            '       <i class="fas fa-chevron-down"></i>' +
-            '       </div>' +
-            '   </div>' +
-            ' </a>' +
-            ' <div id="collapse' + trackID + '" class="collapse" aria-labelledby="document' + trackID + '" data-parent="#filesListing">' +
-            '   <div class="card-body">' +
-            '   <div class="document-details">' +
-            '   <div class="row document-details-row">' +
-            '   <div class="col-12 col-md-6">' +
-            '   <div class="position-relative">' +
-            '     <label for="' + trackID + '">Document Name</label>' +
-            '    <input type="text" class="form-control syncDocumentName" id="' + trackID + '"></div>' +
-            '   </div>' +
-            '   </div>' +
-            '   </div>' +
-            '    <div class="document-signatures no-signatures">                                                                                    ' +
-            '     <p class="no-signatures-message">No signatures are setup for this document yet.</p>                                               ' +
-            '     <button type="button" data-setup-signing-id="' + trackID + '" class="btn btn-white btn-sm btn-setup-signing">Setup Signing</button>   ' +
-            '    </div>                                                                                                                             ' +
-            '   </div>' +
-            ' </div>'
+      <script>
+            function addUploadedFileToFolder(file, trackID, i) {
+                  let uploadedDocument = document.createElement("div");
+                  uploadedDocument.setAttribute("upload-progress-id", trackID);
+                  uploadedDocument.classList.add("document-card")
+                  uploadedDocument.innerHTML = (
+                        '<a class="card-header" id="doc' + trackID + '" data-toggle="collapse" href="#collapse' + trackID + '" role="button" aria-expanded="false" aria-controls="collapse' + trackID + '">' +
+                        '   <div class="icon-container file-icon" aria-label="Folder">' +
+                        '       <i class="fas fa-file-pdf"></i>' +
+                        '   </div>' +
+                        '   <div class="title-container">' +
+                        '       <h4 class="missing-document-name title document-title-' + trackID + '">Please provide document name</h4>' +
+                        '       <p class="original-file-name">' + file.name + '<span class="uploader-name">Timothy Taylor</span></p>' +
+                        '   </div>' +
+                        '   <div class="accordion-expand-actions">' +
+                        '       <button type="button" data-setup-signing-id="' + trackID + '" class="btn btn-white btn-sm btn-setup-signing">Setup Signing</button>' +
+                        '       <div class="icon-sm ml-2 mr-1 chevron-expand-collapse">' +
+                        '       <i class="fas fa-chevron-down"></i>' +
+                        '       </div>' +
+                        '   </div>' +
+                        ' </a>' +
+                        ' <div id="collapse' + trackID + '" class="collapse" aria-labelledby="document' + trackID + '" data-parent="#filesListing">' +
+                        '   <div class="card-body">' +
+                        '   <div class="document-details">' +
+                        '   <div class="row document-details-row">' +
+                        '   <div class="col-12 col-md-6">' +
+                        '   <div class="position-relative">' +
+                        '     <label for="' + trackID + '">Document Name</label>' +
+                        '    <input type="text" class="form-control syncDocumentName" id="' + trackID + '"></div>' +
+                        '   </div>' +
+                        '   </div>' +
+                        '   </div>' +
+                        '    <div class="document-signatures no-signatures">                                                                                    ' +
+                        '     <p class="no-signatures-message">No signatures are setup for this document yet.</p>                                               ' +
+                        '     <button type="button" data-setup-signing-id="' + trackID + '" class="btn btn-white btn-sm btn-setup-signing">Setup Signing</button>   ' +
+                        '    </div>                                                                                                                             ' +
+                        '   </div>' +
+                        ' </div>'
 
-         );
-         document.getElementById("filesListing").appendChild(uploadedDocument);
-      }
+                  );
+                  document.getElementById("filesListing").appendChild(uploadedDocument);
+            }
 
-      $(function () {
-         $("#sortable").sortable();
+            $(function () {
+                  $("#sortable").sortable();
 
-      });
+            });
 
-   </script>
-   <script src="https://unpkg.com/feather-icons"></script>
+      </script>
+      <script src="https://unpkg.com/feather-icons"></script>
 
 
 
