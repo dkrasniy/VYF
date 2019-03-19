@@ -8647,7 +8647,7 @@ label {
   border-radius: 0.35em;
   background: #FFF;
 }
-.folder-card a[aria-expanded=true] .chevron-expand-collapse i, .document-card a[aria-expanded=true] .chevron-expand-collapse i {
+.folder-card .card-header[aria-expanded=true] .chevron-expand-collapse i, .document-card .card-header[aria-expanded=true] .chevron-expand-collapse i {
   transform: rotate(180deg);
 }
 .folder-card a, .document-card a {
@@ -10169,6 +10169,24 @@ legend {
   padding: 0.45rem 1.5rem;
 }
 
+.document-expand-menu {
+  margin: -5px;
+}
+.document-expand-menu .dropdown-menu {
+  margin-top: -10px;
+}
+.document-expand-menu .dropdown-toggle {
+  padding: 10px;
+  display: block;
+  line-height: 0;
+  color: #666;
+  border: 1px solid transparent;
+  background: transparent;
+}
+.document-expand-menu .dropdown-toggle:hover {
+  border-color: red;
+  background: #f4f4f4;
+}
 .document-expand-menu .no-caret:after {
   content: none;
 }

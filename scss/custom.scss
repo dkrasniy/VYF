@@ -511,7 +511,7 @@ label {
     border-radius: $borderRadius;
     background:#FFF;
   
-    a[aria-expanded="true"] {
+    .card-header[aria-expanded="true"] {
         .chevron-expand-collapse i {
             transform:rotate(180deg);
         }
@@ -2275,8 +2275,24 @@ legend {
 .dropdown-item {
     padding: 0.45rem 1.5rem;
 }
-.document-expand-menu 
-{.no-caret
+.document-expand-menu {
+    .dropdown-menu {
+        margin-top:-10px;
+    }
+    margin: -5px;
+    .dropdown-toggle {
+        padding:10px;
+        display: block;
+        line-height: 0;
+        color:$grey-5;
+        border: 1px solid transparent;
+        background: transparent;
+        &:hover {
+            border-color: red;
+            background:$bg-color;
+        }
+    }
+    .no-caret
     {
         &:after {
             content: none;
@@ -2284,3 +2300,4 @@ legend {
     }
 }
     
+
