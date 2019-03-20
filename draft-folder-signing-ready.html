@@ -453,7 +453,7 @@
                         </div>
                         <div class="modal-footer justify-content-space-between">
                               <div>
-                                    <button class="btn btn-danger tertiary">Delete Folder</button>
+                                    <button class="btn btn-danger tertiary" data-toggle="modal" data-target="#folderDelete" data-dismiss="modal">Delete Folder</button>
                               </div>
                               <div>
                                     <button type="button" class="btn btn-primary tertiary"
@@ -523,12 +523,49 @@
 
                         </div>
                         <div class="modal-footer">
-                              <button type="button" class="btn btn-danger tertiary" data-dismiss="modal">Cancel</button>
+                              <button type="button" class="btn btn-danger tertiary" data-dismiss="modal" >Cancel</button>
                               <button class="btn btn-danger">Delete Document</a>
                         </div>
                   </div>
             </div>
       </div>
+
+
+      <!-- Delete Folder -->
+      <div class="modal fade" id="folderDelete" tabindex="-1" role="dialog" aria-labelledby="folderDeleteLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                        <div class="modal-header">
+                              <h5 class="modal-title" id="folderDeleteLabel">Delete Document</h5>
+
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <div class="icon-container">
+                                          <i class="fas fa-times"></i>
+                                    </div>
+                              </button>
+                        </div>
+                        <div class="modal-body">
+                              <div class="alert alert-danger" role="alert">
+                                    <div class="icon-container-ambient">
+                                          <div class="icon-container"> <i class="fas alert-icon"></i> </div>
+                                    </div>
+                                    <div class="alert-content">
+                                          <h4 class="alert-heading">Warning Danger</h4>
+                                          <p>Are you sure you want to delete document x from folder name?</p>
+                                    </div>
+                              </div>
+
+                        </div>
+                        <div class="modal-footer">
+                              <button type="button" class="btn btn-danger tertiary" data-toggle="modal" data-target="#folderEdit" data-dismiss="modal">Cancel</button>
+                              <button class="btn btn-danger">Delete Document</a>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+
 
       <!-- Add Viewer Modal -->
       <div class="modal fade" id="addViewer" tabindex="-1" role="dialog" aria-labelledby="addViewerLabel"
@@ -642,8 +679,6 @@
 
       </script>
       <script src="https://unpkg.com/feather-icons"></script>
-
-
 
 
 
