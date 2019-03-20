@@ -91,7 +91,8 @@ function uploadFile(file, trackID, i) {
   var xhr = new XMLHttpRequest();
   var formData = new FormData();
 
-  console.log("FILE", file)
+  console.log("FILE", file);
+  
   xhr.open("POST", url, true);
   xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 

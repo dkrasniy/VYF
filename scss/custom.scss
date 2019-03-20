@@ -23,12 +23,17 @@ $blue-grey:#95a1ad;
 
 //Application colors
 $blue:hsl(209, 93%, 44%);
+
 $green: #30B34E;
 $green-light:hsla(134, 50%, 95%, 1);
+
 $red: #E02200;
 $red-light: hsla(9, 70%, 95%, 1);
+$red-dark: darken($red, 10%);
+
 $orange: #FA710E;
 $orange-light:hsla(25, 95%, 95%, 1);
+
 $yellow:#F0B429;
 $yellow-light:#FDF8E4;
 
@@ -45,7 +50,26 @@ $primary-darker: darken($primary, 20%);
 $primary-darkest: darken($primary, 30%);
 
 
-$red-dark: darken($red, 10%);
+@function light($color){
+    @return lighten($color, 20%);
+}
+@function lighter($color){
+    @return lighten($color, 30%);
+}
+@function lightest($color){
+    @return change-color(($color), $lightness: 97%);
+}
+@function dark($color){
+    @return darken($color, 5%);
+}
+@function darker($color){
+    @return darken($color, 15%);
+}
+@function darkest($color){
+    @return darken($color, 20%);
+}
+
+
 
 
 
@@ -71,12 +95,199 @@ $boxShadowHover: 0px 2px 3px rgba(0,0,0,0.09);
 $boxShadowSm:0 1px 1px rgba(0, 0, 0, 0.06);
 $boxShadowSmHover:0 1px 1px rgba(0, 0, 0, 0.09);
 
-.color-red {
-    color:$red;
+
+.hover\:color-red:hover {
+    color:$red-dark!important;
 }
-.color-red:hover {
-    color:$red-dark;
+
+.hover\:color-blue:hover {
+    color:$blue!important;
 }
+
+
+$colors: ('red': $red, 'blue': $blue,'green': $green,'orange': $orange,'purple': $purple, 'yellow':$yellow);
+$colors-list: red blue green orange purple yellow;
+
+@each $current-color in $colors-list {
+    $i: index($colors-list, $current-color);
+
+
+    .color-#{$current-color}-light {  
+        color: light(map-get($colors, #{$current-color}))!important;
+    }
+    .color-#{$current-color}-lighter { 
+        color: lighter(map-get($colors, #{$current-color}))!important;
+    }
+    .color-#{$current-color}-lightest { 
+        color: lightest(map-get($colors, #{$current-color}))!important;
+    }
+    .color-#{$current-color} {
+        color: map-get($colors, #{$current-color})!important;
+    }
+    .color-#{$current-color}-dark {  
+        color: dark(map-get($colors, #{$current-color}))!important;
+    }
+    .color-#{$current-color}-darker {
+        color: darker(map-get($colors, #{$current-color}))!important;
+    }
+    .color-#{$current-color}-darkest { 
+        color: darkest(map-get($colors, #{$current-color}))!important;
+    }
+
+    //BG COLORS
+    .bg-color-#{$current-color}-light {  
+        background: light(map-get($colors, #{$current-color}))!important;
+    }
+    .bg-color-#{$current-color}-lighter { 
+        background: lighter(map-get($colors, #{$current-color}))!important;
+    }
+    .bg-color-#{$current-color}-lightest { 
+        background: lightest(map-get($colors, #{$current-color}))!important;
+    }
+    .bg-color-#{$current-color} {
+        background: map-get($colors, #{$current-color})!important;
+    }
+    .bg-color-#{$current-color}-dark {  
+        background: dark(map-get($colors, #{$current-color}))!important;
+    }
+    .bg-color-#{$current-color}-darker {
+        background: darker(map-get($colors, #{$current-color}))!important;
+    }
+    .bg-color-#{$current-color}-darkest { 
+        background: darkest(map-get($colors, #{$current-color}))!important;
+    }    
+
+    .folder-theme-#{$current-color} {
+        .theme-color-light {  
+            color: light(map-get($colors, #{$current-color}))!important;
+        }
+        .theme-color-lighter { 
+            color: lighter(map-get($colors, #{$current-color}))!important;
+        }
+        .theme-color-lightest { 
+            color: lightest(map-get($colors, #{$current-color}))!important;
+        }
+        .theme-color {
+            color: map-get($colors, #{$current-color})!important;
+        }
+        .theme-color-dark {  
+            color: dark(map-get($colors, #{$current-color}))!important;
+        }
+        .theme-color-darker {
+            color: darker(map-get($colors, #{$current-color}))!important;
+        }
+        .theme-color-darkest { 
+            color: darkest(map-get($colors, #{$current-color}))!important;
+        }
+    
+        //BG COLORS
+        .theme-bg-color-light {  
+            background: light(map-get($colors, #{$current-color}))!important;
+            border-color: light(map-get($colors, #{$current-color}))!important;
+            &.btn:focus, &.btn.focus {
+                box-shadow: 0 0 0 0.2rem rgba((map-get($colors, #{$current-color})), 0.4)!important;
+            }
+            &.btn:not(:disabled):not(.disabled):active:focus, &.btn:not(:disabled):not(.disabled).active:focus, .show > &.btn.dropdown-toggle:focus {
+                box-shadow: 0 0 0 0.2rem rgba((map-get($colors, #{$current-color})), 0.4)!important;
+            }
+            &.btn:hover {
+                background: map-get($colors, #{$current-color})!important;
+                border-color: map-get($colors, #{$current-color})!important;
+            }
+        }
+        .theme-bg-color-lighter { 
+            background: lighter(map-get($colors, #{$current-color}))!important;
+            border-color: lighter(map-get($colors, #{$current-color}))!important;
+            &.btn:focus, &.btn.focus {
+                box-shadow: 0 0 0 0.2rem rgba((map-get($colors, #{$current-color})), 0.4)!important;
+            }
+            &.btn:not(:disabled):not(.disabled):active:focus, &.btn:not(:disabled):not(.disabled).active:focus, .show > &.btn.dropdown-toggle:focus {
+                box-shadow: 0 0 0 0.2rem rgba((map-get($colors, #{$current-color})), 0.4)!important;
+            }
+            &.btn:hover {
+                background: map-get($colors, #{$current-color})!important;
+                border-color: map-get($colors, #{$current-color})!important;
+            }
+        }
+        .theme-bg-color-lightest { 
+            background: lightest(map-get($colors, #{$current-color}))!important;
+            border-color: lightest(map-get($colors, #{$current-color}))!important;
+            &.btn:focus, &.btn.focus {
+                box-shadow: 0 0 0 0.2rem rgba((map-get($colors, #{$current-color})), 0.4)!important;
+            }
+            &.btn:not(:disabled):not(.disabled):active:focus, &.btn:not(:disabled):not(.disabled).active:focus, .show > &.btn.dropdown-toggle:focus {
+                box-shadow: 0 0 0 0.2rem rgba((map-get($colors, #{$current-color})), 0.4)!important;
+            }
+            &.btn:hover {
+                background: map-get($colors, #{$current-color})!important;
+                border-color: map-get($colors, #{$current-color})!important;
+            }
+        }
+        .theme-bg-color {
+            background: map-get($colors, #{$current-color})!important;
+            border-color: map-get($colors, #{$current-color})!important;
+            &.btn:focus, &.btn.focus {
+                box-shadow: 0 0 0 0.2rem rgba((map-get($colors, #{$current-color})), 0.4)!important;
+            }
+            &.btn:not(:disabled):not(.disabled):active:focus, &.btn:not(:disabled):not(.disabled).active:focus, .show > &.btn.dropdown-toggle:focus {
+                box-shadow: 0 0 0 0.2rem rgba((map-get($colors, #{$current-color})), 0.4)!important;
+            }
+            &.btn:hover {
+                background: dark(map-get($colors, #{$current-color}))!important;
+                border-color: dark(map-get($colors, #{$current-color}))!important;
+            }
+        }
+        .theme-bg-color-dark {  
+            background: dark(map-get($colors, #{$current-color}))!important;
+            border-color:  dark(map-get($colors, #{$current-color}))!important;
+            &.btn:focus, &.btn.focus {
+                box-shadow: 0 0 0 0.2rem rgba((map-get($colors, #{$current-color})), 0.4)!important;
+            }
+            &.btn:not(:disabled):not(.disabled):active:focus, &.btn:not(:disabled):not(.disabled).active:focus, .show > &.btn.dropdown-toggle:focus {
+                box-shadow: 0 0 0 0.2rem rgba((map-get($colors, #{$current-color})), 0.4)!important;
+            }
+            &.btn:hover {
+                background: darker(map-get($colors, #{$current-color}))!important;
+                border-color: darker(map-get($colors, #{$current-color}))!important;
+            }
+        }
+        .theme-bg-color-darker {
+            background: darker(map-get($colors, #{$current-color}))!important;
+            border-color: darker(map-get($colors, #{$current-color}))!important;
+            &.btn:focus, &.btn.focus {
+                box-shadow: 0 0 0 0.2rem rgba((map-get($colors, #{$current-color})), 0.4)!important;
+            }
+            &.btn:not(:disabled):not(.disabled):active:focus, &.btn:not(:disabled):not(.disabled).active:focus, .show > &.btn.dropdown-toggle:focus {
+                box-shadow: 0 0 0 0.2rem rgba((map-get($colors, #{$current-color})), 0.4)!important;
+            }
+            &.btn:hover {
+                background: darker(map-get($colors, #{$current-color}))!important;
+                border-color: darker(map-get($colors, #{$current-color}))!important;
+            }
+        }
+        .theme-bg-color-darkest { 
+            background: darkest(map-get($colors, #{$current-color}))!important;
+            border-color: darkest(map-get($colors, #{$current-color}))!important;
+            &.btn:focus, &.btn.focus {
+                box-shadow: 0 0 0 0.2rem rgba((map-get($colors, #{$current-color})), 0.4)!important;
+            }
+            &.btn:not(:disabled):not(.disabled):active:focus, &.btn:not(:disabled):not(.disabled).active:focus, .show > &.btn.dropdown-toggle:focus {
+                box-shadow: 0 0 0 0.2rem rgba((map-get($colors, #{$current-color})), 0.4)!important;
+            }
+            &.btn:hover {
+                background: (map-get($colors, #{$current-color}))!important;
+                border-color: (map-get($colors, #{$current-color}))!important;
+            }
+        }    
+    }
+}
+
+
+
+
+
+
+
 .font-size-xs {
     font-size:.85rem;
 }
@@ -651,6 +862,20 @@ line-height: 1.5;
         text-align: left;
     }
 }
+.folder-icon-container {
+    background: unset;
+    height: 50px;
+    width: 50px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    border-radius: 50%;
+    color: $grey-2;
+    background:$grey-10;
+}
+
 
 .icon-container.signature-icon{
     background: $yellow-light;
