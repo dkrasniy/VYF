@@ -86,9 +86,12 @@ function previewFile(file, trackID, i) {
 }
 
 function uploadFile(file, trackID, i) {
+
   var url = "'https://api.cloudinary.com/v1_1/joezimim007/image/upload";
   var xhr = new XMLHttpRequest();
   var formData = new FormData();
+
+  console.log("FILE", file)
   xhr.open("POST", url, true);
   xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 
