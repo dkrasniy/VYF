@@ -1,6 +1,7 @@
 $(document).ready(function(){
     checkFolderStatus();
     feather.replace();
+    checkForDarkMode();
 });
 
 $(document.body).on("input propertychange",'.float-labels input', function () {
@@ -61,3 +62,10 @@ $(document.body).on("click", ".document-expand-menu .dropdown-item", function(ev
     $(thisModal).modal('show');
 
 })
+
+//DARK MODE
+function checkForDarkMode() {
+    let isDarkMode = false;
+    isDarkMode = JSON.parse(localStorage.getItem("darkmode"));
+    isDarkMode ? (document.body.classList.add("darkModeEnabled")) : document.body.classList.remove("darkModeEnabled");
+}

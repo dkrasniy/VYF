@@ -111,7 +111,6 @@ $colors-list: red blue green orange purple yellow;
 @each $current-color in $colors-list {
     $i: index($colors-list, $current-color);
 
-
     .color-#{$current-color}-light {  
         color: light(map-get($colors, #{$current-color}))!important;
     }
@@ -284,6 +283,28 @@ $colors-list: red blue green orange purple yellow;
 
 
 
+.folder-theme-starfield {
+    .page-header {
+        background:#333;
+    }
+    .page-info {
+        .page-title {
+            color:#fff!important;
+        }
+        .page-description {
+            color:#eee!important;
+        }
+        
+    }
+    .status-badge {
+        background: hsla(0, 0%, 100%, 0.25)!important;
+        color: #fff!important;
+    }
+    .folder-icon-container {
+        color: #ffffff!important;
+        background: hsla(0, 0%, 100%, 0.25)!important;
+    }
+}
 
 
 
@@ -508,6 +529,20 @@ label {
     &.modal-widest {
         .modal-dialog {
             max-width: 750px;
+        }
+    }
+
+    &.headerless {
+        .modal-header {
+            background: #fff!important;
+            padding-top: 2rem!important;
+        }
+        .modal-body {
+            background: #ffffff!important;
+            padding-top: 0!important;
+        }
+        .modal-footer {
+            background: $light-grey!important;
         }
     }
 }
@@ -829,6 +864,10 @@ line-height: 1.5;
     input {
         padding-left:40px;
     }
+}
+.no-items-found {
+    text-align: center;
+    padding: 20vh;
 }
 .card-header {
     padding: 1em;
@@ -2536,3 +2575,67 @@ legend {
 }
     
 
+
+// DARK MODE 
+body.darkModeEnabled {
+    .app-title {
+        color: #dcdcdc;
+    }
+    .user-account-dropdown {
+        background: #272727;
+        a.dropdown-toggle {
+            color: #b3b3b3;}
+    }
+
+
+    background: #292929;
+    .main-header {
+        background: #1b1b1b;
+        li a {
+            color: #e4e4e4;
+        }
+    }
+
+    .page-header {
+        background: #1b1b1b;
+        .page-title {
+            color: white;
+        }
+        
+    }
+    .page-header > .container {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .empty-state {
+        color:#fff;
+    }
+    .modal {
+        .modal-content {
+            background: #272727;
+        }
+        label {
+            color:#fff;
+        }
+        .form-control {
+            background-color: #3a3a3a;
+            color:#eee;
+        }
+        .color-picker-container {
+            background: #3a3a3a;
+        }
+        .color-option.grey {
+            background: #fff;
+        }
+        .icon-container {
+            background: #3a3a3a;
+            color: #fff;
+        }
+        .modal-header, .modal-footer {
+            background: #222;
+            color:#fff;
+        }
+        .modal-body {
+            background: #272727;
+        }
+    }
+}

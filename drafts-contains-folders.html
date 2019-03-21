@@ -184,7 +184,7 @@
 
       var folderList = new List('folder-list-sortable-searchable', options);
       
-      var noItems = $('<p id="no-items-found" style="text-align:center; padding:3em 0;">No folders .</li>');
+      var noItems = $('<div class="drafts-search no-items-found"><p>No matches found. Please try another search.</p></div>');
 
       folderList.on('updated', function(list) {
         if (list.matchingItems.length == 0) {

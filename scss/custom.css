@@ -1063,6 +1063,24 @@
   border-color: #F0B429 !important;
 }
 
+.folder-theme-starfield .page-header {
+  background: #333;
+}
+.folder-theme-starfield .page-info .page-title {
+  color: #fff !important;
+}
+.folder-theme-starfield .page-info .page-description {
+  color: #eee !important;
+}
+.folder-theme-starfield .status-badge {
+  background: rgba(255, 255, 255, 0.25) !important;
+  color: #fff !important;
+}
+.folder-theme-starfield .folder-icon-container {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
 .font-size-xs {
   font-size: 0.85rem;
 }
@@ -9508,6 +9526,17 @@ label {
 .modal.modal-widest .modal-dialog {
   max-width: 750px;
 }
+.modal.headerless .modal-header {
+  background: #fff !important;
+  padding-top: 2rem !important;
+}
+.modal.headerless .modal-body {
+  background: #ffffff !important;
+  padding-top: 0 !important;
+}
+.modal.headerless .modal-footer {
+  background: #f7f7f7 !important;
+}
 
 .modal-backdrop.show {
   opacity: 0.2;
@@ -9812,6 +9841,11 @@ label {
 }
 .search-container input {
   padding-left: 40px;
+}
+
+.no-items-found {
+  text-align: center;
+  padding: 20vh;
 }
 
 .card-header {
@@ -11263,6 +11297,64 @@ legend {
 }
 .document-expand-menu .no-caret:after {
   content: none;
+}
+
+body.darkModeEnabled {
+  background: #292929;
+}
+body.darkModeEnabled .app-title {
+  color: #dcdcdc;
+}
+body.darkModeEnabled .user-account-dropdown {
+  background: #272727;
+}
+body.darkModeEnabled .user-account-dropdown a.dropdown-toggle {
+  color: #b3b3b3;
+}
+body.darkModeEnabled .main-header {
+  background: #1b1b1b;
+}
+body.darkModeEnabled .main-header li a {
+  color: #e4e4e4;
+}
+body.darkModeEnabled .page-header {
+  background: #1b1b1b;
+}
+body.darkModeEnabled .page-header .page-title {
+  color: white;
+}
+body.darkModeEnabled .page-header > .container {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+body.darkModeEnabled .empty-state {
+  color: #fff;
+}
+body.darkModeEnabled .modal .modal-content {
+  background: #272727;
+}
+body.darkModeEnabled .modal label {
+  color: #fff;
+}
+body.darkModeEnabled .modal .form-control {
+  background-color: #3a3a3a;
+  color: #eee;
+}
+body.darkModeEnabled .modal .color-picker-container {
+  background: #3a3a3a;
+}
+body.darkModeEnabled .modal .color-option.grey {
+  background: #fff;
+}
+body.darkModeEnabled .modal .icon-container {
+  background: #3a3a3a;
+  color: #fff;
+}
+body.darkModeEnabled .modal .modal-header, body.darkModeEnabled .modal .modal-footer {
+  background: #222;
+  color: #fff;
+}
+body.darkModeEnabled .modal .modal-body {
+  background: #272727;
 }
 
 /*# sourceMappingURL=custom.css.map */
