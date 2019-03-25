@@ -178,6 +178,28 @@ $colors-list: red blue green orange purple yellow;
         .theme-color-darkest { 
             color: darkest(map-get($colors, #{$current-color}))!important;
         }
+
+        .theme-fill-color-light {  
+            fill: light(map-get($colors, #{$current-color}))!important;
+        }
+        .theme-fill-color-lighter { 
+            fill: lighter(map-get($colors, #{$current-color}))!important;
+        }
+        .theme-fill-color-lightest { 
+            fill: lightest(map-get($colors, #{$current-color}))!important;
+        }
+        .theme-fill-color {
+            fill: map-get($colors, #{$current-color})!important;
+        }
+        .theme-fill-color-dark {  
+            fill: dark(map-get($colors, #{$current-color}))!important;
+        }
+        .theme-fill-color-darker {
+            fill: darker(map-get($colors, #{$current-color}))!important;
+        }
+        .theme-fill-color-darkest { 
+            fill: darkest(map-get($colors, #{$current-color}))!important;
+        }
     
         //BG COLORS
         .theme-bg-color-light {  
@@ -673,7 +695,7 @@ label {
 }
 
 
-.alert-danger {
+.alert-danger, .toast-danger {
     .icon-container-ambient {
         background: $red-light;
     }
@@ -691,7 +713,7 @@ label {
     }
 }
 
-.alert-success {
+.alert-success,.toast-success {
     .icon-container-ambient {
         background: $green-light;
     }
@@ -708,7 +730,7 @@ label {
         }
     }
 }
-.alert-warning {
+.alert-warning, .toast-warning {
     .icon-container-ambient {
         background: $orange-light;
     }
@@ -2160,7 +2182,7 @@ padding: 1em;
     text-align: center;
     margin: 0 auto;
     max-width: 440px;
-    img {
+    img,svg {
         margin-bottom:20px;
         user-drag: none; 
         user-select: none;
@@ -2637,5 +2659,56 @@ body.darkModeEnabled {
         .modal-body {
             background: #272727;
         }
+    }
+}
+
+.toast {
+    transition: .25s ease all;
+    box-shadow: $boxShadowSm;
+    border:none;
+    border-radius: $borderRadius;
+    background:#FFF;
+    display: flex;
+    padding: .65em 1em;
+    max-width: 350px;
+    min-width: 350px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateY(20px);
+    p {
+        margin:0;
+    }
+
+    .icon-container {
+        font-size: 13px;
+    }
+    &.toast-success {
+        background:$green;
+        p {
+            color:white;
+        }
+    }
+    &.toast-danger {
+        background:$red;
+        p {
+            color:white;
+        }
+    }
+   
+    &.hide {
+        opacity: 0;
+        transform: scale(.95);
+    }
+    &.show {
+        opacity: 1;
+        transform: translateY(0);
+        transform: scale(1);
+    }
+    &.fixed-bottom-right {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
     }
 }

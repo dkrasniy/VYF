@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <!-- CSS -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+   <link rel="stylesheet" href="../scss/custom.css">
+   <link rel="stylesheet" href="../fonts/fonts.css">
+   <title>Components - Virtual Yellow Folder</title>
+
+</head>
+
+<body style="margin: 0 auto; max-width:900px; padding:1em;">
+   <h2>Snackbar/Toast</h2>
+
+
+   <div class="toast toast-success fixed-bottom-right" role="status" aria-live="polite" aria-atomic="true"
+      data-delay="2000" data-animation="false">
+      <div class="toast-content">
+         <p>Folder deleted successfuly.</p>
+      </div>
+   
+      <button type="button" class="close" data-dismiss="toast" aria-label="Close">
+         <div class="icon-container">
+            <i class="fas fa-times"></i>
+         </div>
+      </button>
+   </div>
+
+       
+
+
+
+
+   <!-- JavaScript -->
+   <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+   <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+   <script>
+         $(document).ready(function(){
+           $('.toast').toast('show');
+         });
+         </script>
+</body>
+
+</html>
