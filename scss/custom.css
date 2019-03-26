@@ -10301,6 +10301,8 @@ label {
 .page-header .page-description {
   margin-bottom: 0;
   color: #767676;
+}
+.page-header .page-description.no-desc {
   font-style: italic;
 }
 
@@ -10782,26 +10784,23 @@ span.uploader-name:before {
   content: "Uploaded by ";
 }
 
-.esign .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+.esign .page-header .page-title {
+  font-size: 1.25em !important;
 }
-.esign .header .file-info {
+.esign .file-info {
   padding: 1em;
   background: white;
 }
-.esign .header .document-name {
+.esign .document-name {
   margin: 0;
   font-weight: 600;
   font-size: 1.5em;
 }
-.esign .header .original-file-name {
+.esign .original-file-name {
   margin: 0;
   color: #666;
 }
-.esign .header .toolbar {
+.esign .toolbar {
   background: #333;
 }
 .esign .pdf-viewer embed {
@@ -10810,27 +10809,11 @@ span.uploader-name:before {
   display: flex;
 }
 .esign .toolbar-wrapper {
-  background: #333;
-  padding: 0;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 2;
-  -ms-flex: 2;
-  flex: 2;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
+  user-select: none;
   color: #fff;
-  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: relative;
   white-space: nowrap;
@@ -10839,8 +10822,6 @@ span.uploader-name:before {
   overflow-x: auto;
 }
 .esign .dropdown-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 .esign .toolbar-button {
@@ -10859,13 +10840,13 @@ span.uploader-name:before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 10px 15px;
+  padding: 12px 15px;
   -webkit-transition: 0.2s ease all;
   -o-transition: 0.2s ease all;
   transition: 0.2s ease all;
 }
 .esign .toolbar-button:hover {
-  background: #5f6d78;
+  background: #000;
 }
 .esign .toolbar-button span {
   -webkit-box-flex: 24px;
@@ -10893,7 +10874,7 @@ span.uploader-name:before {
 }
 .esign .page-indicator {
   margin: 0 20px;
-  font-size: 80%;
+  font-size: 90%;
 }
 .esign .page-indicator button {
   width: 26px;
@@ -10910,7 +10891,6 @@ span.uploader-name:before {
   -ms-flex-pack: center;
   justify-content: center;
   padding: 7px 3px;
-  -ms-touch-action: none;
   touch-action: none;
 }
 .esign .page-indicator .input-controls {
@@ -10918,7 +10898,7 @@ span.uploader-name:before {
   display: -ms-flexbox;
   display: flex;
   height: 28px;
-  margin: 0 4px;
+  margin: 0 10px;
 }
 .esign .page-indicator input[type=number]::-webkit-inner-spin-button,
 .esign .page-indicator input[type=number]::-webkit-outer-spin-button {
