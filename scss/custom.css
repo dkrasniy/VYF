@@ -10252,7 +10252,7 @@ label {
   padding: 1em 0;
   display: flex;
   align-items: center;
-  transition: 0.2s ease all;
+  transition: 0.2s ease opacity;
 }
 .main-header li a svg {
   max-width: 17px;
@@ -11461,6 +11461,101 @@ body.darkModeEnabled .modal .modal-header, body.darkModeEnabled .modal .modal-fo
 }
 body.darkModeEnabled .modal .modal-body {
   background: #272727;
+}
+
+/* -------------------------
+    Side Navigation
+---------------------------*/
+body.sideNavigationEnabled main {
+  margin-left: 240px;
+}
+body.sideNavigationEnabled .navbar-expand-md > .container, body.sideNavigationEnabled .navbar-expand-md > .container-fluid {
+  max-width: initial;
+  padding: initial;
+  margin: initial;
+  display: block;
+  height: 100%;
+  width: 240px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 10;
+  background: #fff;
+  padding: 2em 1.5em;
+  border-right: 1px solid #eee;
+}
+body.sideNavigationEnabled .navbar-expand-md .navbar-nav {
+  flex-direction: column;
+}
+body.sideNavigationEnabled .new-folder-button {
+  margin: 2em 0;
+}
+body.sideNavigationEnabled nav#main-header-nav {
+  margin: 3em -1.5em;
+}
+body.sideNavigationEnabled ul {
+  padding: 0;
+  margin: 0;
+  margin: initial;
+}
+body.sideNavigationEnabled li {
+  list-style-type: none;
+  position: relative;
+}
+body.sideNavigationEnabled li:before {
+  content: " ";
+}
+body.sideNavigationEnabled li a {
+  display: block;
+  padding: 10px 1em;
+  color: #666;
+  font-size: 1.05rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+body.sideNavigationEnabled li.active {
+  background: #f5faff;
+}
+body.sideNavigationEnabled li.active a {
+  color: #0874d9;
+}
+body.sideNavigationEnabled li.active a:before {
+  content: "";
+  height: 33px;
+  width: 3px;
+  display: block;
+  left: 0;
+  top: 0;
+  background: #0874D9;
+  position: absolute;
+  height: 70%;
+  top: 15%;
+}
+body.sideNavigationEnabled .logo-container img {
+  max-width: 110px;
+}
+body.sideNavigationEnabled .user-account-dropdown {
+  position: absolute;
+  bottom: 0;
+  background: #fbfbfb;
+  left: 0;
+  width: 100%;
+}
+body.sideNavigationEnabled .user-account-dropdown .dropdown-toggle {
+  padding: 2em 1.5em;
+}
+body.sideNavigationEnabled .user-account-dropdown .dropdown-menu.show {
+  visibility: visible;
+  transform-origin: bottom left;
+  transform: scale(1);
+  opacity: 1;
+}
+body.sideNavigationEnabled .user-account-dropdown .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  left: 40px !important;
 }
 
 .toast {

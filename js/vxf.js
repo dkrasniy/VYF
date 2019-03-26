@@ -2,6 +2,7 @@ $(document).ready(function(){
     checkFolderStatus();
     feather.replace();
     checkForDarkMode();
+    checkForSideNavigation();
 });
 
 $(document.body).on("input propertychange",'.float-labels input', function () {
@@ -68,4 +69,11 @@ function checkForDarkMode() {
     let isDarkMode = false;
     isDarkMode = JSON.parse(localStorage.getItem("darkmode"));
     isDarkMode ? (document.body.classList.add("darkModeEnabled")) : document.body.classList.remove("darkModeEnabled");
+}
+
+//Side Nav
+function checkForSideNavigation() {
+    let isSideNav = false;
+    isSideNav = JSON.parse(localStorage.getItem("isSideNav"));
+    isSideNav ? (document.body.classList.add("sideNavigationEnabled")) : document.body.classList.remove("sideNavigationEnabled");
 }

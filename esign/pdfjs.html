@@ -55,9 +55,13 @@
 
             $('#pdfURL').on("submit", function (e) {
                 e.preventDefault();
-                console.log(document.getElementById("urlPDFToRender").value);
                 loadURLDocument(document.getElementById("urlPDFToRender").value);
 
+                //test rect
+                var c = document.getElementById("page1"); 
+                var ctx = c.getContext("2d"); 
+                ctx.rect(20, 20, 150, 100); 
+                ctx.stroke();
             })
 
         
@@ -80,7 +84,7 @@
                 pageNum = 1,
                 pageRendering = false,
                 pageNumPending = null,
-                scale = 1.,
+                scale = 2,
                 canvas = document.getElementById('the-canvas'),
                 ctx = canvas.getContext('2d');
 
@@ -193,20 +197,29 @@
                 canvas.style.display = "block";
                 var context = canvas.getContext('2d');
                 canvas.setAttribute("page-number", page.pageIndex+1);
+                canvas.setAttribute("id", "page"+ (page.pageIndex +1))
                 canvas.height = viewport.height;
                 canvas.width = viewport.width;
+
+                var inputFieldController = document.createElement("div");
+                inputFieldController.style.display = "absolute";
+                inputFieldController.setAttribute("id", "pageController"+ (page.pageIndex +1))
+
 
                 //Draw it on the canvas
                 page.render({ canvasContext: context, viewport: viewport });
 
                 //Add it to the web page
                 document.body.appendChild(canvas);
+                document.body.appendChild(inputFieldController);
 
                 //Move to next page
                 currPage++;
                 if (thePDF !== null && currPage <= numPages) {
                     thePDF.getPage(currPage).then(handlePages);
                 }
+
+               
             }
 
 </script>

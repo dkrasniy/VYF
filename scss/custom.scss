@@ -1291,7 +1291,7 @@ line-height: 1.5;
             
             display:flex;
             align-items: center;
-            transition:.2s ease all;
+            transition:.2s ease opacity;
             svg {
                 max-width: 17px;
                 margin-right: 10px;
@@ -2645,6 +2645,122 @@ body.darkModeEnabled {
     }
 }
 
+
+/* -------------------------
+    Side Navigation
+---------------------------*/
+body.sideNavigationEnabled {
+    main {
+        margin-left:$sidebarNavWidth;
+    }
+    .navbar-expand-md > .container, .navbar-expand-md > .container-fluid {
+        max-width: initial;
+        padding: initial;
+        margin: initial;
+        display: block;
+        height: 100%;
+        width:$sidebarNavWidth;
+        position:fixed;
+        top:0;
+        left:0;
+        height: 100%;
+       //  overflow: auto;
+        z-index: 10;
+        background: #fff;
+        padding:2em 1.5em;
+        border-right:$onePxBorder;
+    }
+    .navbar-expand-md .navbar-nav {
+        flex-direction: column;
+    }
+
+
+    .new-folder-button {
+       margin: 2em 0;
+   }
+
+   nav#main-header-nav {
+        margin: 3em -1.5em;
+    }
+   ul {
+       padding: 0;
+       margin: 0;
+       margin:initial;
+   }
+   li {
+       list-style-type: none;
+       position: relative;
+       //Return list semantics in VoiceOver. It's magic
+       &:before {
+           content: " "; 
+         }
+
+         a {
+           display: block;
+           padding: 10px 1em;
+           color: $grey-5;
+           font-size: 1.05rem;
+           text-decoration: none;
+           display: flex;
+           align-items:center;
+         }
+         &.active {
+           background:$primary-lightest;
+             a {
+                 color:$blue;
+                 &:before{
+       
+                       content: "";
+                       height: 33px;
+                       width: 3px;
+                       display: block;
+                       left: 0;
+                       top: 0;
+                       background: #0874D9;
+                       position: absolute;
+                       height: 70%;
+                       top: 15%;
+                 }
+                 
+             }
+         }
+   }
+   
+    .logo-container {
+        img {
+            max-width:110px;
+        }
+    }
+    .user-account-dropdown {
+       position: absolute;
+       bottom:0;
+       background: #fbfbfb;
+       left: 0;
+       width: 100%;
+       .dropdown-toggle {
+        padding: 2em 1.5em;
+       }
+
+       .dropdown-menu{
+       &.show {
+        visibility: visible;
+        transform-origin: bottom left;
+        transform: scale(1);
+        opacity: 1;
+       } 
+    }
+
+       .dropdown-menu {
+        top: auto;
+        bottom: 100%;
+        left: 40px!important;
+       }
+   }
+}
+
+
+
+
 .toast {
     transition: .25s ease all;
     box-shadow: $boxShadowSm;
@@ -2695,3 +2811,5 @@ body.darkModeEnabled {
         right: 40px;
     }
 }
+
+
