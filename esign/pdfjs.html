@@ -22,8 +22,11 @@
         <input class="form-control" type="text" id="urlPDFToRender" placeholder="Enter PDF URL to render"/>
         
         <button class="btn btn-white ml-2" type="submit" role="submit">Submit</button>
+        
     </form>
-        <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <p>Can use as test: https://s1.q4cdn.com/806093406/files/doc_downloads/test.pdf</p>
+
+        <script src="./pdf.js"></script>
         <div>
           <button class="btn btn-white btn-sm" id="prev">Previous</button>
           <button class="btn btn-white btn-sm" id="next">Next</button>
@@ -58,7 +61,7 @@
             var pdfjsLib = window['pdfjs-dist/build/pdf'];
 
             // The workerSrc property shall be specified.
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.js';
+            pdfjsLib.GlobalWorkerOptions.workerSrc = './pdf.worker.js';
 
             var pdfDoc = null,
                 pageNum = 1,
@@ -168,6 +171,7 @@
          
 
             function handlePages(page) {
+
                 //This gives us the page's dimensions at full scale
                 var viewport = page.getViewport(1.5);
 
@@ -175,6 +179,7 @@
                 var canvas = document.createElement("canvas");
                 canvas.style.display = "block";
                 var context = canvas.getContext('2d');
+                canvas.setAttribute("page-number", page.pageIndex+1);
                 canvas.height = viewport.height;
                 canvas.width = viewport.width;
 
