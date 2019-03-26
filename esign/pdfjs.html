@@ -1,27 +1,58 @@
 <html>
 
 <head>
-    <title>pdfjs</title>
+    <title>pdf viewer</title>
+    <link rel="stylesheet" href="../scss/custom.css">
+    <style>
+        canvas {
+            margin: 0 auto;
+            height: 90vh;
+            box-shadow: 0px 0px 9px 1px hsla(0, 0%, 0%, 0.21);
+            margin-bottom: 5vh!important;
+        }
+        #pdfURL {
+            max-width: 400px;
+            padding:1em;
+        }
+        </style>
 </head>
 
 <body>
-        <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
-
-        <h1>PDF.js Previous/Next example</h1>
+    <form id="pdfURL" class=" d-flex">
+        <input class="form-control" type="text" id="urlPDFToRender" placeholder="Enter PDF URL to render"/>
         
+        <button class="btn btn-white ml-2" type="submit" role="submit">Submit</button>
+    </form>
+        <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
         <div>
-          <button id="prev">Previous</button>
-          <button id="next">Next</button>
-          &nbsp; &nbsp;
+          <button class="btn btn-white btn-sm" id="prev">Previous</button>
+          <button class="btn btn-white btn-sm" id="next">Next</button>
           <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
         </div>
         
-        <canvas id="the-canvas"></canvas>
+        <canvas id="the-canvas" style="display:none;"></canvas>
 
+
+        <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
         <script>
-        // If absolute URL from the remote server is provided, configure the CORS
+
+
+            $('#pdfURL').on("submit", function (e) {
+                e.preventDefault();
+                console.log(document.getElementById("urlPDFToRender").value);
+                loadURLDocument(document.getElementById("urlPDFToRender").value);
+
+            })
+
+        
+            var currPage = 1; //Pages are 1-based not 0-based
+            var numPages = 0;
+            var thePDF = null;
+
+
+            // If absolute URL from the remote server is provided, configure the CORS
             // header on that server.
-            var url = 'https://s22.q4cdn.com/396847794/files/doc_financials/quarterly/2019/_10-Q-Q1-2019-(As-Filed).pdf';
+            var url = 'http://ir.tesla.com/static-files/0b913415-467d-4c0d-be4c-9225c2cb0ae0';
 
             // Loaded via <script> tag, create shortcut to access PDF.js exports.
             var pdfjsLib = window['pdfjs-dist/build/pdf'];
@@ -33,9 +64,11 @@
                 pageNum = 1,
                 pageRendering = false,
                 pageNumPending = null,
-                scale = 1.5,
+                scale = 1.,
                 canvas = document.getElementById('the-canvas'),
                 ctx = canvas.getContext('2d');
+
+
 
             /**
              * Get page info from document, resize canvas accordingly, and render page.
@@ -107,17 +140,59 @@
             }
             document.getElementById('next').addEventListener('click', onNextPage);
 
+
             /**
              * Asynchronously downloads PDF.
              */
-            pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
-                pdfDoc = pdfDoc_;
-                document.getElementById('page_count').textContent = pdfDoc.numPages;
-
-                // Initial/first page rendering
-                renderPage(pageNum);
+             $( document ).ready(function() {
+               // loadURLDocument(url);
             });
+
+            function loadURLDocument(url){
+                pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
+              //  pdfDoc = pdfDoc_;
+               // document.getElementById('page_count').textContent = pdfDoc.numPages;
+
+                 //Set PDFJS global object (so we can easily access in our page functions
+                thePDF = pdfDoc_;
+
+                //How many pages it has
+                numPages = pdfDoc_.numPages;
+
+
+                pdfDoc_.getPage(1).then(handlePages);
+                // Initial/first page rendering
+                //renderPage(pageNum);
+            });
+            }
+         
+
+            function handlePages(page) {
+                //This gives us the page's dimensions at full scale
+                var viewport = page.getViewport(1.5);
+
+                //We'll create a canvas for each page to draw it on
+                var canvas = document.createElement("canvas");
+                canvas.style.display = "block";
+                var context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                //Draw it on the canvas
+                page.render({ canvasContext: context, viewport: viewport });
+
+                //Add it to the web page
+                document.body.appendChild(canvas);
+
+                //Move to next page
+                currPage++;
+                if (thePDF !== null && currPage <= numPages) {
+                    thePDF.getPage(currPage).then(handlePages);
+                }
+            }
+
 </script>
+
 </body>
 
 </html>
