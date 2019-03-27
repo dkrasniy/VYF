@@ -10866,6 +10866,10 @@ span.uploader-name:before {
   -ms-flex-direction: column;
   flex-direction: column;
 }
+.esign .toolbar-item.active {
+  background: #F0B429;
+  color: black;
+}
 .esign path.stroke-color {
   stroke: white;
 }
@@ -11466,6 +11470,13 @@ body.darkModeEnabled .modal .modal-body {
 /* -------------------------
     Side Navigation
 ---------------------------*/
+.onlyOnSideNav {
+  display: none;
+}
+
+body.sideNavigationEnabled .onlyOnSideNav {
+  display: block;
+}
 body.sideNavigationEnabled main {
   margin-left: 240px;
 }
@@ -11605,6 +11616,138 @@ body.sideNavigationEnabled .user-account-dropdown .dropdown-menu {
   position: fixed;
   bottom: 40px;
   right: 40px;
+}
+
+.signHelpDialog {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.9);
+  background: #222;
+  width: 60vw;
+  position: fixed;
+  bottom: 40px;
+  left: 20vw;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 0.5em;
+  transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0s;
+}
+.signHelpDialog .helpDialogTitle {
+  font-size: 1.25em;
+  display: block;
+  font-weight: bold;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0s;
+  transform: scale(0.85);
+}
+.signHelpDialog .helpDialogDesc {
+  font-size: 1em;
+  display: block;
+  color: #ababab;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0s;
+  transform: scale(0.85);
+}
+.signHelpDialog .help-icon {
+  max-width: 40px;
+  text-align: center;
+  margin: 0 auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0s;
+  transform: scale(0.85);
+}
+.signHelpDialog.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0s;
+}
+.signHelpDialog.show .helpDialogTitle {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition-delay: 0.15s;
+}
+.signHelpDialog.show .helpDialogDesc {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition-delay: 0.25s;
+}
+.signHelpDialog.show .help-icon {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition-delay: 0.1s;
+}
+
+#canvas-container canvas {
+  margin: 0 auto;
+  height: 150vh;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5vh !important;
+}
+
+.loader > div {
+  width: 18px;
+  height: 18px;
+  background-color: #333;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.loader .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.loader .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.esign .toolbar-wrapper {
+  opacity: 1;
+  transform: ease 0.2s opacity;
+}
+
+.loader {
+  display: none;
+}
+
+body.documentIsLoading .toolbar-wrapper {
+  opacity: 0;
+  transform: ease 0.2s opacity;
+}
+body.documentIsLoading #canvas-container {
+  display: none;
+}
+body.documentIsLoading .loader {
+  display: block;
 }
 
 /*# sourceMappingURL=custom.css.map */

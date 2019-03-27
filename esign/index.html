@@ -73,7 +73,7 @@
                                           <button class="toolbar-button sidepanel-dropdown-icon"></button>
                                           <div class="dropdown-content" role="listbox"></div>
                                     </div>
-                                    <div class="toolbar-item">
+                                    <div class="toolbar-item" id="engageSignature">
                                           <button class="toolbar-button sign-icon"></button>
                                     </div>
                                     <div class="toolbar-item">
@@ -100,7 +100,7 @@
                                                                         class="right-arrow-icon arrow-controls"></span></button>
                                                       </div>
                                                 </span>
-                                                <span> of 5</span>
+                                                <span> of <span id="page_count">5</span></span>
                                           </div>
                                     </div>
                                     <div style="flex: 1 1 0%;"></div>
@@ -120,20 +120,308 @@
 
             </div>
             <div class="container main-content-container">
-                 PDF Loading...
-
+                       
+                  <div class="loader">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
+                  </div>
+            
+                  <div id="canvas-container">
+                        <canvas id="the-canvas" style="display:none;"></canvas>
+                  </div>
+            
             </div>
       </main>
 
 
+      <div class="signHelpDialog">
+            <div class="help-icon"><div class="sign-icon"></div></div>
+            <span class="helpDialogTitle">Add Signature Field</span>
+            <span class="helpDialogDesc">Start </span>
+      </div>
+
+
       <!-- JavaScript -->
+      <script src="./pdf.js"></script>
+      <script src="../js/fabric.min.js"></script>
       <script src="../js/jquery-3.3.1.min.js"></script>
       <script src="../js/jquery-ui.min.js"></script>
       <script src="../bootstrap/js/popper.min.js"></script>
       <script src="../bootstrap/js/bootstrap.min.js"></script>
+
       <script src="../js/vxf.js"></script>
+      <script src="../js/esign.js"></script>
       <script src="./icons.js"></script>
       <script src="../js/feather.min.js"></script>
+     
+
+
+
+      <script>
+            var currPage = 1; //Pages are 1-based not 0-based
+            var numPages = 0;
+            var thePDF = null;
+            let isLoading = true;
+
+
+            // If absolute URL from the remote server is provided, configure the CORS
+            // header on that server.
+         //   var url = 'https://s1.q4cdn.com/806093406/files/doc_downloads/test.pdf';
+            var url ='https://s22.q4cdn.com/396847794/files/doc_financials/quarterly/2019/_10-Q-Q1-2019-(As-Filed).pdf';
+
+            // Loaded via <script> tag, create shortcut to access PDF.js exports.
+            var pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+            // The workerSrc property shall be specified.
+            pdfjsLib.GlobalWorkerOptions.workerSrc = './pdf.worker.js';
+
+            var pdfDoc = null,
+                  pageNum = 1,
+                  pageRendering = false,
+                  pageNumPending = null,
+                  scale = 2,
+                  canvas = document.getElementById('the-canvas'),
+                  ctx = canvas.getContext('2d');
+
+
+
+            /**
+             * Get page info from document, resize canvas accordingly, and render page.
+             * @param num Page number.
+             */
+            function renderPage(num) {
+
+                  pageRendering = true;
+                  // Using promise to fetch the page
+                  pdfDoc.getPage(num).then(function (page) {
+                        var viewport = page.getViewport({ scale: scale });
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+
+                        // Render PDF page into canvas context
+                        var renderContext = {
+                              canvasContext: ctx,
+                              viewport: viewport
+                        };
+                        var renderTask = page.render(renderContext);
+
+                        // Wait for rendering to finish
+                        renderTask.promise.then(function () {
+                              pageRendering = false;
+
+                              if (pageNumPending !== null) {
+                                    // New page rendering is pending
+                                    renderPage(pageNumPending);
+                                    pageNumPending = null;
+                              }
+                        });
+                  });
+
+                  // Update page counters
+                  document.getElementById('page_num').textContent = num;
+            }
+
+            /**
+             * If another page rendering in progress, waits until the rendering is
+             * finised. Otherwise, executes rendering immediately.
+             */
+            function queueRenderPage(num) {
+                  if (pageRendering) {
+                        pageNumPending = num;
+                  } else {
+                        renderPage(num);
+                  }
+            }
+
+
+            /**
+             * Asynchronously downloads PDF.
+             */
+            $(document).ready(function () {
+                  document.body.classList.add("documentIsLoading");
+                  loadURLDocument(url);
+
+            });
+
+            function loadURLDocument(url) {
+                  pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
+                        //  pdfDoc = pdfDoc_;
+                        document.getElementById('page_count').innerText = pdfDoc_.numPages;
+
+                        //Set PDFJS global object (so we can easily access in our page functions
+                        thePDF = pdfDoc_;
+
+                        //How many pages it has
+                        numPages = pdfDoc_.numPages;
+
+
+                        pdfDoc_.getPage(1).then(handlePages);
+                        // Initial/first page rendering
+                        //renderPage(pageNum);
+                  });
+            }
+
+
+            function handlePages(page) {
+
+
+                  //This gives us the page's dimensions at full scale
+                  var viewport = page.getViewport(1.5);
+
+                  //We'll create a canvas for each page to draw it on
+                  var canvas = document.createElement("canvas");
+                  canvas.style.display = "block";
+                  var context = canvas.getContext('2d');
+                  canvas.setAttribute("page-number", page.pageIndex + 1);
+                  canvas.setAttribute("id", "page" + (page.pageIndex + 1))
+                  canvas.height = viewport.height;
+                  canvas.width = viewport.width;
+
+                  var inputFieldController = document.createElement("div");
+                  inputFieldController.style.display = "absolute";
+                  inputFieldController.setAttribute("id", "pageController" + (page.pageIndex + 1))
+
+
+                  //Draw it on the canvas
+                  page.render({
+                              canvasContext: context,
+                              viewport: viewport
+                        }).then(function() {
+                              var bg = canvas.toDataURL("image/png");
+                              var fcanvas = new fabric.Canvas('page'+(page.pageIndex + 1), {
+                              selection: false
+                              });
+                              fcanvas.setBackgroundImage(bg,fcanvas.renderAll.bind(fcanvas));
+                           
+                              
+
+                              var rect, isDown, origX, origY;
+
+                              fcanvas.on('mouse:down', function (o) {
+                                    isDown = true;
+                                    var pointer = fcanvas.getPointer(o.e);
+                                    origX = pointer.x;
+                                    origY = pointer.y;
+                                    var pointer = fcanvas.getPointer(o.e);
+                                    rect = new fabric.Rect({
+                                          left: origX,
+                                          top: origY,
+                                          originX: 'left',
+                                          originY: 'top',
+                                          width: pointer.x - origX,
+                                          height: pointer.y - origY,
+                                          angle: 0,
+                                          fill: 'rgba(0, 0, 0, 0.5)',
+                                          transparentCorners: false
+                                    });
+                                    fcanvas.add(rect);
+                              });
+
+                              fcanvas.on('mouse:move', function (o) {
+                                    if (!isDown) return;
+                                    var pointer = fcanvas.getPointer(o.e);
+
+                                    if (origX > pointer.x) {
+                                          rect.set({ left: Math.abs(pointer.x) });
+                                    }
+                                    if (origY > pointer.y) {
+                                          rect.set({ top: Math.abs(pointer.y) });
+                                    }
+
+                                    rect.set({ width: Math.abs(origX - pointer.x) });
+                                    rect.set({ height: Math.abs(origY - pointer.y) });
+
+
+                                    fcanvas.renderAll();
+                              });
+
+                              fcanvas.on('mouse:up', function (o) {
+                                    isDown = false;
+                              });
+                              
+                              
+                        });
+
+
+             
+
+
+                  //Add it to the web page
+                  document.getElementById('canvas-container').appendChild(canvas);
+                  document.getElementById('canvas-container').appendChild(inputFieldController);
+
+                  //Move to next page
+                  currPage++;
+                  if (thePDF !== null && currPage <= numPages) {
+                        thePDF.getPage(currPage).then(handlePages);
+                  } else {
+                        isLoading = false;
+                        document.body.classList.remove("documentIsLoading");
+                  }
+
+
+            }
+
+      </script>
+
+      <script>
+            function engageSignature(){
+                  document.addEventListener("mousedown", function(e){
+                        console.log(e.path[0].id)
+                        //createRect(e.path[0].id);
+                  });
+            }
+
+            function createRect(id){
+                  var canvas = new fabric.Canvas(id, { selection: false });
+
+                  var rect, isDown, origX, origY;
+
+                  canvas.on('mouse:down', function (o) {
+                        isDown = true;
+                        var pointer = canvas.getPointer(o.e);
+                        origX = pointer.x;
+                        origY = pointer.y;
+                        var pointer = canvas.getPointer(o.e);
+                        rect = new fabric.Rect({
+                              left: origX,
+                              top: origY,
+                              originX: 'left',
+                              originY: 'top',
+                              width: pointer.x - origX,
+                              height: pointer.y - origY,
+                              angle: 0,
+                              fill: 'rgba(255,0,0,0.5)',
+                              transparentCorners: false
+                        });
+                        canvas.add(rect);
+                  });
+
+                  canvas.on('mouse:move', function (o) {
+                        if (!isDown) return;
+                        var pointer = canvas.getPointer(o.e);
+
+                        if (origX > pointer.x) {
+                              rect.set({ left: Math.abs(pointer.x) });
+                        }
+                        if (origY > pointer.y) {
+                              rect.set({ top: Math.abs(pointer.y) });
+                        }
+
+                        rect.set({ width: Math.abs(origX - pointer.x) });
+                        rect.set({ height: Math.abs(origY - pointer.y) });
+
+
+                        canvas.renderAll();
+                  });
+
+                  canvas.on('mouse:up', function (o) {
+                        isDown = false;
+                  });
+            }
+      
+</script>
 </body>
 
 </html>
