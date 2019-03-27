@@ -11692,6 +11692,10 @@ body.sideNavigationEnabled .user-account-dropdown .dropdown-menu {
   margin-bottom: 5vh !important;
 }
 
+.canvas-container {
+  margin: 0 auto;
+}
+
 .loader > div {
   width: 18px;
   height: 18px;
