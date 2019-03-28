@@ -10784,6 +10784,10 @@ span.uploader-name:before {
   content: "Uploaded by ";
 }
 
+.esign .loader {
+  text-align: center;
+  padding: 3em 1em;
+}
 .esign .page-header .page-title {
   font-size: 1.25em !important;
 }
@@ -11752,6 +11756,18 @@ body.documentIsLoading #canvas-container {
   display: none;
 }
 body.documentIsLoading .loader {
+  display: block;
+}
+
+.popUpAutocompleteDialog {
+  position: absolute;
+  display: none;
+  z-index: 100000;
+  background: #fff;
+  padding: 1em 2em;
+  box-shadow: 0 2px 4px #0000002e;
+}
+.popUpAutocompleteDialog.show {
   display: block;
 }
 
