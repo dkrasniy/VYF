@@ -10028,9 +10028,11 @@ label {
   display: flex;
 }
 .document-card .sign-setup-ready .signatures .signature-icon {
-  height: 30px;
-  width: 30px;
+  max-height: 30px;
+  max-width: 30px;
   margin-right: 10px;
+  min-height: 30px;
+  min-width: 30px;
 }
 .document-card .sign-setup-ready .signatures .signatures-text {
   align-items: center;
@@ -11406,8 +11408,9 @@ legend {
   background: transparent;
 }
 .document-expand-menu .dropdown-toggle:hover {
-  border-color: red;
-  background: #f4f4f4;
+  border-color: #fafafa;
+  background: #fafafa;
+  border-radius: 0.35em;
 }
 .document-expand-menu .no-caret:after {
   content: none;

@@ -949,10 +949,11 @@ line-height: 1.5;
         .signatures {
             display: flex;
             .signature-icon {
-                
-                height: 30px;
-                width: 30px;
+                max-height: 30px;
+                max-width: 30px;
                 margin-right: 10px;
+                min-height: 30px;
+                min-width: 30px;
             }
             .signatures-text {
                 align-items: center;
@@ -2577,8 +2578,9 @@ legend {
         border: 1px solid transparent;
         background: transparent;
         &:hover {
-            border-color: red;
-            background:$bg-color;
+            border-color: #fafafa;
+            background: #fafafa;
+            border-radius: .35em;
         }
     }
     .no-caret
