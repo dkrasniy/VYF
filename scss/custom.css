@@ -9873,6 +9873,7 @@ label {
   border: none;
   border-radius: 0.35em;
   background: #FFF;
+  transition: 0.2s ease box-shadow;
 }
 .folder-card .card-header[aria-expanded=true] .chevron-expand-collapse i, .document-card .card-header[aria-expanded=true] .chevron-expand-collapse i {
   transform: rotate(180deg);
@@ -9882,6 +9883,10 @@ label {
 }
 .folder-card .card-body, .document-card .card-body {
   background: #F8F8F8;
+}
+.folder-card:hover, .document-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  background: #f6f6f6 !important;
 }
 
 .span-table-labels span {
@@ -12034,8 +12039,11 @@ body.documentIsLoading .loader {
        Progress Bars
 -------------------------------- */
 .progress {
-  border-radius: 10px;
   height: 1em;
+}
+
+.progress-bar, .progress {
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=custom.css.map */

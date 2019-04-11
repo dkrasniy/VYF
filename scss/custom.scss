@@ -794,6 +794,7 @@ label {
     border:none;
     border-radius: $borderRadius;
     background:#FFF;
+    transition: .2s ease box-shadow;
   
     .card-header[aria-expanded="true"] {
         .chevron-expand-collapse i {
@@ -806,6 +807,10 @@ label {
     }
     .card-body {
         background:#F8F8F8;
+    }
+    &:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
+        background:#f6f6f6!important;
     }
 }
   
@@ -3243,6 +3248,8 @@ body.documentIsLoading {
        Progress Bars
 -------------------------------- */
 .progress {
-    border-radius: 10px;
     height: 1em;
+}
+.progress-bar, .progress {
+    border-radius: 10px;
 }
