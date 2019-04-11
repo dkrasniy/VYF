@@ -968,7 +968,10 @@ line-height: 1.5;
     background: $yellow-light;
     color: $yellow;
 }
-
+.en-route-route-slip-icon {
+    background: $yellow;
+    color:white;
+}
 
 .document-card {
     .sign-setup-ready {
@@ -3264,5 +3267,19 @@ body.documentIsLoading {
     color:#666;
     b {
         color:#333;
+    }
+}
+
+
+
+.en-route-stages {
+    .stages-head {
+        font-weight: 600;
+    }
+    .en-route-stage, .stages-head {
+        padding: .75em 0;
+    }
+    [data-status="completed"] {
+       color:$green;
     }
 }

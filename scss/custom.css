@@ -10051,6 +10051,11 @@ label {
   color: #F0B429;
 }
 
+.en-route-route-slip-icon {
+  background: #F0B429;
+  color: white;
+}
+
 .document-card .sign-setup-ready .signatures {
   display: flex;
 }
@@ -12050,6 +12055,16 @@ body.documentIsLoading .loader {
 }
 .data-w-label span b {
   color: #333;
+}
+
+.en-route-stages .stages-head {
+  font-weight: 600;
+}
+.en-route-stages .en-route-stage, .en-route-stages .stages-head {
+  padding: 0.75em 0;
+}
+.en-route-stages [data-status=completed] {
+  color: #30B34E;
 }
 
 /*# sourceMappingURL=custom.css.map */

@@ -94,7 +94,9 @@
                         <div class="folder-contents row">
                               <div class="routing-slip col-4">
                                     <div class="routing-header">
-                                          <img src="assets/empty-states/route-icon.svg" />
+                                          <div class="icon-container en-route-route-slip-icon">
+                                                <i class="fas fa-road"></i>
+                                          </div>
                                           <h2>Routing Slip</h2>
                                           <button type="button" class="icon-container toggle-route-slip">
                                                 <i class="fas fa-chevron-left"></i>
@@ -108,132 +110,25 @@
                                           </ul>
                                     </div>
                                     <div class="routing-body">
-                                          <div class="routing-slip-container ui-sortable">
-                                                <div class="routing-item routing-slip-thead ui-sortable-handle">
-                                                      <div></div>
-                                                      <div>Deliver To</div>
-                                                      <div>Dept</div>
-                                                      <div></div>
-
-                                                </div>
-                                                <div id="sortable">
-                                                      <div class="routing-item ui-sortable-handle">
-                                                            <div class="sortable-draggable-icon-container"><i
-                                                                        data-feather="menu"></i>
-                                                            </div>
-                                                            <div class="routing-item-deliver-to-name">Paul
-                                                                  Makhnovskiy<span class="desc">Signing 2
-                                                                        documents</span></div>
-                                                            <div class="d-flex align-items-center">ESDD</div>
-                                                            <div class="access">
-                                                                  <div class="dropdown document-expand-menu">
-                                                                        <a class="dropdown-toggle no-caret " href="#"
-                                                                              role="button" id="dropdownMenuLink"
-                                                                              data-toggle="dropdown"
-                                                                              aria-haspopup="true"
-                                                                              aria-expanded="false">
-                                                                              <i data-feather="more-vertical"></i>
-                                                                        </a>
-
-                                                                        <div class="dropdown-menu dropdown-menu-right"
-                                                                              aria-labelledby="dropdownMenuLink">
-                                                                              <a class="dropdown-item" href="#"
-                                                                                    data-toggle="modal"
-                                                                                    data-target="#editRouteDestinationPerimissions">Edit
-                                                                                    Permissions</a>
-                                                                              <a class="dropdown-item color-red"
-                                                                                    href="#" data-toggle="modal"
-                                                                                    data-target="#removeRouteDestination">Remove</a>
-
-                                                                        </div>
-                                                                  </div>
-                                                            </div>
-
+                                          <div>
+                                                <div class="en-route-stages">
+                                                      <div class="d-flex stages-head">
+                                                            <div class="col-8 p-0">Deliever To</div>
+                                                            <div class="flex-1">Dept</div>
                                                       </div>
-                                                      <div class="routing-item ui-sortable-handle">
-                                                            <div class="sortable-draggable-icon-container"><i
-                                                                        data-feather="menu"></i>
-                                                            </div>
-                                                            <div class="routing-item-deliver-to-name">Andrew Studer<span
-                                                                        class="desc">Signing 1
-                                                                        document</span></div>
-                                                            <div>ESDD</div>
-                                                            <div class="access">
-                                                                  <div class="dropdown document-expand-menu">
-                                                                        <a class="dropdown-toggle no-caret " href="#"
-                                                                              role="button" id="dropdownMenuLink"
-                                                                              data-toggle="dropdown"
-                                                                              aria-haspopup="true"
-                                                                              aria-expanded="false">
-                                                                              <i data-feather="more-vertical"></i>
-                                                                        </a>
-
-                                                                        <div class="dropdown-menu dropdown-menu-right"
-                                                                              aria-labelledby="dropdownMenuLink">
-                                                                              <a class="dropdown-item" href="#"
-                                                                                    data-toggle="modal"
-                                                                                    data-target="#documentRename">Rename</a>
-                                                                              <a class="dropdown-item color-red"
-                                                                                    href="#" data-toggle="modal"
-                                                                                    data-target="#documentDelete">Delete...</a>
-                                                                              <a class="dropdown-item"
-                                                                                    href="#">Download</a>
-                                                                              <a class="dropdown-item" href="#">Version
-                                                                                    History</a>
-                                                                        </div>
-                                                                  </div>
-                                                            </div>
-
+                                                      <div class="d-flex en-route-stage" data-status="complete">
+                                                            <div class="col-8 p-0">Andrew Studer</div>
+                                                            <div class="flex-1">ESDD</div>
                                                       </div>
-                                                      <div class="routing-item ui-sortable-handle">
-                                                            <div class="sortable-draggable-icon-container"><i
-                                                                        data-feather="menu"></i>
-                                                            </div>
-                                                            <div>Timothy Taylor<span class="desc">Viewing
-                                                                        documents</span></div>
-                                                            <div>ESDD</div>
-                                                            <div class="sign-edit">
-                                                                  <div class="dropdown document-expand-menu">
-                                                                        <a class="dropdown-toggle no-caret " href="#"
-                                                                              role="button" id="dropdownMenuLink"
-                                                                              data-toggle="dropdown"
-                                                                              aria-haspopup="true"
-                                                                              aria-expanded="false">
-                                                                              <i data-feather="more-vertical"></i>
-                                                                        </a>
-
-                                                                        <div class="dropdown-menu dropdown-menu-right"
-                                                                              aria-labelledby="dropdownMenuLink">
-                                                                              <a class="dropdown-item" href="#"
-                                                                                    data-toggle="modal"
-                                                                                    data-target="#documentRename">Rename</a>
-                                                                              <a class="dropdown-item color-red"
-                                                                                    href="#" data-toggle="modal"
-                                                                                    data-target="#documentDelete">Delete...</a>
-                                                                              <a class="dropdown-item"
-                                                                                    href="#">Download</a>
-                                                                              <a class="dropdown-item" href="#">Version
-                                                                                    History</a>
-                                                                        </div>
-                                                                  </div>
-
-
-                                                            </div>
-
+                                                      <div class="d-flex en-route-stage" data-status="delivered">
+                                                            <div class="col-8 p-0">John Appleseed</div>
+                                                            <div class="flex-1">AAPL</div>
                                                       </div>
+                                    
                                                 </div>
-                                                <div class="add-viewer-container">
-                                                      <button type="button" class="btn btn-primary tertiary btn-sm"
-                                                            data-toggle="modal" data-target="#addViewer">Add
-                                                            Viewer</button>
-                                                </div>
-                                                <div class="add-viewer-container">
-                                                      <button class="btn btn-primary btn-block" data-toggle="modal"
-                                                            data-target="#routeFolder">Route</button>
-                                                      <p class="estimated-completion">Estimated Completion <b>4 days</b>
-                                                      </p>
-                                                </div>
-
+                                                <button class="btn btn-danger tertiary btn-block" data-toggle="modal" data-target="#recallFolder">Recall
+                                                      Folder</button>
+                                                </p>
                                           </div>
                                     </div>
                               </div>
