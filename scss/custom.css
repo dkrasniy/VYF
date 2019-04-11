@@ -12059,12 +12059,13 @@ body.documentIsLoading .loader {
   color: #333;
 }
 
-.en-route-stages .stages-head {
-  font-weight: 600;
-}
 .en-route-stages .en-route-stage, .en-route-stages .stages-head {
   padding: 0.75em 0;
   position: relative;
+}
+.en-route-stages .stages-head {
+  font-weight: 600;
+  padding-bottom: 0.25em;
 }
 .en-route-stages .en-route-stage .icon-container {
   font-size: 0.8em;
@@ -12104,6 +12105,14 @@ body.documentIsLoading .loader {
 .en-route-stages [data-status=queued] .icon-placeholder::before {
   content: "";
   color: #eee;
+}
+.en-route-stages [data-status=rejected] .icon-container {
+  background: red;
+  color: white;
+}
+.en-route-stages [data-status=rejected] .icon-placeholder::before {
+  content: "";
+  color: white;
 }
 .en-route-stages .en-route-body {
   position: relative;

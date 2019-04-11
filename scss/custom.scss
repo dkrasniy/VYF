@@ -3275,13 +3275,15 @@ body.documentIsLoading {
 
 
 .en-route-stages {
-    
-    .stages-head {
-        font-weight: 600;
-    }
+   
     .en-route-stage, .stages-head {
         padding: .75em 0;
         position: relative;
+    }
+     
+    .stages-head {
+        font-weight: 600;
+        padding-bottom: .25em;
     }
     .en-route-stage{
         .icon-container {
@@ -3331,6 +3333,18 @@ body.documentIsLoading {
         .icon-placeholder::before {
             content: "\f00c";
             color:#eee;
+        }
+     }
+     [data-status="rejected"] {
+
+        .icon-container {
+            background:red;
+            color:white;
+           
+        }
+        .icon-placeholder::before {
+            content: "\f00d";
+            color:white;
         }
      }
     
