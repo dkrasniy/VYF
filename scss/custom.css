@@ -9758,6 +9758,7 @@ label {
   border: none;
   background: #f7f7f7;
   color: #555;
+  position: relative;
 }
 .icon-container.light {
   background: #fff;
@@ -10025,7 +10026,8 @@ label {
   font-size: 14px;
   text-align: left;
 }
-.card-header .additional-subtext {
+
+.additional-subtext {
   display: block;
   font-size: 0.9em;
   color: #777;
@@ -12062,9 +12064,49 @@ body.documentIsLoading .loader {
 }
 .en-route-stages .en-route-stage, .en-route-stages .stages-head {
   padding: 0.75em 0;
+  position: relative;
 }
-.en-route-stages [data-status=completed] {
+.en-route-stages .en-route-stage .icon-container {
+  font-size: 0.8em;
+  background: #eee;
+}
+.en-route-stages .en-route-stage:before {
+  position: absolute;
+  content: "";
+  background: #eee;
+  left: calc(.8em - 2px);
+  height: 100%;
+  width: 4px;
+}
+.en-route-stages .en-route-stage:last-child:before {
+  display: none;
+}
+.en-route-stages [data-status=completed] .icon-container {
+  background: #ecf9ef;
   color: #30B34E;
+}
+.en-route-stages [data-status=completed] .icon-placeholder::before {
+  content: "";
+}
+.en-route-stages [data-status=completed]:before {
+  background: #ecf9ef;
+}
+.en-route-stages [data-status=delivered]:before {
+  background: #eee;
+}
+.en-route-stages [data-status=delivered] .icon-placeholder::before {
+  content: "";
+  color: #666;
+}
+.en-route-stages [data-status=queued]:before {
+  background: #eee;
+}
+.en-route-stages [data-status=queued] .icon-placeholder::before {
+  content: "";
+  color: #eee;
+}
+.en-route-stages .en-route-body {
+  position: relative;
 }
 
 /*# sourceMappingURL=custom.css.map */

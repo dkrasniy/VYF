@@ -655,6 +655,7 @@ label {
     border: none;
     background: $light-grey;
     color:$grey-4;
+    position: relative;
     &.light {
         background: #fff;
         color:$grey-3;
@@ -941,13 +942,14 @@ line-height: 1.5;
         font-size: 14px;
         text-align: left;
     }
-    .additional-subtext {
-        display: block;
-        font-size: .9em;
-        color: #777;
-        font-weight: normal;
-    }
+    
    
+}
+.additional-subtext {
+    display: block;
+    font-size: .9em;
+    color: #777;
+    font-weight: normal;
 }
 .folder-icon-container {
     background: unset;
@@ -3273,13 +3275,67 @@ body.documentIsLoading {
 
 
 .en-route-stages {
+    
     .stages-head {
         font-weight: 600;
     }
     .en-route-stage, .stages-head {
         padding: .75em 0;
+        position: relative;
+    }
+    .en-route-stage{
+        .icon-container {
+            font-size: .8em;
+            background:#eee;
+        }
+        &:before {
+            position: absolute;
+            content: '';
+            background: #eee;
+            left: calc(.8em - 2px);
+            height: 100%;
+            width: 4px;
+        }
+        &:last-child {
+            &:before {
+                display: none;
+            }
+        }
     }
     [data-status="completed"] {
-       color:$green;
+        .icon-container {
+            background:$green-light;
+            color:$green;
+           
+        }
+        .icon-placeholder::before {
+            content: "\f00c"
+        }
+       &:before{
+        background:$green-light;
+       } 
+    }
+    [data-status="delivered"] {
+        &:before{
+         background:#eee;
+        } 
+        .icon-placeholder::before {
+            content: "\f01c";
+            color:#666;
+        }
+     }
+     [data-status="queued"] {
+        &:before{
+         background:#eee;
+        } 
+        .icon-placeholder::before {
+            content: "\f00c";
+            color:#eee;
+        }
+     }
+    
+    .en-route-body {
+        position: relative;
+        
     }
 }
