@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+      <link rel="stylesheet" href="scss/custom.css">
+      <link rel="stylesheet" href="fonts/fonts.css">
+      <title>Virtual Yellow Folder</title>
+   </head>
+   <body>
+         <header class="main-header navbar navbar-expand-md">
+               <div class="container">
+                  <div class="logo-container">
+                     <span class="app-title">Virtual Yellow Folder</span>
+                     <!-- <img src="assets/logo/filled-color-h.svg" alt="Virtual Yellow Folder Logo"> -->
+                  </div>
+                  <nav class="top-navigation" id="main-header-nav" aria-labelledby="main-header-nav-label" role="navigation">
+                     <div id="main-header-nav-label" class="main-header__nav-label sr-only">Main menu</div>
+                     <ul class="mr-auto navbar-nav" role="list">
+                        <li role="listitem"><a href="home.html"><i data-feather="home"></i> Inbox</a></li>
+                        <li role="listitem"><a href="drafts.html"><i data-feather="file"></i></i> Drafts</a></li>
+                        <li role="listitem" class="active"><a href="en-route.html"><i data-feather="map"></i> En Route</a></li>
+                        <li role="listitem"><a href="completed.html"><i data-feather="check"></i> Completed</a></li>
+                     </ul>
+                  </nav>
+                  <div class="dropdown user-account-dropdown">
+                     <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Timothy Taylor</a>
+                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                        <div class="user-info-overview">
+                           <h6 class="name">Timothy Taylor</h6>
+                           <p class="user-email">timothy.taylor@calpers.ca.gov</p>
+                        </div>
+                        <a class="dropdown-item" href="#"><i data-feather="user"></i> My Account</a>
+                        <a class="dropdown-item" href="#"><i data-feather="settings"></i>Preferences</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i>Sign Out</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./index.html"><i data-feather="git-merge"></i>Prototype Sitemap</a>
+                    </div>
+                  </div>
+               </div>
+            </header>
+         
+            <main>
+               <div class="page-header">
+                  <div class="container">
+                     <div class="page-info">
+                        <div class="has-icon">
+                           <div class="details">
+                              <h1 class="page-title">En Route (2)</h1>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="page-actions">
+            
+                     </div>
+                  </div>
+               </div>
+               <div class="container main-content-container">
+                  <div id="folder-list-sortable-searchable">
+            
+                     <div class="search-container  col-md-3 ml-auto mb-4">
+                        <i data-feather="search"></i>
+                        <input class="search form-control float-right-folder-search" placeholder="Search" />
+            
+                     </div>
+            
+                     <div class="card-listing-header span-table-labels card-header-flex d-flex">
+                        <span class="sort col-5 p-0" data-sort="listjs-title">Folder Name</span>
+                        <span class="sort flex-1" data-sort="listjs-duration">Duration</span>
+                        <span class="sort flex-1" data-sort="listjs-completed">Completed</span>
+                        <span class="sort flex-1" data-sort="listjs-queue">Queue</span>
+                     </div>
+                     <div class="list">
+                        <div class="folder-card folder-theme-blue">
+                           <a class="card-header card-header-flex d-flex" role="button" href="#">
+                              <div class="folder-title col-5 p-0">
+                                 <div class="icon-container theme-bg-color-lightest theme-color" aria-label="Folder">
+                                    <i class="fas fa-folder"></i>
+                                 </div>
+                                 <h4 class="listjs-title">Travel Expense Folder</h4>
+                              </div>
+                              <p class="listjs-duration flex-1">5 days</p>
+                              <div class="progress-container d-flex align-items-center flex-1">
+                                 <div class="progress flex-1" style="max-width: 40%;">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30"
+                                       aria-valuemin="0" aria-valuemax="100"></div>
+                                 </div>
+                                 <p class="listjs-completed pl-2">30%</p>
+                              </div>
+            
+                              <p class="listjs-queue flex-1">Paul Makhnovskiy<span class="additional-subtext">Signing 2
+                                    documents</span></p>
+                           </a>
+                        </div>
+                        <div class="folder-card folder-theme-red">
+                           <a class="card-header card-header-flex d-flex" role="button" href="#">
+                              <div class="folder-title col-5 p-0">
+                                 <div class="icon-container theme-bg-color-lightest theme-color" aria-label="Folder">
+                                    <i class="fas fa-folder"></i>
+                                 </div>
+                                 <h4 class="listjs-title">Some Other Folder</h4>
+                              </div>
+                              <p class="listjs-duration flex-1">1 hour</p>
+                              <div class="progress-container d-flex align-items-center flex-1">
+                                 <div class="progress flex-1" style="max-width: 40%;">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="80"
+                                       aria-valuemin="0" aria-valuemax="100"></div>
+                                 </div>
+                                 <p class="listjs-completed pl-2">80%</p>
+                              </div>
+            
+                              <p class="listjs-queue flex-1">Paul Makhnovskiy</p>
+                           </a>
+                        </div>
+            
+                     </div>
+                  </div>
+               </div>
+            
+            </main>
+
+
+
+      <!-- JavaScript -->
+      <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+      <script src="bootstrap/js/popper.min.js"></script>
+      <script src="bootstrap/js/bootstrap.min.js"></script>
+      <script src="js/feather.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+      <script src="js/vxf.js"></script>
+
+      <script>
+            var options = {
+                valueNames: ['listjs-title', 'listjs-status', 'listjs-duration', 'listjs-completed','listjs-queue' ]
+            };
+            var folderList = new List('folder-list-sortable-searchable', options);
+            var noItems = $('<div class="drafts-search no-items-found"><p>No matches found. Please try another search.</p></div>');
+            folderList.on('updated', function(list) {
+              if (list.matchingItems.length == 0) {
+                $(list.list).append(noItems);
+              } else {
+                noItems.detach();
+              }
+            });
+      </script>
+    
+   </body>
+</html>

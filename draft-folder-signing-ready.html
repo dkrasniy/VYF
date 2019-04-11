@@ -66,7 +66,8 @@
             <div class="page-header">
                   <div class="container">
                         <div class="page-info">
-                              <div class="folder-icon-container theme-bg-color-lightest theme-color"><i class="fas fa-folder"></i></div>
+                              <div class="folder-icon-container theme-bg-color-lightest theme-color"><i
+                                          class="fas fa-folder"></i></div>
                               <div class="details">
                                     <h1 class="page-title">Travel Expense Folder<span
                                                 class="status-badge status-draft">Draft</span>
@@ -101,73 +102,112 @@
                                           </ul>
                                     </div>
                                     <div class="routing-body">
-                                          <div class="routing-slip-container ui-sortable" id="sortable">
+                                          <div class="routing-slip-container ui-sortable">
                                                 <div class="routing-item routing-slip-thead ui-sortable-handle">
-
+                                                            <div></div>
                                                       <div>Deliver To</div>
                                                       <div>Dept</div>
-                                                      <div>Access</div>
                                                       <div></div>
+                                                      
                                                 </div>
                                                 <div id="sortable">
                                                       <div class="routing-item ui-sortable-handle">
-
+                                                                  <div class="sortable-draggable-icon-container"><i data-feather="menu"></i>
+                                                                  </div>
                                                             <div class="routing-item-deliver-to-name">Paul
                                                                   Makhnovskiy<span class="desc">Signing 2
                                                                         documents</span></div>
-                                                            <div>ESDD</div>
+                                                            <div class="d-flex align-items-center">ESDD</div>
                                                             <div class="access">
-                                                                  <div class="form-group user-access">
-                                                                        <label for="sel1" class="sr-only">Select
-                                                                              list:</label>
-                                                                        <select class="form-control" id="sel1">
-                                                                              <option disabled>View</option>
-                                                                              <option selected>Sign</option>
-                                                                              <option>Edit</option>
-                                                                        </select>
-                                                                  </div>
+                                                                        <div class="dropdown document-expand-menu">
+                                                                                    <a class="dropdown-toggle no-caret " href="#"
+                                                                                          role="button" id="dropdownMenuLink"
+                                                                                          data-toggle="dropdown"
+                                                                                          aria-haspopup="true"
+                                                                                          aria-expanded="false">
+                                                                                          <i data-feather="more-vertical"></i>
+                                                                                    </a>
+            
+                                                                                    <div class="dropdown-menu dropdown-menu-right"
+                                                                                          aria-labelledby="dropdownMenuLink">
+                                                                                          <a class="dropdown-item" href="#"
+                                                                                                data-toggle="modal"
+                                                                                                data-target="#editRouteDestinationPerimissions">Edit Permissions</a>
+                                                                                          <a class="dropdown-item color-red" href="#" data-toggle="modal" data-target="#removeRouteDestination">Remove</a>
+                                                                                         
+                                                                                    </div>
+                                                                              </div>
                                                             </div>
-                                                            <div class="sortable-draggable"><i data-feather="menu"></i>
-                                                            </div>
+                                                           
                                                       </div>
                                                       <div class="routing-item ui-sortable-handle">
-
+                                                                  <div class="sortable-draggable-icon-container"><i data-feather="menu"></i>
+                                                                  </div>
                                                             <div class="routing-item-deliver-to-name">Andrew Studer<span
                                                                         class="desc">Signing 1
                                                                         document</span></div>
                                                             <div>ESDD</div>
                                                             <div class="access">
-                                                                  <div class="form-group user-access">
-                                                                        <label for="sel1" class="sr-only">Select
-                                                                              list:</label>
-                                                                        <select class="form-control" id="sel1">
-                                                                              <option>View</option>
-                                                                              <option>Sign</option>
-                                                                              <option>Edit</option>
-                                                                        </select>
-                                                                  </div>
+                                                                        <div class="dropdown document-expand-menu">
+                                                                                    <a class="dropdown-toggle no-caret " href="#"
+                                                                                          role="button" id="dropdownMenuLink"
+                                                                                          data-toggle="dropdown"
+                                                                                          aria-haspopup="true"
+                                                                                          aria-expanded="false">
+                                                                                          <i data-feather="more-vertical"></i>
+                                                                                    </a>
+            
+                                                                                    <div class="dropdown-menu dropdown-menu-right"
+                                                                                          aria-labelledby="dropdownMenuLink">
+                                                                                          <a class="dropdown-item" href="#"
+                                                                                                data-toggle="modal"
+                                                                                                data-target="#documentRename">Rename</a>
+                                                                                          <a class="dropdown-item color-red"
+                                                                                                href="#" data-toggle="modal"
+                                                                                                data-target="#documentDelete">Delete...</a>
+                                                                                          <a class="dropdown-item"
+                                                                                                href="#">Download</a>
+                                                                                          <a class="dropdown-item" href="#">Version
+                                                                                                History</a>
+                                                                                    </div>
+                                                                              </div>
                                                             </div>
-                                                            <div class="sortable-draggable"><i data-feather="menu"></i>
-                                                            </div>
+                                                           
                                                       </div>
                                                       <div class="routing-item ui-sortable-handle">
-
+                                                                  <div class="sortable-draggable-icon-container"><i data-feather="menu"></i>
+                                                                  </div>
                                                             <div>Timothy Taylor<span class="desc">Viewing
                                                                         documents</span></div>
                                                             <div>ESDD</div>
                                                             <div class="sign-edit">
-                                                                  <div class="form-group user-access">
-                                                                        <label for="sel1" class="sr-only">Select
-                                                                              list:</label>
-                                                                        <select class="form-control" id="sel1">
-                                                                              <option>View</option>
-                                                                              <option>Sign</option>
-                                                                              <option selected>Edit</option>
-                                                                        </select>
-                                                                  </div>
+                                                                        <div class="dropdown document-expand-menu">
+                                                                                    <a class="dropdown-toggle no-caret " href="#"
+                                                                                          role="button" id="dropdownMenuLink"
+                                                                                          data-toggle="dropdown"
+                                                                                          aria-haspopup="true"
+                                                                                          aria-expanded="false">
+                                                                                          <i data-feather="more-vertical"></i>
+                                                                                    </a>
+            
+                                                                                    <div class="dropdown-menu dropdown-menu-right"
+                                                                                          aria-labelledby="dropdownMenuLink">
+                                                                                          <a class="dropdown-item" href="#"
+                                                                                                data-toggle="modal"
+                                                                                                data-target="#documentRename">Rename</a>
+                                                                                          <a class="dropdown-item color-red"
+                                                                                                href="#" data-toggle="modal"
+                                                                                                data-target="#documentDelete">Delete...</a>
+                                                                                          <a class="dropdown-item"
+                                                                                                href="#">Download</a>
+                                                                                          <a class="dropdown-item" href="#">Version
+                                                                                                History</a>
+                                                                                    </div>
+                                                                              </div>
+
+                                                                 
                                                             </div>
-                                                            <div class="sortable-draggable"><i data-feather="menu"></i>
-                                                            </div>
+                                                           
                                                       </div>
                                                 </div>
                                                 <div class="add-viewer-container">
@@ -215,7 +255,7 @@
                                                             </div>
                                                             <div class="accordion-expand-actions">
                                                                   <a class="btn btn-default btn-sm"
-                                                                        href="https://www.calpers.ca.gov/docs/board-agendas/201802/financeadmin/item-5d-01_a-rev.pdf"
+                                                                        href="https://www.calpers.ca.gov/docs/folboard-agendas/201802/financeadmin/item-5d-01_a-rev.pdf"
                                                                         onclick="event.stopPropagation()"
                                                                         target="_blank">View Document</a>
 
@@ -257,7 +297,9 @@
                                                                                                 class="fas fa-signature"></i>
                                                                                     </div>
                                                                                     <span class="signatures-text"><span
-                                                                                                class="signatures-count">To David Krasniy, Andrew Studer
+                                                                                                class="signatures-count">To
+                                                                                                David Krasniy, Andrew
+                                                                                                Studer
                                                                                           </span>and 3 more
                                                                                     </span>
                                                                               </div>
@@ -450,7 +492,8 @@
                         </div>
                         <div class="modal-footer justify-content-space-between">
                               <div>
-                                    <button class="btn btn-danger tertiary" data-toggle="modal" data-target="#folderDelete" data-dismiss="modal">Delete Folder</button>
+                                    <button class="btn btn-danger tertiary" data-toggle="modal"
+                                          data-target="#folderDelete" data-dismiss="modal">Delete Folder</button>
                               </div>
                               <div>
                                     <button type="button" class="btn btn-primary tertiary"
@@ -520,7 +563,7 @@
 
                         </div>
                         <div class="modal-footer">
-                              <button type="button" class="btn btn-danger tertiary" data-dismiss="modal" >Cancel</button>
+                              <button type="button" class="btn btn-danger tertiary" data-dismiss="modal">Cancel</button>
                               <button class="btn btn-danger">Delete Document</a>
                         </div>
                   </div>
@@ -529,8 +572,8 @@
 
 
       <!-- Delete Folder -->
-      <div class="modal fade headerless" id="folderDelete" tabindex="-1" role="dialog" aria-labelledby="folderDeleteLabel"
-            aria-hidden="true">
+      <div class="modal fade headerless" id="folderDelete" tabindex="-1" role="dialog"
+            aria-labelledby="folderDeleteLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                   <div class="modal-content">
                         <div class="modal-header">
@@ -547,7 +590,8 @@
 
                         </div>
                         <div class="modal-footer">
-                              <button type="button" class="btn btn-danger tertiary" data-toggle="modal" data-target="#folderEdit" data-dismiss="modal">Cancel</button>
+                              <button type="button" class="btn btn-danger tertiary" data-toggle="modal"
+                                    data-target="#folderEdit" data-dismiss="modal">Cancel</button>
                               <button class="btn btn-danger">Delete Document</a>
                         </div>
                   </div>
@@ -587,6 +631,130 @@
       </div>
 
 
+      <!-- editRouteDestinationPerimissions -->
+      <div class="modal fade" id="editRouteDestinationPerimissions" tabindex="-1" role="dialog" aria-labelledby="editRouteDestinationPerimissionsLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                        <div class="modal-header">
+                              <h5 class="modal-title" id="editRouteDestinationPerimissionsLabel">Edit Permissions</h5>
+
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <div class="icon-container">
+                                          <i class="fas fa-times"></i>
+                                    </div>
+                              </button>
+                        </div>
+                        <div class="modal-body">
+
+                            
+                        </div>
+                        <div class="modal-footer">
+                              <button type="button" class="btn btn-primary tertiary"
+                                    data-dismiss="modal">Cancel</button>
+                              <button class="btn btn-primary" type="submit">Save Changes</a>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+
+      <!-- removeRouteDestination -->
+      <div class="modal fade headerless" id="removeRouteDestination" tabindex="-1" role="dialog" aria-labelledby="removeRouteDestinationLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                        <div class="modal-header">
+                              <h5 class="modal-title" id="removeRouteDestinationLabel">Remove Timothy Taylor</h5>
+
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <div class="icon-container">
+                                          <i class="fas fa-times"></i>
+                                    </div>
+                              </button>
+                        </div>
+                        <div class="modal-body">
+                              <p>Removing Timothy Taylor will also remove his signature from all documents.</p>
+
+                        </div>
+                        <div class="modal-footer">
+                              <button type="button" class="btn btn-danger tertiary"
+                                    data-dismiss="modal">Cancel</button>
+                              <button class="btn btn btn-danger" type="submit">Remove</a>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      
+
+
+
+
+      <!-- Route Folder -->
+      <div class="modal fade modal-wide route-folder-modal" id="routeFolder" tabindex="-1" role="dialog" aria-labelledby="routeFolderLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                        <div class="modal-header">
+                              <h5 class="modal-title" id="routeFolderLabel">Route Folder</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <div class="icon-container">
+                                          <i class="fas fa-times"></i>
+                                    </div>
+                              </button>
+                        </div>
+                        <div class="modal-body d-flex align-items-center">
+
+                        <div class="flex-60">
+                              <h4><b>Travel Expense Folder</b></h4>
+                              <p>Are you ready to send this folder to all signers and approvers?</p>
+                        </div>
+                        <div class="image-preview-route flex-40">
+                              <div class="overlay"></div>
+                              <div class="routing-slip">
+                                    <img src="assets/empty-states/route-icon.svg" class="mr-auto ml-auto d-block">
+                                    <div class="routing-body">
+                                          <div class="routing-slip-container">
+                                                <div class="routing-item routing-slip-thead">
+                                                      <div></div>
+                                                      <div>Deliver To</div>
+                                                      <div>Dept</div>
+                                                </div>
+                                                <div>
+                                                      <div class="routing-item">
+                                                            <div></div>
+                                                            <div class="routing-item-deliver-to-name">Paul Makhnovskiy</div>
+                                                            <div class="d-flex align-items-center">ESDD</div>
+                                                      </div>
+                                                      <div class="routing-item">
+                                                            <div></div>
+                                                            <div class="routing-item-deliver-to-name">Andrew Studer</div>
+                                                            <div>ESDD</div>
+                                                      </div>
+                                                      <div class="routing-item ui-sortable-handle">
+                                                            <div></div>
+                                                            <div>Timothy Taylor</div>
+                                                            <div>ESDD</div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                        </div>
+                        <div class="modal-footer">
+                              <button type="button" class="btn btn-primary tertiary"
+                                    data-dismiss="modal">Cancel</button>
+                              <button class="btn btn-primary" type="submit">Route</a>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+
+
       <!-- JavaScript -->
 
       <script src="js/jquery-3.3.1.min.js"></script>
@@ -598,6 +766,21 @@
       <script src="js/vxf.js"></script>
 
       <script src="js/file-uploader-vxf.js"></script>
+
+      <script>
+            $(function () {
+                  $("#sortable").sortable({
+                        placeholder: "ui-state-highlight",
+                         axis: 'y' ,
+                         tolerance: 'pointer',
+                         stop: function(event, ui) { 
+                               //alert("stop");
+                               console.log('on drop send to db')
+                              }
+                  });
+                  $("#sortable").disableSelection();
+            });
+      </script>
 
       <script>
             function addUploadedFileToFolder(file, trackID, i) {
@@ -629,23 +812,23 @@
                         '      </div>' +
                         '   </div>' +
                         ' </div>' +
-                         '     <div class="document-details">' +
-                         '           <div class="row document-details-row">' +
-                         '                 <div class="col-12 col-md-6">' +
-                         '                       <div class="sign-setup-ready">' +
-                         '                             <div class="signatures">' +
-                         '                                   <span class="signatures-text">No signatures are setup for this document yet.</span>' +
-                         '                             </div>' +
-                         '                       </div>' +
-                         '                 </div>' +
-                         '                 <div class="col-12 col-md-6">' +
-                         '                       <div class="icon-sm ml-2 mr-1 chevron-expand-collapse float-right">' +
-                         '                             <i class="fas fa-chevron-down"></i>' +
-                         '                       </div>' +
-                         '                 </div>' +
-                         '           </div>' +
-                         '     </div>' +
-                        
+                        '     <div class="document-details">' +
+                        '           <div class="row document-details-row">' +
+                        '                 <div class="col-12 col-md-6">' +
+                        '                       <div class="sign-setup-ready">' +
+                        '                             <div class="signatures">' +
+                        '                                   <span class="signatures-text">No signatures are setup for this document yet.</span>' +
+                        '                             </div>' +
+                        '                       </div>' +
+                        '                 </div>' +
+                        '                 <div class="col-12 col-md-6">' +
+                        '                       <div class="icon-sm ml-2 mr-1 chevron-expand-collapse float-right">' +
+                        '                             <i class="fas fa-chevron-down"></i>' +
+                        '                       </div>' +
+                        '                 </div>' +
+                        '           </div>' +
+                        '     </div>' +
+
 
                         '   </div>' +
                         ' <div id="collapse' + trackID + '" class="collapse" aria-labelledby="document' + trackID + '" data-parent="#filesListing">' +
@@ -661,10 +844,10 @@
                   document.getElementById("filesListing").appendChild(uploadedDocument);
             }
 
-            $(function () {
-                  $("#sortable").sortable();
-
-            });
+      
+                 
+    
+      
 
       </script>
       <script src="https://unpkg.com/feather-icons"></script>
@@ -674,4 +857,3 @@
 </body>
 
 </html>
-

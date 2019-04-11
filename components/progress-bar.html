@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+      <link rel="stylesheet" href="../scss/custom.css">
+      <link rel="stylesheet" href="../fonts/fonts.css">
+      <title>Components - Virtual Yellow Folder</title>
+   
+   </head>
+   <body style="margin: 0 auto; max-width:900px; padding:1em;">
+      <h2>Progress</h2>
+      <div class="section-to-code">
+         <div class="progress-container d-flex align-items-center">
+            <div class="progress flex-1">
+               <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+            </div>
+            <span class="pl-3"><b>75%</b></span>
+         </div>
+      </div>
+      
+      <div class="section-to-code">
+         <div class="progress-container d-flex align-items-center ">
+            <div class="progress flex-1">
+               <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+            </div>
+            <span class="pl-3"><b>50%</b></span>
+         </div>
+      </div>
+      
+      <div class="section-to-code">
+         <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+               aria-valuemax="100"></div>
+         </div>
+      </div>
+      
+   
+      <!-- JavaScript -->
+      <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+      <script src="../bootstrap/js/bootstrap.min.js"></script>
+      <script>
+         var matches = document.querySelectorAll("div.section-to-code");
+         //console.log(matches.length)
+         for(i = 0; i < matches.length; i++){
+            let innerSection = (matches[i]);
+            var div = document.createElement("div");
+            div.innerText = innerSection.innerHTML; 
+            div.classList.add("code-code");
+            innerSection.appendChild(div)
+         }
+      </script>
+   </body>
+</html>
