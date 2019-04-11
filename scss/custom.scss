@@ -1390,12 +1390,17 @@ line-height: 1.5;
     background: #f6f6f6;
    }
    &.status-enroute {
-    background: $orange;
-    color:#fff;
+    // background: $orange-light;
+    // color:$orange;
+
+    background: #f6f6f6;
+
    }
    &.status-completed {
-    background: $green;
-    color:#fff;
+    // background: $green;
+    // color:#fff;
+
+    background: #f6f6f6;
    }
 }
 
@@ -3252,4 +3257,12 @@ body.documentIsLoading {
 }
 .progress-bar, .progress {
     border-radius: 10px;
+}
+
+.data-w-label span {
+    display: block;
+    color:#666;
+    b {
+        color:#333;
+    }
 }

@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+      <link rel="stylesheet" href="scss/custom.css">
+      <link rel="stylesheet" href="fonts/fonts.css">
+      <title>Virtual Yellow Folder</title>
+
+
+</head>
+
+<body>
+      <header class="main-header navbar navbar-expand-md">
+            <div class="container">
+                  <div class="logo-container">
+                        <span class="app-title">Virtual Yellow Folder</span>
+                        <!-- <img src="assets/logo/filled-color-h.svg" alt="Virtual Yellow Folder Logo"> -->
+                  </div>
+                  <nav class="top-navigation" id="main-header-nav" aria-labelledby="main-header-nav-label"
+                        role="navigation">
+                        <div id="main-header-nav-label" class="main-header__nav-label sr-only">Main menu</div>
+                        <ul class="mr-auto navbar-nav" role="list">
+                              <li role="listitem" class="active"><a href="home.html"><i data-feather="home"></i>
+                                          Inbox</a></li>
+                              <li role="listitem"><a href="drafts.html"><i data-feather="file"></i></i> Drafts</a></li>
+                              <li role="listitem"><a href="en-route.html"><i data-feather="map"></i> En Route</a></li>
+                              <li role="listitem"><a href="completed.html"><i data-feather="check"></i> Completed</a>
+                              </li>
+                        </ul>
+                  </nav>
+                  <div class="dropdown user-account-dropdown">
+                        <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">Timothy Taylor</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                              <div class="user-info-overview">
+                                    <h6 class="name">Timothy Taylor</h6>
+                                    <p class="user-email">timothy.taylor@calpers.ca.gov</p>
+                              </div>
+                              <a class="dropdown-item" href="#"><i data-feather="user"></i> My Account</a>
+                              <a class="dropdown-item" href="#"><i data-feather="settings"></i>Preferences</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i>Sign Out</a>
+                        </div>
+                  </div>
+            </div>
+      </header>
+
+
+
+      <main class="folder-theme-green">
+            <div class="page-header">
+                  <div class="container">
+                        <div class="page-info">
+                              <div class="folder-icon-container theme-bg-color-lightest theme-color"><i
+                                          class="fas fa-folder"></i></div>
+                              <div class="details">
+                                    <h1 class="page-title">Travel Expense Folder<span
+                                                class="status-badge status-enroute">En Route</span>
+                                    </h1>
+                                  
+                              </div>
+                        </div>
+                        <div class="page-actions col-5">
+                              <div class="data-w-label flex-1">
+                                    <span><b>Duration</b></span>
+                                    <span>4 days</span>
+                              </div>
+                              <div class="data-w-label flex-1">
+                                    <span><b>Completion</b></span>
+                                    <div class="progress-container d-flex align-items-center flex-1">
+                                          <div class="progress flex-1" style="max-width: 40%;">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="80"
+                                                      aria-valuemin="0" aria-valuemax="100"></div>
+                                          </div>
+                                          <span class="pl-2" style="font-size:.9em;">80%</span>
+                                    </div>
+                              </div>
+                        
+                        
+                              <div class="data-w-label flex-1">
+                                    <span><b>Queue</b></span>
+                                    <span>Timothy Taylor</span>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            <div class="container main-content-container">
+                  <div class="folder-view">
+                        <div class="folder-contents row">
+                              <div class="routing-slip col-4">
+                                    <div class="routing-header">
+                                          <img src="assets/empty-states/route-icon.svg" />
+                                          <h2>Routing Slip</h2>
+                                          <button type="button" class="icon-container toggle-route-slip">
+                                                <i class="fas fa-chevron-left"></i>
+                                          </button>
+                                    </div>
+                                    <div class="routing-slip-initials">
+                                          <ul>
+                                                <li>PM</li>
+                                                <li>AS</li>
+                                                <li>TT</li>
+                                          </ul>
+                                    </div>
+                                    <div class="routing-body">
+                                          <div class="routing-slip-container ui-sortable">
+                                                <div class="routing-item routing-slip-thead ui-sortable-handle">
+                                                      <div></div>
+                                                      <div>Deliver To</div>
+                                                      <div>Dept</div>
+                                                      <div></div>
+
+                                                </div>
+                                                <div id="sortable">
+                                                      <div class="routing-item ui-sortable-handle">
+                                                            <div class="sortable-draggable-icon-container"><i
+                                                                        data-feather="menu"></i>
+                                                            </div>
+                                                            <div class="routing-item-deliver-to-name">Paul
+                                                                  Makhnovskiy<span class="desc">Signing 2
+                                                                        documents</span></div>
+                                                            <div class="d-flex align-items-center">ESDD</div>
+                                                            <div class="access">
+                                                                  <div class="dropdown document-expand-menu">
+                                                                        <a class="dropdown-toggle no-caret " href="#"
+                                                                              role="button" id="dropdownMenuLink"
+                                                                              data-toggle="dropdown"
+                                                                              aria-haspopup="true"
+                                                                              aria-expanded="false">
+                                                                              <i data-feather="more-vertical"></i>
+                                                                        </a>
+
+                                                                        <div class="dropdown-menu dropdown-menu-right"
+                                                                              aria-labelledby="dropdownMenuLink">
+                                                                              <a class="dropdown-item" href="#"
+                                                                                    data-toggle="modal"
+                                                                                    data-target="#editRouteDestinationPerimissions">Edit
+                                                                                    Permissions</a>
+                                                                              <a class="dropdown-item color-red"
+                                                                                    href="#" data-toggle="modal"
+                                                                                    data-target="#removeRouteDestination">Remove</a>
+
+                                                                        </div>
+                                                                  </div>
+                                                            </div>
+
+                                                      </div>
+                                                      <div class="routing-item ui-sortable-handle">
+                                                            <div class="sortable-draggable-icon-container"><i
+                                                                        data-feather="menu"></i>
+                                                            </div>
+                                                            <div class="routing-item-deliver-to-name">Andrew Studer<span
+                                                                        class="desc">Signing 1
+                                                                        document</span></div>
+                                                            <div>ESDD</div>
+                                                            <div class="access">
+                                                                  <div class="dropdown document-expand-menu">
+                                                                        <a class="dropdown-toggle no-caret " href="#"
+                                                                              role="button" id="dropdownMenuLink"
+                                                                              data-toggle="dropdown"
+                                                                              aria-haspopup="true"
+                                                                              aria-expanded="false">
+                                                                              <i data-feather="more-vertical"></i>
+                                                                        </a>
+
+                                                                        <div class="dropdown-menu dropdown-menu-right"
+                                                                              aria-labelledby="dropdownMenuLink">
+                                                                              <a class="dropdown-item" href="#"
+                                                                                    data-toggle="modal"
+                                                                                    data-target="#documentRename">Rename</a>
+                                                                              <a class="dropdown-item color-red"
+                                                                                    href="#" data-toggle="modal"
+                                                                                    data-target="#documentDelete">Delete...</a>
+                                                                              <a class="dropdown-item"
+                                                                                    href="#">Download</a>
+                                                                              <a class="dropdown-item" href="#">Version
+                                                                                    History</a>
+                                                                        </div>
+                                                                  </div>
+                                                            </div>
+
+                                                      </div>
+                                                      <div class="routing-item ui-sortable-handle">
+                                                            <div class="sortable-draggable-icon-container"><i
+                                                                        data-feather="menu"></i>
+                                                            </div>
+                                                            <div>Timothy Taylor<span class="desc">Viewing
+                                                                        documents</span></div>
+                                                            <div>ESDD</div>
+                                                            <div class="sign-edit">
+                                                                  <div class="dropdown document-expand-menu">
+                                                                        <a class="dropdown-toggle no-caret " href="#"
+                                                                              role="button" id="dropdownMenuLink"
+                                                                              data-toggle="dropdown"
+                                                                              aria-haspopup="true"
+                                                                              aria-expanded="false">
+                                                                              <i data-feather="more-vertical"></i>
+                                                                        </a>
+
+                                                                        <div class="dropdown-menu dropdown-menu-right"
+                                                                              aria-labelledby="dropdownMenuLink">
+                                                                              <a class="dropdown-item" href="#"
+                                                                                    data-toggle="modal"
+                                                                                    data-target="#documentRename">Rename</a>
+                                                                              <a class="dropdown-item color-red"
+                                                                                    href="#" data-toggle="modal"
+                                                                                    data-target="#documentDelete">Delete...</a>
+                                                                              <a class="dropdown-item"
+                                                                                    href="#">Download</a>
+                                                                              <a class="dropdown-item" href="#">Version
+                                                                                    History</a>
+                                                                        </div>
+                                                                  </div>
+
+
+                                                            </div>
+
+                                                      </div>
+                                                </div>
+                                                <div class="add-viewer-container">
+                                                      <button type="button" class="btn btn-primary tertiary btn-sm"
+                                                            data-toggle="modal" data-target="#addViewer">Add
+                                                            Viewer</button>
+                                                </div>
+                                                <div class="add-viewer-container">
+                                                      <button class="btn btn-primary btn-block" data-toggle="modal"
+                                                            data-target="#routeFolder">Route</button>
+                                                      <p class="estimated-completion">Estimated Completion <b>4 days</b>
+                                                      </p>
+                                                </div>
+
+                                          </div>
+                                    </div>
+                              </div>
+                              <div class="col-8 folder-items">
+                                   
+                                    <div class="accordion list" id="filesListing">
+                                          <div upload-progress-id="8jqh25" class="document-card">
+                                                <div class="document-header card-header collapsed d-block"
+                                                      id="doc8jqh25" data-toggle="collapse" href="#collapse8jqh25"
+                                                      role="button" aria-expanded="false"
+                                                      aria-controls="collapse8jqh25">
+
+                                                      <div class="grid-layout-document">
+
+                                                            <div class="icon-container file-icon" aria-label="Folder">
+                                                                  <i class="fas fa-file-pdf"></i>
+                                                            </div>
+                                                            <div class="title-container">
+                                                                  <h4 class="title document-title-8jqh25">Buck Slip</h4>
+                                                                  <p class="original-file-name">01-Buck Slip.pdf<span
+                                                                              class="uploader-name">Timothy
+                                                                              Taylor</span></p>
+                                                            </div>
+                                                            <div class="accordion-expand-actions">
+                                                                  <a class="btn btn-default btn-sm"
+                                                                        href="https://www.calpers.ca.gov/docs/folboard-agendas/201802/financeadmin/item-5d-01_a-rev.pdf"
+                                                                        onclick="event.stopPropagation()"
+                                                                        target="_blank">View Document</a>
+
+
+
+                                                                  <div class="dropdown document-expand-menu">
+                                                                        <a class="dropdown-toggle no-caret " href="#"
+                                                                              role="button" id="dropdownMenuLink"
+                                                                              data-toggle="dropdown"
+                                                                              aria-haspopup="true"
+                                                                              aria-expanded="false">
+                                                                              <i data-feather="more-vertical"></i>
+                                                                        </a>
+
+                                                                        <div class="dropdown-menu dropdown-menu-right"
+                                                                              aria-labelledby="dropdownMenuLink">
+                                                                              <a class="dropdown-item" href="#"
+                                                                                    data-toggle="modal"
+                                                                                    data-target="#documentRename">Rename</a>
+                                                                              <a class="dropdown-item color-red"
+                                                                                    href="#" data-toggle="modal"
+                                                                                    data-target="#documentDelete">Delete...</a>
+                                                                              <a class="dropdown-item"
+                                                                                    href="#">Download</a>
+                                                                              <a class="dropdown-item" href="#">Version
+                                                                                    History</a>
+                                                                        </div>
+                                                                  </div>
+
+                                                            </div>
+                                                      </div>
+                                                      <div class="document-details">
+                                                            <div class="row document-details-row">
+                                                                  <div class="col-12 col-md-6">
+                                                                        <div class="sign-setup-ready">
+                                                                              <div class="signatures">
+                                                                                    <div class="icon-container signature-icon"
+                                                                                          aria-label="6 Signatures"><i
+                                                                                                class="fas fa-signature"></i>
+                                                                                    </div>
+                                                                                    <span class="signatures-text"><span
+                                                                                                class="signatures-count">To
+                                                                                                David Krasniy, Andrew
+                                                                                                Studer
+                                                                                          </span>and 3 more
+                                                                                    </span>
+                                                                              </div>
+                                                                        </div>
+
+
+                                                                  </div>
+                                                                  <div class="col-12 col-md-6">
+                                                                        <div
+                                                                              class="icon-sm ml-2 mr-1 chevron-expand-collapse float-right">
+                                                                              <i class="fas fa-chevron-down"></i>
+                                                                        </div>
+                                                                  </div>
+
+                                                            </div>
+                                                      </div>
+
+
+                                                </div>
+
+                                                <div id="collapse8jqh25" class="collapse"
+                                                      aria-labelledby="document8jqh25" data-parent="#filesListing">
+                                                      <div class="card-body">
+
+                                                            <div class="document-signatures row">
+                                                                  <div class="col-md-4">
+                                                                        <label>File Settings</label>
+                                                                        Only visible to signers
+                                                                        <div class="custom-switch"
+                                                                              style="font-size:13px;">
+                                                                              <input type="checkbox"
+                                                                                    id="switchCheckbox2">
+                                                                              <label aria-hidden="true"
+                                                                                    for="switchCheckbox2">On</label>
+                                                                              <div aria-hidden="true"
+                                                                                    class="switch__marker"></div>
+                                                                        </div>
+
+
+
+                                                                        <label>Sign the document in any order</label>
+                                                                        <div class="custom-switch">
+                                                                              <input type="checkbox"
+                                                                                    id="switchCheckbox1">
+                                                                              <label aria-hidden="true"
+                                                                                    for="switchCheckbox1">On</label>
+                                                                              <div aria-hidden="true"
+                                                                                    class="switch__marker"></div>
+                                                                        </div>
+                                                                  </div>
+                                                                  <div class="col-md-8">
+                                                                        <div
+                                                                              class="card-header signature-header-layout">
+
+                                                                              <div class="title-container">
+                                                                                    <h4 class="title">Andrew Studer</h4>
+                                                                                    <p class="original-file-name">5
+                                                                                          signatures required</p>
+                                                                              </div>
+                                                                              <div
+                                                                                    class="accordion-expand-actions justify-content-end">
+                                                                                    <button type="button"
+                                                                                          class="icon-sm icon-container "
+                                                                                          aria-label="Close">
+                                                                                          <i class="fas fa-trash"></i>
+                                                                                    </button>
+                                                                              </div>
+                                                                        </div>
+                                                                        <div
+                                                                              class="card-header signature-header-layout">
+
+                                                                              <div class="title-container">
+                                                                                    <h4 class="title">Paul Makhnovskiy
+                                                                                    </h4>
+                                                                                    <p class="original-file-name">1
+                                                                                          signature
+                                                                                          required</p>
+                                                                              </div>
+                                                                              <div
+                                                                                    class="accordion-expand-actions justify-content-end">
+                                                                                    <button type="button"
+                                                                                          class="icon-sm icon-container "
+                                                                                          aria-label="Close">
+                                                                                          <i class="fas fa-trash"></i>
+                                                                                    </button>
+                                                                              </div>
+                                                                        </div>
+                                                                  </div>
+
+
+
+
+
+
+
+
+
+
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+
+                                    </div>
+                              </div>
+                        </div>
+
+                  </div>
+
+            </div>
+      </main>
+
+
+
+      <!-- JavaScript -->
+
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/jquery-ui.min.js"></script>
+      <script src="bootstrap/js/popper.min.js"></script>
+      <script src="bootstrap/js/bootstrap.min.js"></script>
+      <script src="js/vxf.js"></script>
+      <script src="js/file-uploader-vxf.js"></script>
+      <script src="https://unpkg.com/feather-icons"></script>
+
+</body>
+
+</html>

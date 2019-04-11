@@ -10346,12 +10346,10 @@ label {
   background: #f6f6f6;
 }
 .status-badge.status-enroute {
-  background: #FA710E;
-  color: #fff;
+  background: #f6f6f6;
 }
 .status-badge.status-completed {
-  background: #30B34E;
-  color: #fff;
+  background: #f6f6f6;
 }
 
 .page-header > .container {
@@ -12044,6 +12042,14 @@ body.documentIsLoading .loader {
 
 .progress-bar, .progress {
   border-radius: 10px;
+}
+
+.data-w-label span {
+  display: block;
+  color: #666;
+}
+.data-w-label span b {
+  color: #333;
 }
 
 /*# sourceMappingURL=custom.css.map */
