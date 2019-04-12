@@ -3372,8 +3372,18 @@ body.documentIsLoading {
         align-items: center;
         justify-content: center;
         height: 100%;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
         font-size: 14px;
+        font-weight:bold;
+    }
+    .footer {
+        margin: -1.25em;
+        margin-top: 1.25em;
+        background: #fff;
+        padding: 1em 1.5em;
+    }
+    .custom-switch label {
+        background-color: #eaeaea;
     }
 
 }
