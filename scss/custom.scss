@@ -3358,3 +3358,22 @@ body.documentIsLoading {
         
     }
 }
+
+.sign-documents-container-view {
+    .document-card {
+        position: relative;
+        margin-left: 40px;
+    }
+    span.document-number-order {
+        position: absolute;
+        width: 40px;
+        left: -40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        letter-spacing: 3px;
+        font-size: 14px;
+    }
+
+}
