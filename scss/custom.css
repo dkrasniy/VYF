@@ -12151,5 +12151,18 @@ body.documentIsLoading .loader {
 .sign-documents-container-view .document-card:hover {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
 }
+.sign-documents-container-view .signed-tag .icon-container {
+  height: 20px;
+  width: 20px;
+  font-size: 12px;
+  background: #ecf9ef;
+  color: #30B34E;
+  margin-right: 5px;
+}
+.sign-documents-container-view .signed-tag .signature-text {
+  font-size: 14px;
+  color: #30B34E;
+  font-size: 0.8em;
+}
 
 /*# sourceMappingURL=custom.css.map */
