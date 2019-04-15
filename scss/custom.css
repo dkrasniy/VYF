@@ -12145,9 +12145,6 @@ body.documentIsLoading .loader {
   background: #fff;
   padding: 1em 1.5em;
 }
-.sign-documents-container-view .custom-switch label {
-  background-color: #eaeaea;
-}
 .sign-documents-container-view .document-card:hover {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
 }
@@ -12163,6 +12160,14 @@ body.documentIsLoading .loader {
   font-size: 14px;
   color: #30B34E;
   font-size: 0.8em;
+}
+
+.signer-options {
+  background: #fff;
+  padding: 1em;
+}
+.signer-options .custom-switch label {
+  background-color: #eaeaea;
 }
 
 /*# sourceMappingURL=custom.css.map */

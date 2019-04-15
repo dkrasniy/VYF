@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+      <link rel="stylesheet" href="scss/custom.css">
+      <link rel="stylesheet" href="fonts/fonts.css">
+      <title>Virtual Yellow Folder</title>
+
+
+</head>
+
+<body>
+      <header class="main-header navbar navbar-expand-md">
+            <div class="container">
+                  <div class="logo-container">
+                        <span class="app-title">Virtual Yellow Folder</span>
+                        <!-- <img src="assets/logo/filled-color-h.svg" alt="Virtual Yellow Folder Logo"> -->
+                  </div>
+                  <nav class="top-navigation" id="main-header-nav" aria-labelledby="main-header-nav-label"
+                        role="navigation">
+                        <div id="main-header-nav-label" class="main-header__nav-label sr-only">Main menu</div>
+                        <ul class="mr-auto navbar-nav" role="list">
+                              <li role="listitem" class="active"><a href="home.html"><i data-feather="home"></i>
+                                          Inbox</a></li>
+                              <li role="listitem"><a href="drafts.html"><i data-feather="file"></i></i> Drafts</a></li>
+                              <li role="listitem"><a href="en-route.html"><i data-feather="map"></i> En Route</a></li>
+                              <li role="listitem"><a href="completed.html"><i data-feather="check"></i> Completed</a>
+                              </li>
+                        </ul>
+                  </nav>
+                  <div class="dropdown user-account-dropdown">
+                        <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">Timothy Taylor</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                              <div class="user-info-overview">
+                                    <h6 class="name">Timothy Taylor</h6>
+                                    <p class="user-email">timothy.taylor@calpers.ca.gov</p>
+                              </div>
+                              <a class="dropdown-item" href="#"><i data-feather="user"></i> My Account</a>
+                              <a class="dropdown-item" href="#"><i data-feather="settings"></i>Preferences</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i>Sign Out</a>
+                        </div>
+                  </div>
+            </div>
+      </header>
+
+      <main class="folder-theme-green">
+            <div class="page-header">
+                  <div class="container">
+                        <div class="page-info">
+                              <div class="folder-icon-container theme-bg-color-lightest theme-color"><i
+                                          class="fas fa-folder"></i></div>
+                              <div class="details">
+                                    <h1 class="page-title">Travel Expense Folder<span
+                                                class="status-badge status-enroute">En Route</span>
+                                    </h1>
+
+                              </div>
+                        </div>
+                        <div class="page-actions col-5">
+                              <div class="data-w-label flex-1">
+                                    <span><b>Folder Owner</b></span>
+                                    <span>Timothy Taylor</span>
+                              </div>
+                              <div class="data-w-label flex-1">
+                                    <span><b>In My Queue</b></span>
+                                    <span>5 days</span>
+                              </div>
+                              <div class="data-w-label flex-1">
+                                    <span><b>Completion</b></span>
+                                    <div class="progress-container d-flex align-items-center flex-1">
+                                          <div class="progress flex-1" style="max-width: 40%;">
+                                                <div class="progress-bar bg-success" role="progressbar"
+                                                      style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+                                                      aria-valuemax="100"></div>
+                                          </div>
+                                          <span class="pl-2" style="font-size:.9em;">80%</span>
+                                    </div>
+                              </div>
+
+
+
+                        </div>
+                  </div>
+            </div>
+            <div class="signer-options">
+                                    <div class="container  d-flex align-items-center justify-content-space-between "><div class="d-flex"> <div class="custom-switch"
+                                       style="font-size:14px;">
+                                       <input type="checkbox"
+                                             id="switchCheckbox2">
+                                       <label aria-hidden="true"
+                                             for="switchCheckbox2">On</label>
+                                       <div aria-hidden="true"
+                                             class="switch__marker"></div>
+                                 </div><span class="ml-2">Email me final copy of folder</span></div>
+                                       <button type="button" class="btn btn-primary" disabled>Complete</button>
+                                    </div>
+      </div>
+            <div class="container main-content-container">
+                  <div class="folder-view">
+                        <div class="folder-contents row">
+                              <div class="routing-slip col-4">
+                                    <div class="routing-header">
+                                          <div class="icon-container en-route-route-slip-icon">
+                                                <i class="fas fa-road"></i>
+                                          </div>
+                                          <h2>Routing Slip</h2>
+                                          <button type="button" class="icon-container toggle-route-slip">
+                                                <i class="fas fa-chevron-left"></i>
+                                          </button>
+                                    </div>
+                                    <div class="routing-slip-initials">
+                                          <ul>
+                                                <li>PM</li>
+                                                <li>AS</li>
+                                                <li>TT</li>
+                                          </ul>
+                                    </div>
+                                    <div class="routing-body">
+                                          <div>
+                                                <div class="en-route-stages mb-3">
+                                                      <div class="d-flex stages-head">
+                                                            <div class="flex-1"></div>
+                                                            <div class="col-8 p-0">Deliever To</div>
+                                                            <div class="flex-1">Dept</div>
+                                                      </div>
+                                                      <div class="en-route-body">
+                                                            <div class="d-flex en-route-stage" data-status="completed">
+                                                                  <div class="flex-1">
+                                                                        <div class="icon-container">
+                                                                              <i class="fas icon-placeholder"></i>
+                                                                        </div>
+                                                                  </div>
+                                                                  <div class="col-8 p-0">Andrew Studer<span
+                                                                              class="additional-subtext">Signed all
+                                                                              documents</span></div>
+                                                                  <div class="flex-1 d-flex align-items-center">ESDD
+                                                                  </div>
+                                                            </div>
+                                                            <div class="d-flex en-route-stage" data-status="delivered">
+                                                                  <div class="flex-1">
+                                                                        <div class="icon-container">
+                                                                              <i class="fas icon-placeholder"></i>
+                                                                        </div>
+                                                                  </div>
+                                                                  <div class="col-8 p-0"><b>John Appleseed</b><span
+                                                                              class="additional-subtext">Opened</span>
+                                                                  </div>
+                                                                  <div class="flex-1 d-flex align-items-center">AAPL
+                                                                  </div>
+                                                            </div>
+                                                            <div class="d-flex en-route-stage" data-status="queued">
+                                                                  <div class="flex-1">
+                                                                        <div class="icon-container">
+                                                                              <i class="fas icon-placeholder"></i>
+                                                                        </div>
+                                                                  </div>
+                                                                  <div class="col-8 p-0">Timothy Taylor<span
+                                                                              class="additional-subtext"><i>Queued</i></span>
+                                                                  </div>
+                                                                  <div class="flex-1 d-flex align-items-center">NFLX
+                                                                  </div>
+                                                            </div>
+
+                                                      </div>
+
+                                                </div>
+                                               
+                                                </p>
+                                          </div>
+                                    </div>
+                              </div>
+                              <div class="col-8 folder-items">
+
+                                    <div class="accordion list sign-documents-container-view">
+                                                <div class="document-card signature-needed">
+                                                            <span class="document-number-order">1/3</span>
+                                                            <div class="document-header card-header d-block">
+                                                               <div class="d-flex">
+                                                                  <div class="icon-container file-icon col-1" aria-label="Folder">
+                                                                     <i class="fas fa-file-pdf"></i>
+                                                                  </div>
+                                                                  <div class="title-container col-6">
+                                                                     <h4 class="title document-title-8jqh25">Buck Slip</h4>
+                                                                     <p class="original-file-name">01-Buck Slip.pdf<span class="uploader-name">Timothy
+                                                                           Taylor</span></p>
+                                                                  </div>
+                                                                  <div class="d-flex flex-1 align-items-center justify-content-end">
+                                                                     <a class="btn btn-default btn-sm mr-2"
+                                                                        href="https://www.calpers.ca.gov/docs/folboard-agendas/201802/financeadmin/item-5d-01_a-rev.pdf"
+                                                                        onclick="event.stopPropagation()" target="_blank">View & Sign Document</a><div class="dropdown document-expand-menu">
+                                                                        <a class="dropdown-toggle no-caret " href="#" role="button"
+                                                                           id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                                                           aria-expanded="false">
+                                                                           <i data-feather="more-vertical"></i> 
+                                                                        </a>
+                                                                        <div class="dropdown-menu dropdown-menu-right"
+                                                                           aria-labelledby="dropdownMenuLink" x-placement="bottom-end"
+                                                                           style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(46px, 46px, 0px);">
+                                                                           <a class="dropdown-item" href="#" data-toggle="modal"
+                                                                              data-target="#moreInfo">About</a>
+                                                                        </div>
+                                                                     </div>
+                                                                  </div>
+                                                               </div>
+                                                               
+                                                               <!-- <div class="document-details">
+                                                                     <div class="row document-details-row">
+                                                                           <div class="col-12 col-md-6">
+                                                                                 <div class="sign-setup-ready">
+                                                                                       <div class="signatures">
+                                                                                             <div class="icon-container" aria-label="6 Signatures"><i class="fas fa-signature"></i>
+                                                                                             </div>
+                                                                                             <span class="signatures-text"><span class="signatures-count">This document needs your signature
+                                                                                             </span>
+                                                                                       </div>
+                                                                                 </div>
+                                                                           </div>
+                                                                     </div>
+                                                               </div> -->
+                              
+                              
+                                                            </div>
+                                                         </div>
+                              
+                                                         <div class="document-card">
+                                                               <span class="document-number-order">2/3</span>
+                                                               <div class="document-header card-header d-block">
+                                                                  <div class="d-flex">
+                                                                     <div class="icon-container file-icon col-1" aria-label="Folder">
+                                                                        <i class="fas fa-file-pdf"></i>
+                                                                     </div>
+                                                                     <div class="title-container col-6">
+                                                                        <h4 class="title document-title-8jqh25">Buck Slip</h4>
+                                                                        <p class="original-file-name">01-Buck Slip.pdf<span class="uploader-name">Timothy
+                                                                              Taylor</span></p>
+                                                                     </div>
+                                                                     <div class="d-flex flex-1 align-items-center justify-content-end">
+                                                                        <a class="btn btn-default btn-sm mr-2"
+                                                                           href="https://www.calpers.ca.gov/docs/folboard-agendas/201802/financeadmin/item-5d-01_a-rev.pdf"
+                                                                           onclick="event.stopPropagation()" target="_blank">View Document</a><div class="dropdown document-expand-menu">
+                                                                           <a class="dropdown-toggle no-caret " href="#" role="button"
+                                                                              id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                                                              aria-expanded="false">
+                                                                              <i data-feather="more-vertical"></i> 
+                                                                           </a>
+                                                                           <div class="dropdown-menu dropdown-menu-right"
+                                                                              aria-labelledby="dropdownMenuLink" x-placement="bottom-end"
+                                                                              style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(46px, 46px, 0px);">
+                                                                              <a class="dropdown-item" href="#" data-toggle="modal"
+                                                                                 data-target="#moreInfo">About</a>
+                                                                           </div>
+                                                                        </div>
+                                                                     </div>
+                                                                  </div>
+                                                                  
+                                                               </div>
+                                                            
+                                                            </div>
+                              
+                                                            
+                                                            <div class="document-card signature-needed">
+                                                                  <span class="document-number-order">3/3</span>
+                                                                  <div class="document-header card-header d-block">
+                                                                     <div class="d-flex">
+                                                                        <div class="icon-container file-icon col-1" aria-label="Folder">
+                                                                           <i class="fas fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <div class="title-container col-6">
+                                                                           <h4 class="title document-title-8jqh25">Buck Slip</h4>
+                                                                           <p class="original-file-name">01-Buck Slip.pdf<span class="uploader-name">Timothy
+                                                                                 Taylor</span></p>
+                                                                        </div>
+                                                                        <div class="d-flex flex-1 align-items-center justify-content-end">
+                                                                           <a class="btn btn-default btn-sm mr-2"
+                                                                              href="https://www.calpers.ca.gov/docs/folboard-agendas/201802/financeadmin/item-5d-01_a-rev.pdf"
+                                                                              onclick="event.stopPropagation()" target="_blank">View & Sign Document</a><div class="dropdown document-expand-menu">
+                                                                              <a class="dropdown-toggle no-caret " href="#" role="button"
+                                                                                 id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                                                                 aria-expanded="false">
+                                                                                 <i data-feather="more-vertical"></i> 
+                                                                              </a>
+                                                                              <div class="dropdown-menu dropdown-menu-right"
+                                                                                 aria-labelledby="dropdownMenuLink" x-placement="bottom-end"
+                                                                                 style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(46px, 46px, 0px);">
+                                                                                 <a class="dropdown-item" href="#" data-toggle="modal"
+                                                                                    data-target="#moreInfo">About</a>
+                                                                              </div>
+                                                                           </div>
+                                                                        </div>
+                                                                     </div>
+                                                                  </div>
+                                                               </div>
+                                    
+
+                                    </div>
+                              </div>
+                        </div>
+
+                  </div>
+
+            </div>
+      </main>
+
+
+
+      <!-- JavaScript -->
+
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/jquery-ui.min.js"></script>
+      <script src="bootstrap/js/popper.min.js"></script>
+      <script src="bootstrap/js/bootstrap.min.js"></script>
+      <script src="js/vxf.js"></script>
+      <script src="js/file-uploader-vxf.js"></script>
+      <script src="https://unpkg.com/feather-icons"></script>
+
+</body>
+
+</html>
