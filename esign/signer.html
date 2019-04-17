@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+      <link rel="stylesheet" href="../scss/custom.css">
+      <link rel="stylesheet" href="../fonts/fonts.css">
+      <title>Signer View - Virtual Yellow Folder</title>
+</head>
+
+<body>
+      <header class="main-header navbar navbar-expand-md">
+            <div class="container">
+                  <div class="logo-container">
+                        <span class="app-title">Virtual Yellow Folder</span>
+                        <!-- <img src="assets/logo/filled-color-h.svg" alt="Virtual Yellow Folder Logo"> -->
+                  </div>
+                  <nav class="top-navigation" id="main-header-nav" aria-labelledby="main-header-nav-label"
+                        role="navigation">
+                        <div id="main-header-nav-label" class="main-header__nav-label sr-only">Main menu</div>
+                        <ul class="mr-auto navbar-nav" role="list">
+                              <li role="listitem"><a href="home.html"><i data-feather="home"></i>
+                                          Inbox</a></li>
+                              <li role="listitem"><a href="drafts.html"><i data-feather="file"></i></i> Drafts</a></li>
+                              <li role="listitem"><a href="en-route.html"><i data-feather="map"></i> En Route</a></li>
+                              <li role="listitem"><a href="completed.html"><i data-feather="check"></i> Completed</a>
+                              </li>
+                        </ul>
+                  </nav>
+                  <div class="dropdown user-account-dropdown">
+                        <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">Timothy Taylor</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                              <div class="user-info-overview">
+                                    <h6 class="name">Timothy Taylor</h6>
+                                    <p class="user-email">timothy.taylor@calpers.ca.gov</p>
+                              </div>
+                              <a class="dropdown-item" href="#"><i data-feather="user"></i> My Account</a>
+                              <a class="dropdown-item" href="#"><i data-feather="settings"></i>Preferences</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i>Sign Out</a>
+                        </div>
+                  </div>
+            </div>
+      </header>
+
+      <main class="esign">
+            <div class="page-header">
+                  <div class="container">
+                        <div class="page-info">
+                              <div class="folder-icon-container theme-bg-color-lightest theme-color"><i
+                                          class="fas fa-file-pdf"></i></div>
+                              <div class="details">
+                                    <h1 class="page-title">Buck Slip</h1>
+                                    <p class="page-description">01_Buck_slip.pdf</p>
+                              </div>
+                        </div>
+                        <div class="page-actions">
+                              <button type="button" class="btn btn-white mr-2" data-toggle="modal"
+                                    data-target="#folderEdit" onclick="this.blur();">Cancel Changes</button>
+                              <button type="button" class="btn btn-primary theme-bg-color" id="upload_documents">Save
+                                    Changes</button>
+                        </div>
+                  </div>
+                  <div class="toolbar">
+                        <div class="container">
+                              <div class="toolbar-wrapper">
+                                    <div class="toolbar-item dropdown-group">
+                                          <button class="toolbar-button sidepanel-dropdown-icon"></button>
+                                          <div class="dropdown-content" role="listbox"></div>
+                                    </div>
+                               
+                                    <div style="flex: 1 1 0%;"></div>
+                                    <div class="toolbar-item">
+                                          <div class="page-indicator d-flex align-items-center">
+                                                <span>Page</span>
+                                                <span>
+                                                      <div class="input-controls">
+                                                            <button class="prev-page" title="Previous Page"
+                                                                  disabled="disabled"><span
+                                                                        class="left-arrow-icon arrow-controls"></span></button>
+                                                            <label for="navigatePage">Go to Page</label>
+                                                            <input id="navigatePage" max="5" min="1" type="number"
+                                                                  value="1" />
+                                                            <button class="next-page" title="Next Page"><span
+                                                                        class="right-arrow-icon arrow-controls"></span></button>
+                                                      </div>
+                                                </span>
+                                                <span> of <span id="page_count">5</span></span>
+                                          </div>
+                                    </div>
+                                    <div style="flex: 1 1 0%;"></div>
+                                    <div class="toolbar-item">
+                                          <button class="toolbar-button zoom-out-icon has-divider-left"></button>
+                                    </div>
+                                    <div class="toolbar-item">
+                                          <button class="toolbar-button zoom-in-icon has-divider-left"></button>
+                                    </div>
+                                    <div class="toolbar-item">
+                                          <button class="toolbar-button print-icon has-divider-left"></button>
+                                    </div>
+
+                              </div>
+                        </div>
+                  </div>
+
+                  <div class="toolbar secondary-toolbar">
+                        <div class="container">
+                              <div class="toolbar-wrapper">
+
+                                    <div style="flex: 1 1 0%;"></div>
+                                    <div class="toolbar-item">
+                                          <button class="toolbar-button has-divider-left">
+                                                <i style="font-size: 22px; width: 24px;"
+                                                      class="fas fa-trash"></i></button>
+                                    </div>
+
+                              </div>
+                        </div>
+                  </div>
+
+                  <div class="instructional-text">
+                        <div class="container">
+                              <p>It's your turn to sign.</p>
+                        </div>
+                  </div>
+
+                  <div class="toolbar signer-toolbar">
+                        <div class="container">
+                              <div class="d-flex justify-content-between">
+                                    <div class="col-6">
+                                          <div class="signature-initials-preview">
+                                                <div class="btn btn-white" data-toggle="modal"
+                                                data-target="#signatureStyleEdit" onclick="this.blur();">
+                                          
+                                                 <div class="sig-container">
+                                                       <div class="sig-title">Your Signature</div>
+                                                       <div class="inner-sig-container">David Krasniy</div>
+                                                 </div>
+                                                 <div class="sig-container ml-4">
+                                                            <div class="sig-title">Initials</div>
+                                                            <div class="inner-sig-container">D.K.</div>
+                                                      </div>
+                                          
+                                          </div>
+                                          </div>
+                                    </div>
+                                    <div><div class="progress-container d-flex align-items-center ">
+                                                <div class="progress flex-1">
+                                                   <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                      aria-valuemax="100"></div>
+                                                </div>
+                                                <span class="pl-3"><b>50%</b></span>
+                                             </div></div>
+                              </div>
+                        </div>
+                  </div>
+
+
+            </div>
+            <div class="container main-content-container">
+
+                  <div class="loader">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
+                  </div>
+
+                  <div id="canvas-container">
+                        <canvas id="the-canvas" style="display:none;"></canvas>
+                  </div>
+
+            </div>
+
+            <div class="popUpAutocompleteDialog" id="popUpAutocompleteDialog">
+                  <input type="text" placeholder="start typing" />
+            </div>
+      </main>
+
+
+      <div class="signHelpDialog">
+            <div class="help-icon">
+                  <div class="sign-icon"></div>
+            </div>
+            <span class="helpDialogTitle">Add Signature Field</span>
+            <span class="helpDialogDesc">Start </span>
+      </div>
+
+
+      
+
+      <div class="modal fade modal-wide" id="signatureStyleEdit" tabindex="-1" role="dialog" aria-labelledby="signatureStyleEditLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                        <div class="modal-header">
+                              <h5 class="modal-title" id="signatureStyleEditLabel">Create Signature</h5>
+
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <div class="icon-container">
+                                          <i class="fas fa-times"></i>
+                                    </div>
+                              </button>
+                        </div>
+                        <div class="modal-body">
+                              <p>Removing Timothy Taylor will also remove his signature from all documents.</p>
+
+
+                              <label for="style1"> <div class="sig-container">
+                                          <div class="sig-title">Your Signature</div>
+                                          <div class="inner-sig-container">David Krasniy</div>
+                                    </div>
+                                    <div class="sig-container ml-4">
+                                               <div class="sig-title">Initials</div>
+                                               <div class="inner-sig-container">D.K.</div>
+                                         </div></label>
+                              <input type="radio" name="sigstyle" id="style1" value="style1"> <br>
+
+                              <input type="radio" name="sigstyle" value="female"> Female<br>
+                              
+                              <input type="radio" name="sigstyle" value="other"> Other<br><br>
+                              
+
+                        </div>
+                        <div class="modal-footer">
+                              <button type="button" class="btn btn-primary tertiary"
+                                    data-dismiss="modal">Cancel</button>
+                              <button class="btn btn btn-primary" type="submit">Save</a>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+
+      <!-- JavaScript -->
+      <script src="./pdf.js"></script>
+      <script src="../js/fabric.min.js"></script>
+      <script src="../js/jquery-3.3.1.min.js"></script>
+      <script src="../js/jquery-ui.min.js"></script>
+      <script src="../bootstrap/js/popper.min.js"></script>
+      <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+      <script src="../js/vxf.js"></script>
+      <script src="../js/esign.js"></script>
+      <script src="./icons.js"></script>
+      <script src="../js/feather.min.js"></script>
+
+
+
+
+      <script>
+            var currPage = 1; //Pages are 1-based not 0-based
+            var numPages = 0;
+            var thePDF = null;
+            let isLoading = true;
+
+
+            // If absolute URL from the remote server is provided, configure the CORS
+            // header on that server.
+            var url = 'https://s1.q4cdn.com/806093406/files/doc_downloads/test.pdf';
+            //var url ='https://s22.q4cdn.com/396847794/files/doc_financials/quarterly/2019/_10-Q-Q1-2019-(As-Filed).pdf';
+
+            // Loaded via <script> tag, create shortcut to access PDF.js exports.
+            var pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+            // The workerSrc property shall be specified.
+            pdfjsLib.GlobalWorkerOptions.workerSrc = './pdf.worker.js';
+
+            var pdfDoc = null,
+                  pageNum = 1,
+                  pageRendering = false,
+                  pageNumPending = null,
+                  scale = 2,
+                  canvas = document.getElementById('the-canvas'),
+                  ctx = canvas.getContext('2d');
+
+
+
+            /**
+             * Get page info from document, resize canvas accordingly, and render page.
+             * @param num Page number.
+             */
+            function renderPage(num) {
+
+                  pageRendering = true;
+                  // Using promise to fetch the page
+                  pdfDoc.getPage(num).then(function (page) {
+                        var viewport = page.getViewport({ scale: scale });
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+
+                        // Render PDF page into canvas context
+                        var renderContext = {
+                              canvasContext: ctx,
+                              viewport: viewport
+                        };
+                        var renderTask = page.render(renderContext);
+
+                        // Wait for rendering to finish
+                        renderTask.promise.then(function () {
+                              pageRendering = false;
+
+                              if (pageNumPending !== null) {
+                                    // New page rendering is pending
+                                    renderPage(pageNumPending);
+                                    pageNumPending = null;
+                              }
+                        });
+                  });
+
+                  // Update page counters
+                  document.getElementById('page_num').textContent = num;
+            }
+
+            /**
+             * If another page rendering in progress, waits until the rendering is
+             * finised. Otherwise, executes rendering immediately.
+             */
+            function queueRenderPage(num) {
+                  if (pageRendering) {
+                        pageNumPending = num;
+                  } else {
+                        renderPage(num);
+                  }
+            }
+
+
+            /**
+             * Asynchronously downloads PDF.
+             */
+            $(document).ready(function () {
+                  document.body.classList.add("documentIsLoading");
+                  loadURLDocument(url);
+            });
+
+            function loadURLDocument(url) {
+                  pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
+                        //  pdfDoc = pdfDoc_;
+                        document.getElementById('page_count').innerText = pdfDoc_.numPages;
+
+                        //Set PDFJS global object (so we can easily access in our page functions
+                        thePDF = pdfDoc_;
+
+                        //How many pages it has
+                        numPages = pdfDoc_.numPages;
+
+                        pdfDoc_.getPage(1).then(handlePages);
+                        // Initial/first page rendering
+                        //renderPage(pageNum);
+                  });
+            }
+
+            function handlePages(page) {
+
+
+                  //This gives us the page's dimensions at full scale
+                  var viewport = page.getViewport(1.5);
+
+                  //We'll create a canvas for each page to draw it on
+                  var canvas = document.createElement("canvas");
+                  canvas.style.display = "block";
+                  var context = canvas.getContext('2d');
+                  canvas.setAttribute("page-number", page.pageIndex + 1);
+                  canvas.setAttribute("id", "page" + (page.pageIndex + 1))
+                  canvas.height = viewport.height;
+                  canvas.width = viewport.width;
+
+                  var inputFieldController = document.createElement("div");
+                  inputFieldController.style.display = "absolute";
+                  inputFieldController.setAttribute("id", "pageController" + (page.pageIndex + 1))
+
+
+                  //Draw it on the canvas
+                  page.render({
+                        canvasContext: context,
+                        viewport: viewport
+                  }).then(function () {
+                        var bg = canvas.toDataURL("image/png");
+                        var fcanvas = new fabric.Canvas('page' + (page.pageIndex + 1), {
+                              selection: false
+                        });
+                        fcanvas.setBackgroundImage(bg, fcanvas.renderAll.bind(fcanvas));
+
+
+
+                        var rect, isDown, origX, origY;
+
+                        fcanvas.on('mouse:down', function (o) {
+                              isDown = true;
+                              var pointer = fcanvas.getPointer(o.e);
+                              origX = pointer.x;
+                              origY = pointer.y;
+                              var pointer = fcanvas.getPointer(o.e);
+                              rect = new fabric.Rect({
+                                    left: origX,
+                                    top: origY,
+                                    originX: 'left',
+                                    originY: 'top',
+                                    width: pointer.x - origX,
+                                    height: pointer.y - origY,
+                                    angle: 0,
+                                    fill: 'rgba(0, 0, 0, 0.5)',
+                                    transparentCorners: false
+                              });
+                              fcanvas.add(rect);
+                        });
+
+                        fcanvas.on('mouse:move', function (o) {
+                              if (!isDown) return;
+                              var pointer = fcanvas.getPointer(o.e);
+
+                              if (origX > pointer.x) {
+                                    rect.set({ left: Math.abs(pointer.x) });
+                              }
+                              if (origY > pointer.y) {
+                                    rect.set({ top: Math.abs(pointer.y) });
+                              }
+
+                              rect.set({ width: Math.abs(origX - pointer.x) });
+                              rect.set({ height: Math.abs(origY - pointer.y) });
+
+
+                              fcanvas.renderAll();
+                        });
+
+                        fcanvas.on('mouse:up', function (o) {
+                              isDown = false;
+                              showPopupUsersSearch(o);
+                        });
+
+
+                  });
+
+
+
+
+
+                  //Add it to the web page
+                  document.getElementById('canvas-container').appendChild(canvas);
+                  document.getElementById('canvas-container').appendChild(inputFieldController);
+
+                  //Move to next page
+                  currPage++;
+                  if (thePDF !== null && currPage <= numPages) {
+                        thePDF.getPage(currPage).then(handlePages);
+                  } else {
+                        isLoading = false;
+                        document.body.classList.remove("documentIsLoading");
+                  }
+
+
+            }
+
+      </script>
+
+      <script>
+            function engageSignature() {
+                  document.addEventListener("mousedown", function (e) {
+                        console.log(e.path[0].id)
+                        //createRect(e.path[0].id);
+                  });
+            }
+
+
+            function showPopupUsersSearch(canvas) {
+                  let popupContainer = $('.popUpAutocompleteDialog');
+                  popupContainer.addClass('show');
+                  let x = canvas.pointer.x;
+                  let y = canvas.pointer.y;
+                  popupContainer.css({ left: x, top: y });
+
+                  console.log(canvas)
+
+            }
+      </script>
+</body>
+
+</html>

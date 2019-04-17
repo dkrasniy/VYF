@@ -2029,6 +2029,10 @@ span.uploader-name {
                 }
 
             }
+            &.signer-toolbar {
+                background: #fff;
+            }
+            
         }
         
         
@@ -2038,6 +2042,15 @@ span.uploader-name {
         margin: 0 auto;
         margin-top: 78px;
         display: flex;
+    }
+    .instructional-text {
+        background: $primary;
+       p {
+           margin:0;
+           text-align:center;
+           color:#fff;
+       }
+       padding:.75em 1em;
     }
 
 .toolbar-wrapper {
@@ -3404,10 +3417,62 @@ body.documentIsLoading {
         }
     }
 }
+
+/* ---- ESIGN ---- */
 .signer-options {
     background:#fff;
     padding:1em;
     .custom-switch label {
         background-color: #eaeaea;
     }
+}
+.signature-initials-preview {
+    margin: 10px 0;
+    .btn {
+        display: inline-flex;
+        box-shadow: none;
+    }
+}
+
+.sig-container {
+    border-left: 2px solid $blue;
+    border-radius: 8px;
+    display: block;
+    height: 100%;
+    margin: 4px 0;
+    overflow: visible;
+    position: relative;
+}
+.sig-container::after, .sig-container::before {
+    border: 0 solid $blue;
+    content: '';
+    display: block;
+    height: 38px;
+    left: -1px;
+    position: absolute;
+    width: 20px;
+}
+.sig-container::before {
+    border-top-left-radius: 8px;
+    border-top-width: 2px;
+    top: -2px;
+}
+.sig-container::after {
+    border-bottom-left-radius: 8px;
+    border-bottom-width: 2px;
+    bottom: -2px;
+}
+.sig-container > div {
+    margin-left: 25px;
+}
+.sig-title {
+    font-size: 12px;
+    position: absolute;
+    top: -9px;
+    color: #676767;
+}
+.inner-sig-container {
+    font-size: 1.35em;
+    padding-top: 6px;
+    font-family: this is signature;
 }
