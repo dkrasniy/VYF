@@ -179,13 +179,32 @@
 
                   <div id="canvas-container">
                         <canvas id="the-canvas" style="display:none;"></canvas>
+
+
                   </div>
+                  
+                  <div class="tab-sign-box" id="indicator-demo">
+                        <div class="sign-indicator"  style="height: 38px; position: absolute; top: 594.266px; left: 290px; display: flex;"></div>
+                        <div data-id="188" class="esignContainer sign-mode"
+                              style="width: 290px; height: 38px; position: absolute; top: 594.266px; left: 529.5px; display: flex;">
 
-            </div>
+                              <p class="sign-here-text">Sign Here</p>
+                        </div>
 
-            <div class="popUpAutocompleteDialog" id="popUpAutocompleteDialog">
-                  <input type="text" placeholder="start typing" />
-            </div>
+                  </div>
+                  <div class="tab-sign-box" id="indicator-demo">
+                              <div class="sign-indicator"  style="height: 38px; position: absolute; top: 894.266px; left: 290px; display: flex;"></div>
+                              <div data-id="188" class="esignContainer sign-mode"
+                                    style="width: 290px; height: 38px; position: absolute; top:894.266px; left: 829.5px; display: flex;">
+      
+                                    <p class="sign-here-text">Sign Here</p>
+                              </div>
+      
+                        </div>
+
+                  <div class="popUpAutocompleteDialog" id="popUpAutocompleteDialog">
+                        <input type="text" placeholder="start typing" />
+                  </div>
       </main>
 
 
@@ -447,10 +466,13 @@
 
 
 
-
                   //Add it to the web page
                   document.getElementById('canvas-container').appendChild(canvas);
                   document.getElementById('canvas-container').appendChild(inputFieldController);
+                  
+                
+
+                  
 
                   //Move to next page
                   currPage++;
@@ -460,7 +482,7 @@
                         isLoading = false;
                         document.body.classList.remove("documentIsLoading");
                   }
-
+              
 
             }
 
@@ -486,6 +508,11 @@
 
             }
       </script>
+
+
+
+      </div>
+
 </body>
 
 </html>

@@ -11131,6 +11131,45 @@ span.uploader-name:before {
 .esignContainer:hover:before {
   transform: scale(1.03);
 }
+.esignContainer.sign-mode {
+  background: #f8f2fc;
+  border-bottom: 2px dashed #913FD6;
+  align-items: center;
+  padding: 0 10px;
+}
+.esignContainer.sign-mode:before {
+  content: none;
+}
+.esignContainer.sign-mode p.sign-here-text {
+  margin: 0;
+  color: #913FD6;
+  font-weight: 600;
+}
+
+.sign-indicator {
+  background: #913FD6;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  align-items: center;
+  color: white;
+  text-transform: uppercase;
+  padding: 5px;
+  min-width: 30px;
+}
+.sign-indicator p {
+  margin: 0;
+}
+.sign-indicator:after {
+  content: "";
+  position: absolute;
+  display: block;
+  right: -19px;
+  width: 0;
+  height: 0;
+  border-top: 19px solid transparent;
+  border-bottom: 19px solid transparent;
+  border-left: 19px solid #913FD6;
+}
 
 .esignContainer p.signer-name {
   font-weight: bold;

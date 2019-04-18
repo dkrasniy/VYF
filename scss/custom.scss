@@ -2280,7 +2280,44 @@ button.next-page {
         transform: scale(1.03);
     }
 
-   
+    &.sign-mode {
+        &:before {
+            content:none;
+        }
+        background:lightest($purple);
+        border-bottom:2px dashed $purple;
+        align-items: center;
+        p.sign-here-text {
+            margin:0;
+            color:$purple;
+            font-weight: 600;
+        }
+        padding:0 10px;
+    }
+}
+.sign-indicator {
+    background:$purple;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    align-items: center;
+    color:white;
+    text-transform: uppercase;
+    padding:5px;
+    min-width: 30px;
+    p{
+        margin:0;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        right: -19px;
+        width: 0;
+        height: 0;
+        border-top: 19px solid transparent;
+        border-bottom: 19px solid transparent;
+        border-left: 19px solid $purple;
+    }
 }
 
 
