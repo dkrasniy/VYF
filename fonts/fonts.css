@@ -30,3 +30,14 @@
     font-style: normal;
     font-display: swap;
 }
+
+
+@font-face {
+    font-family: 'PERS01';
+    src:
+        url('pers01.eot?#iefix') format('embedded-opentype'),
+        url('pers01.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
