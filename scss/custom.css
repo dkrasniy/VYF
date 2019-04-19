@@ -12284,6 +12284,7 @@ body.documentIsLoading .loader {
   padding-top: 6px;
   font-family: "pers01";
   min-width: 80px;
+  text-align: left;
 }
 
 .signature-input-fields {
