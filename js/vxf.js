@@ -6,7 +6,6 @@ $(document).ready(function(){
 });
 
 $(document.body).on("input propertychange",'.float-labels input', function () {
-
     if (!this.value) {
         $(this).removeClass('float-true');
         $(this).prev().removeClass('float-true');
@@ -16,6 +15,23 @@ $(document.body).on("input propertychange",'.float-labels input', function () {
         $(this).prev().addClass('float-true');
     }
 })
+
+$(document.body).on("input propertychange",'#signatureInput', function () {
+    signaturefields = document.getElementsByClassName("signature-full-name");  // Find the elements
+        for(var i = 0; i < signaturefields.length; i++){
+            signaturefields[i].innerText = this.value;    // Change the content
+    }
+
+})
+
+$(document.body).on("input propertychange",'#initialsInput', function () {
+    signaturefields = document.getElementsByClassName("signature-initials");  // Find the elements
+        for(var i = 0; i < signaturefields.length; i++){
+            signaturefields[i].innerText = this.value;    // Change the content
+    }
+
+})
+
 
 
 

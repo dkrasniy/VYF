@@ -1207,6 +1207,11 @@
   background: rgba(255, 255, 255, 0.25) !important;
 }
 
+.bg-offwhite {
+  background: #ddd;
+  background-color: #ddd;
+}
+
 .font-size-xs {
   font-size: 0.85rem;
 }
@@ -9666,7 +9671,7 @@ label {
   max-width: 600px;
 }
 .modal.modal-widest .modal-dialog {
-  max-width: 750px;
+  max-width: 850px;
 }
 .modal.headerless .modal-header {
   background: #fff !important;
@@ -11136,6 +11141,7 @@ span.uploader-name:before {
   border-bottom: 2px dashed #913FD6;
   align-items: center;
   padding: 0 10px;
+  border-radius: 0;
 }
 .esignContainer.sign-mode:before {
   content: none;
@@ -12277,6 +12283,83 @@ body.documentIsLoading .loader {
   font-size: 1.35em;
   padding-top: 6px;
   font-family: "pers01";
+  min-width: 80px;
+}
+
+.signature-input-fields {
+  padding: 1rem 1.75rem;
+}
+
+.signature-styles .checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.signature-styles .checkmark i {
+  height: 40px;
+  width: 40px;
+  border: 2px solid #f4f4f4;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: transparent;
+  background: #f4f4f4;
+}
+.signature-styles label {
+  display: flex;
+  padding: 1em;
+  border: 2px solid transparent;
+  border-radius: 0.35em;
+  background: white;
+  margin-bottom: 1em;
+  transition: 0.1s ease box-shadow;
+}
+.signature-styles label:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.signature-styles [type=radio]:checked,
+.signature-styles [type=radio]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+.signature-styles [type=radio]:checked + label,
+.signature-styles [type=radio]:not(:checked) + label {
+  position: relative;
+  cursor: pointer;
+}
+.signature-styles [type=radio]:checked + label {
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.05);
+}
+.signature-styles [type=radio]:checked + label .checkmark i {
+  background: #0874d9;
+  border-color: #0874d9;
+  color: #fff;
+}
+
+.sign-font-style-2 .inner-sig-container {
+  font-family: "Satisfy", cursive !important;
+}
+
+.sign-font-style-3 .inner-sig-container {
+  font-family: "Dancing Script", cursive !important;
+}
+
+.sign-font-style-4 .inner-sig-container {
+  font-family: "Indie Flower", cursive !important;
+}
+
+.sign-font-style-5 .inner-sig-container {
+  font-family: "Great Vibes", cursive !important;
+}
+
+.sign-font-style-6 .inner-sig-container {
+  font-family: "Tangerine", cursive !important;
+}
+
+.sign-font-style-7 .inner-sig-container {
+  font-family: "Sacramento", cursive !important;
 }
 
 /*# sourceMappingURL=custom.css.map */

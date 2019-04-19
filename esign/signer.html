@@ -10,6 +10,13 @@
       <link rel="stylesheet" href="../scss/custom.css">
       <link rel="stylesheet" href="../fonts/fonts.css">
       <title>Signer View - Virtual Yellow Folder</title>
+      <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Great+Vibes|Indie+Flower|Sacramento|Satisfy|Tangerine" rel="stylesheet">
+      <style>
+     
+     
+      
+      
+      </style>
 </head>
 
 <body>
@@ -142,11 +149,11 @@
 
                                                       <div class="sig-container">
                                                             <div class="sig-title">Your Signature</div>
-                                                            <div class="inner-sig-container">Andrew Studer</div>
+                                                            <div class="inner-sig-container">Timothy Taylor</div>
                                                       </div>
                                                       <div class="sig-container ml-4">
                                                             <div class="sig-title">Initials</div>
-                                                            <div class="inner-sig-container">A.S.</div>
+                                                            <div class="inner-sig-container">T.T.</div>
                                                       </div>
 
                                                 </div>
@@ -219,7 +226,7 @@
 
 
 
-      <div class="modal fade modal-wide" id="signatureStyleEdit" tabindex="-1" role="dialog"
+      <div class="modal fade modal-widest" id="signatureStyleEdit" tabindex="-1" role="dialog"
             aria-labelledby="signatureStyleEditLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -232,26 +239,131 @@
                                     </div>
                               </button>
                         </div>
-                        <div class="modal-body">
-                              <p>Removing Timothy Taylor will also remove his signature from all documents.</p>
+                        <div class="signature-input-fields bg-offwhite">
+                              <div class="row justify-content-between m-0">
+                                    <div class="position-relative float-labels col-6 p-0">
+                                          <label for="signatureInput" class="float-label">Signature Name</label>
+                                          <input autocomplete="name" id="signatureInput"  type="text" class="form-control"
+                                                value="">
+                                    </div>
+                        
+                                    <div class="position-relative float-labels col-5 p-0">
+                                          <label for="initialsInput" class="float-label">Initials</label>
+                                          <input id="initialsInput" type="text" class="form-control"
+                                                value="">
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="modal-body signature-styles">
+                                    <input type="radio" name="sigstyle" id="style1" value="style1"> 
+                                    <label for="style1" class="signature-style-label sign-font-style-1">
+                                         <div class="signature-style-container d-flex col-10">
+                                          <div class="sig-container">
+                                                <div class="sig-title">Your Signature</div>
+                                                <div class="inner-sig-container signature-full-name">David Krasniy</div>
+                                          </div>
+                                          <div class="sig-container ml-4">
+                                                <div class="sig-title">Initials</div>
+                                                <div class="inner-sig-container signature-initials">D.K.</div>
+                                          </div>
+                                          </div>
+                                          <div class="checkmark col-2"> <i class="fas fa-check"></i></div>
+                                    </label>
 
+                             
 
-                              <label for="style1">
+                              <input type="radio" name="sigstyle" id="style2" value="style2"> 
+                              <label for="style2" class="signature-style-label sign-font-style-2">
+                                   <div class="signature-style-container d-flex col-10">
                                     <div class="sig-container">
                                           <div class="sig-title">Your Signature</div>
-                                          <div class="inner-sig-container">David Krasniy</div>
+                                          <div class="inner-sig-container signature-full-name">David Krasniy</div>
                                     </div>
                                     <div class="sig-container ml-4">
                                           <div class="sig-title">Initials</div>
-                                          <div class="inner-sig-container">D.K.</div>
+                                          <div class="inner-sig-container signature-initials">D.K.</div>
                                     </div>
+                                    </div>
+                                    <div class="checkmark col-2"> <i class="fas fa-check"></i></div>
                               </label>
-                              <input type="radio" name="sigstyle" id="style1" value="style1"> <br>
 
-                              <input type="radio" name="sigstyle" value="female"> Female<br>
 
-                              <input type="radio" name="sigstyle" value="other"> Other<br><br>
+                              <input type="radio" name="sigstyle" id="style3" value="style3"> 
+                              <label for="style3" class="signature-style-label sign-font-style-3">
+                                   <div class="signature-style-container d-flex col-10">
+                                    <div class="sig-container">
+                                          <div class="sig-title">Your Signature</div>
+                                          <div class="inner-sig-container signature-full-name">David Krasniy</div>
+                                    </div>
+                                    <div class="sig-container ml-4">
+                                          <div class="sig-title">Initials</div>
+                                          <div class="inner-sig-container signature-initials">D.K.</div>
+                                    </div>
+                                    </div>
+                                    <div class="checkmark col-2"> <i class="fas fa-check"></i></div>
+                              </label>
 
+                              <input type="radio" name="sigstyle" id="style4" value="style4"> 
+                              <label for="style4" class="signature-style-label sign-font-style-4">
+                                   <div class="signature-style-container d-flex col-10">
+                                    <div class="sig-container">
+                                          <div class="sig-title">Your Signature</div>
+                                          <div class="inner-sig-container signature-full-name">David Krasniy</div>
+                                    </div>
+                                    <div class="sig-container ml-4">
+                                          <div class="sig-title">Initials</div>
+                                          <div class="inner-sig-container signature-initials">D.K.</div>
+                                    </div>
+                                    </div>
+                                    <div class="checkmark col-2"> <i class="fas fa-check"></i></div>
+                              </label>
+
+                              <input type="radio" name="sigstyle" id="style5" value="style5"> 
+                              <label for="style5" class="signature-style-label sign-font-style-5">
+                                   <div class="signature-style-container d-flex col-10">
+                                    <div class="sig-container">
+                                          <div class="sig-title">Your Signature</div>
+                                          <div class="inner-sig-container signature-full-name">David Krasniy</div>
+                                    </div>
+                                    <div class="sig-container ml-4">
+                                          <div class="sig-title">Initials</div>
+                                          <div class="inner-sig-container signature-initials">D.K.</div>
+                                    </div>
+                                    </div>
+                                    <div class="checkmark col-2"> <i class="fas fa-check"></i></div>
+                              </label>
+
+                              <input type="radio" name="sigstyle" id="style6" value="style6"> 
+                              <label for="style6" class="signature-style-label sign-font-style-6">
+                                   <div class="signature-style-container d-flex col-10">
+                                    <div class="sig-container">
+                                          <div class="sig-title">Your Signature</div>
+                                          <div class="inner-sig-container signature-full-name">David Krasniy</div>
+                                    </div>
+                                    <div class="sig-container ml-4">
+                                          <div class="sig-title">Initials</div>
+                                          <div class="inner-sig-container signature-initials">D.K.</div>
+                                    </div>
+                                    </div>
+                                    <div class="checkmark col-2"> <i class="fas fa-check"></i></div>
+                              </label>
+
+                              <input type="radio" name="sigstyle" id="style7" value="style7"> 
+                              <label for="style7" class="signature-style-label sign-font-style-7">
+                                   <div class="signature-style-container d-flex col-10">
+                                    <div class="sig-container">
+                                          <div class="sig-title">Your Signature</div>
+                                          <div class="inner-sig-container signature-full-name">David Krasniy</div>
+                                    </div>
+                                    <div class="sig-container ml-4">
+                                          <div class="sig-title">Initials</div>
+                                          <div class="inner-sig-container signature-initials">D.K.</div>
+                                    </div>
+                                    </div>
+                                    <div class="checkmark col-2"> <i class="fas fa-check"></i></div>
+                              </label>
+
+                           
 
                         </div>
                         <div class="modal-footer">
