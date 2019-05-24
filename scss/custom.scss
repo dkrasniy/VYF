@@ -306,6 +306,12 @@ $colors-list: red blue green orange purple yellow grey;
 }
 
 
+.in-folder {
+    font-size: .9em;
+}
+.fs-9em {
+    font-size: .9em;
+}
 
 .folder-theme-starfield {
     .page-header {
@@ -997,6 +1003,10 @@ line-height: 1.5;
     background: $yellow-light;
     color: $yellow;
 }
+.icon-container.signature-icon-signed{
+    background: $green-light;
+    color: $green;
+}
 .en-route-route-slip-icon {
     background: $yellow;
     color:white;
@@ -1007,6 +1017,13 @@ line-height: 1.5;
         .signatures {
             display: flex;
             .signature-icon {
+                max-height: 30px;
+                max-width: 30px;
+                margin-right: 10px;
+                min-height: 30px;
+                min-width: 30px;
+            }
+            .signature-icon-signed {
                 max-height: 30px;
                 max-width: 30px;
                 margin-right: 10px;
@@ -1321,6 +1338,14 @@ line-height: 1.5;
 
 
 .main-header {
+    .container {
+        padding: .35em 1em;
+    }
+    .navbar-toggler {
+        color: rgba(0, 0, 0, 0.5);
+        border-color: transparent;
+        font-size: 1.1em;
+    }
     background: #fff;
     padding: 0;
     .logo-container {
@@ -1385,7 +1410,6 @@ line-height: 1.5;
     z-index: 2;
     background: white;
   
-
     .page-info {
         max-width: 66.666666%;
         display: flex;
@@ -1452,6 +1476,7 @@ line-height: 1.5;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     padding: 1em;
     min-height: 72px;
+   
 }
 
  .side-navigation {
@@ -1588,6 +1613,7 @@ line-height: 1.5;
     h1 {
         font-weight:800;
         margin-bottom:.1em;
+        font-size: calc(1vw + 1.25em)!important;
     }
     p {
         color:$grey-5;
@@ -2003,7 +2029,6 @@ line-height: 1.5;
 
 
 span.uploader-name {
-    padding-left: 5px;
     color: #777;
     &:before {
         content: 'Uploaded by ';
@@ -2011,8 +2036,9 @@ span.uploader-name {
 }
 
 .routing-slip-date {
+    line-height:1;
+    text-align:right;
     .date {
-    display: block;
     font-weight: bold;
     font-size: .8em;
     text-transform: uppercase;
@@ -2349,7 +2375,7 @@ button.next-page {
     transform:scale(1);
     border-radius:.35em;
     display: flex;
-    min-height: 50px;
+    min-height: 5px;
     align-items: center;
     transition: .2s ease all;
     cursor: pointer;
@@ -3055,7 +3081,7 @@ body.sideNavigationEnabled {
     main {
         margin-left:$sidebarNavWidth;
     }
-    .navbar-expand-md > .container, .navbar-expand-md > .container-fluid {
+    .navbar-expand-lg > .container, .navbar-expand-lg > .container-fluid {
         max-width: initial;
         padding: initial;
         margin: initial;
@@ -3072,7 +3098,7 @@ body.sideNavigationEnabled {
         padding:2em 1.5em;
         border-right:$onePxBorder;
     }
-    .navbar-expand-md .navbar-nav {
+    .navbar-expand-lg .navbar-nav {
         flex-direction: column;
     }
 
@@ -3523,7 +3549,7 @@ body.documentIsLoading {
 .sign-documents-container-view {
     .document-card {
         position: relative;
-        margin-left: 40px;
+        // margin-left: 40px;
     }
     span.document-number-order {
         position: absolute;
@@ -3684,8 +3710,64 @@ body.documentIsLoading {
             }
         }
     }
-
 }
+
+#customizeDownloadFolderPDFForm {
+    .document-checbox-label {
+        display: flex;
+        padding: .75em .5em;
+        border: 2px solid transparent;
+        border-radius: $borderRadius;
+        background:white;
+        margin-bottom: .5em;
+        transition:.1s ease box-shadow;
+        &:hover {
+           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    }
+    .checkmark {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        i {
+            height: 25px;
+            width: 25px;
+            border: 2px solid $bg-color;
+            padding: 10px;
+            font-size: .85em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color:transparent;
+            background:$bg-color;
+        }
+    }
+    [type="checkbox"]:checked,
+    [type="checkbox"]:not(:checked) {
+        position: absolute;
+        left: -9999px;
+    }
+
+    [type="checkbox"]:checked + label,
+    [type="checkbox"]:not(:checked) + label {
+        position: relative;
+        cursor: pointer;
+    }
+
+    [type="checkbox"]:checked + label {
+        //box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        .checkmark {
+            i {
+                background:$blue;
+                border-color:$blue;
+                color:#fff;
+            }
+        }
+    }
+}
+
+
 
 .sign-font-style-2 {
     .inner-sig-container {

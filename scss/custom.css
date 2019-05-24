@@ -1386,6 +1386,14 @@
   border-color: #333 !important;
 }
 
+.in-folder {
+  font-size: 0.9em;
+}
+
+.fs-9em {
+  font-size: 0.9em;
+}
+
 .folder-theme-starfield .page-header {
   background: #333;
 }
@@ -10281,6 +10289,11 @@ span.optional-label-text {
   color: #F0B429;
 }
 
+.icon-container.signature-icon-signed {
+  background: #ecf9ef;
+  color: #30B34E;
+}
+
 .en-route-route-slip-icon {
   background: #F0B429;
   color: white;
@@ -10290,6 +10303,13 @@ span.optional-label-text {
   display: flex;
 }
 .document-card .sign-setup-ready .signatures .signature-icon {
+  max-height: 30px;
+  max-width: 30px;
+  margin-right: 10px;
+  min-height: 30px;
+  min-width: 30px;
+}
+.document-card .sign-setup-ready .signatures .signature-icon-signed {
   max-height: 30px;
   max-width: 30px;
   margin-right: 10px;
@@ -10489,6 +10509,14 @@ span.optional-label-text {
 .main-header {
   background: #fff;
   padding: 0;
+}
+.main-header .container {
+  padding: 0.35em 1em;
+}
+.main-header .navbar-toggler {
+  color: rgba(0, 0, 0, 0.5);
+  border-color: transparent;
+  font-size: 1.1em;
 }
 .main-header .logo-container {
   min-width: 90px;
@@ -10723,6 +10751,7 @@ span.optional-label-text {
 .empty-state h1 {
   font-weight: 800;
   margin-bottom: 0.1em;
+  font-size: calc(1vw + 1.25em) !important;
 }
 .empty-state p {
   color: #666;
@@ -11095,15 +11124,17 @@ span.optional-label-text {
 }
 
 span.uploader-name {
-  padding-left: 5px;
   color: #777;
 }
 span.uploader-name:before {
   content: "Uploaded by ";
 }
 
+.routing-slip-date {
+  line-height: 1;
+  text-align: right;
+}
 .routing-slip-date .date {
-  display: block;
   font-weight: bold;
   font-size: 0.8em;
   text-transform: uppercase;
@@ -11407,7 +11438,7 @@ span.uploader-name:before {
   transform: scale(1);
   border-radius: 0.35em;
   display: flex;
-  min-height: 50px;
+  min-height: 5px;
   align-items: center;
   transition: 0.2s ease all;
   cursor: pointer;
@@ -12072,7 +12103,7 @@ body.sideNavigationEnabled .onlyOnSideNav {
 body.sideNavigationEnabled main {
   margin-left: 240px;
 }
-body.sideNavigationEnabled .navbar-expand-md > .container, body.sideNavigationEnabled .navbar-expand-md > .container-fluid {
+body.sideNavigationEnabled .navbar-expand-lg > .container, body.sideNavigationEnabled .navbar-expand-lg > .container-fluid {
   max-width: initial;
   padding: initial;
   margin: initial;
@@ -12088,7 +12119,7 @@ body.sideNavigationEnabled .navbar-expand-md > .container, body.sideNavigationEn
   padding: 2em 1.5em;
   border-right: 1px solid #eee;
 }
-body.sideNavigationEnabled .navbar-expand-md .navbar-nav {
+body.sideNavigationEnabled .navbar-expand-lg .navbar-nav {
   flex-direction: column;
 }
 body.sideNavigationEnabled .new-folder-button {
@@ -12486,7 +12517,6 @@ body.documentIsLoading .loader {
 
 .sign-documents-container-view .document-card {
   position: relative;
-  margin-left: 40px;
 }
 .sign-documents-container-view span.document-number-order {
   position: absolute;
@@ -12638,6 +12668,52 @@ body.documentIsLoading .loader {
   box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.05);
 }
 .signature-styles [type=radio]:checked + label .checkmark i {
+  background: #0874d9;
+  border-color: #0874d9;
+  color: #fff;
+}
+
+#customizeDownloadFolderPDFForm .document-checbox-label {
+  display: flex;
+  padding: 0.75em 0.5em;
+  border: 2px solid transparent;
+  border-radius: 0.35em;
+  background: white;
+  margin-bottom: 0.5em;
+  transition: 0.1s ease box-shadow;
+}
+#customizeDownloadFolderPDFForm .document-checbox-label:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+#customizeDownloadFolderPDFForm .checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#customizeDownloadFolderPDFForm .checkmark i {
+  height: 25px;
+  width: 25px;
+  border: 2px solid #f4f4f4;
+  padding: 10px;
+  font-size: 0.85em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: transparent;
+  background: #f4f4f4;
+}
+#customizeDownloadFolderPDFForm [type=checkbox]:checked,
+#customizeDownloadFolderPDFForm [type=checkbox]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+#customizeDownloadFolderPDFForm [type=checkbox]:checked + label,
+#customizeDownloadFolderPDFForm [type=checkbox]:not(:checked) + label {
+  position: relative;
+  cursor: pointer;
+}
+#customizeDownloadFolderPDFForm [type=checkbox]:checked + label .checkmark i {
   background: #0874d9;
   border-color: #0874d9;
   color: #fff;
