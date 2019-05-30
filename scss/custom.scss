@@ -1395,7 +1395,52 @@ line-height: 1.5;
            }
 
     }
+}
+.secondary-menu {
+    li {
+        list-style-type: none;
+        position: relative;
+        //Return list semantics in VoiceOver. It's magic
+        &:before {
+            content: " "; 
+          }
+          padding-left:1em;
+          padding-right:1em;
+          &:first-child {
+              padding-left: 0;
+          }
+          &:last-child {
+            padding-right: 0;
+        }
+          a {
+            display:block;
+            color: $grey-6;
+            font-size: .98rem;
+            text-decoration: none;
+            padding: 1em 0;
+            
+            display:flex;
+            align-items: center;
+            transition:.2s ease opacity;
+            svg {
+                max-width: 17px;
+                margin-right: 10px;
+            }
+            i {
+                padding-right: 5px;
+                font-size: .85em;
+            }
+          }
+          &.active, &:hover{
+              a {
+                color: $primary!important;
+              }
+          }
+          &.active{
+            font-weight: bold;
+           }
 
+    }
 }
 .main-content-container {
     padding: 30px 15px;
@@ -1475,8 +1520,6 @@ line-height: 1.5;
     justify-content: space-between;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     padding: 1em;
-    min-height: 72px;
-   
 }
 
  .side-navigation {
@@ -3756,7 +3799,7 @@ body.documentIsLoading {
     }
 
     [type="checkbox"]:checked + label {
-        //box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
         .checkmark {
             i {
                 background:$blue;
@@ -4148,3 +4191,7 @@ select.ui-datepicker-month,select.ui-datepicker-year  {
     }
 }
 
+.span-block-label {
+    color: #888;
+    display: block;
+}

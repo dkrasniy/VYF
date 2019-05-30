@@ -10561,6 +10561,46 @@ span.optional-label-text {
   font-weight: bold;
 }
 
+.secondary-menu li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.secondary-menu li:before {
+  content: " ";
+}
+.secondary-menu li:first-child {
+  padding-left: 0;
+}
+.secondary-menu li:last-child {
+  padding-right: 0;
+}
+.secondary-menu li a {
+  display: block;
+  color: #767676;
+  font-size: 0.98rem;
+  text-decoration: none;
+  padding: 1em 0;
+  display: flex;
+  align-items: center;
+  transition: 0.2s ease opacity;
+}
+.secondary-menu li a svg {
+  max-width: 17px;
+  margin-right: 10px;
+}
+.secondary-menu li a i {
+  padding-right: 5px;
+  font-size: 0.85em;
+}
+.secondary-menu li.active a, .secondary-menu li:hover a {
+  color: #0874d9 !important;
+}
+.secondary-menu li.active {
+  font-weight: bold;
+}
+
 .main-content-container {
   padding: 30px 15px;
 }
@@ -10629,7 +10669,6 @@ span.optional-label-text {
   justify-content: space-between;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   padding: 1em;
-  min-height: 72px;
 }
 
 .side-navigation {
@@ -12713,6 +12752,9 @@ body.documentIsLoading .loader {
   position: relative;
   cursor: pointer;
 }
+#customizeDownloadFolderPDFForm [type=checkbox]:checked + label {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
 #customizeDownloadFolderPDFForm [type=checkbox]:checked + label .checkmark i {
   background: #0874d9;
   border-color: #0874d9;
@@ -13134,6 +13176,11 @@ select.ui-datepicker-month, select.ui-datepicker-year {
   border: none;
   color: white;
   padding: 0 10px;
+}
+
+.span-block-label {
+  color: #888;
+  display: block;
 }
 
 /*# sourceMappingURL=custom.css.map */
