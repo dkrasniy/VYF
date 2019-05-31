@@ -2211,15 +2211,7 @@ span.uploader-name {
         margin-top: 78px;
         display: flex;
     }
-    .instructional-text {
-        background: $primary;
-       p {
-           margin:0;
-           text-align:center;
-           color:#fff;
-       }
-       padding:.75em 1em;
-    }
+  
 
 .toolbar-wrapper {
 	display: flex;
@@ -4194,4 +4186,14 @@ select.ui-datepicker-month,select.ui-datepicker-year  {
 .span-block-label {
     color: #888;
     display: block;
+}
+
+.instructional-text {
+    background: $primary;
+   p {
+       margin:0;
+       text-align:center;
+       color:#fff;
+   }
+   padding:.75em 1em;
 }

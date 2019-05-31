@@ -11289,15 +11289,6 @@ span.uploader-name:before {
   margin-top: 78px;
   display: flex;
 }
-.esign .instructional-text {
-  background: #0874d9;
-  padding: 0.75em 1em;
-}
-.esign .instructional-text p {
-  margin: 0;
-  text-align: center;
-  color: #fff;
-}
 .esign .toolbar-wrapper {
   display: flex;
   flex-direction: row;
@@ -13181,6 +13172,16 @@ select.ui-datepicker-month, select.ui-datepicker-year {
 .span-block-label {
   color: #888;
   display: block;
+}
+
+.instructional-text {
+  background: #0874d9;
+  padding: 0.75em 1em;
+}
+.instructional-text p {
+  margin: 0;
+  text-align: center;
+  color: #fff;
 }
 
 /*# sourceMappingURL=custom.css.map */
