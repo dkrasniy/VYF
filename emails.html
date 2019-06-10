@@ -972,13 +972,9 @@ span.preheader {
 
 table.button {
   width: auto;
-  margin: 0 0 16px 0;
-  Margin: 0 0 16px 0; }
-  table.button table td {
-    text-align: left;
-    color: #fefefe;
-    background: #2199e8;
-    border: 2px solid #2199e8; }
+  margin: 16px 0 16px 0;
+ }
+
     table.button table td a {
       font-family: Helvetica, Arial, sans-serif;
       font-size: 16px;
@@ -987,10 +983,15 @@ table.button {
       text-decoration: none;
       display: inline-block;
       padding: 8px 16px 8px 16px;
-      border: 0 solid #2199e8;
-      border-radius: 3px; }
+      border: 0 solid #0874d9;
+      border-radius: 5px; 
+      text-align: left;
+    color: #fefefe;
+    background: #0874d9;
+    border: 2px solid #0874d9;
+    }
   table.button.radius table td {
-    border-radius: 3px;
+    border-radius: 5px;
     border: none; }
   table.button.rounded table td {
     border-radius: 500px;
@@ -1024,9 +1025,8 @@ table.button.small table a {
   font-size: 12px; }
 
 table.button.large table a {
-  padding: 10px 20px 10px 20px;
-  font-size: 20px; }
-
+  padding: 8px 22px 8px 22px;
+  font-size: 17px; }
 table.button.expand,
 table.button.expanded {
   width: 100% !important; }
@@ -1043,16 +1043,14 @@ table.button.expanded {
   table.button.expanded center {
     min-width: 0; }
 
-table.button:hover table td,
-table.button:visited table td,
-table.button:active table td {
-  background: #147dc2;
-  color: #fefefe; }
+    table.button:hover table td a,table.button:visited table td a, table.button:active table td a {
+      background: #f0f8fe;
+      
+      border: 2px solid #f0f8fe;
+      color: #0874d9!important;
 
-table.button:hover table a,
-table.button:visited table a,
-table.button:active table a {
-  border: 0 solid #147dc2; }
+    }
+
 
 table.button.secondary table td {
   background: #777777;
@@ -1354,6 +1352,25 @@ body.outlook p {
     table.button.small-expand center,
     table.button.small-expanded center {
       min-width: 0; } }
+
+      .logo {
+        width:200px!important;
+        margin-top: 30px;
+        margin-bottom:10px;
+      }
+      .signicon {
+        width:100px!important;
+        margin-top: -20px;
+        margin-bottom:20px;
+      }
+      .main-heading {
+        font-size:20px;
+        font-weight: bold;
+      }
+      .heading-subtext {
+        font-size:16px;
+        color:#666;
+      }
     
     </style>  
 
@@ -1370,7 +1387,7 @@ body.outlook p {
   <body>
     <!-- <style> -->
 
-    <table class="body" data-made-with-foundation="">
+    <table class="body">
       <tr>
           <td>
               <table>
@@ -1382,8 +1399,9 @@ body.outlook p {
               </table>
             </td>
 
-        <td class="float-center" align="center" valign="top">
-            <center data-parsed=""> <img src="./vxf.png" align="center" class="float-center"> </center>
+        <td class="spacer float-center" align="center" valign="top">
+            <center data-parsed=""> 
+              <img src="./vxf.png" alt="Virtual Folder Logo" border="0" align="center" class="logo"> </center>
           <center data-parsed="">
             <table class="spacer float-center">
               <tbody>
@@ -1396,42 +1414,54 @@ body.outlook p {
               <tbody>
                 <tr>
                   <td>
+                      <table class="spacer">
+                          <tbody>
+                            <tr>
+                              <td height="50px" style="font-size:50px;line-height:50px;">&#xA0;</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      
                     <table class="row">
                       <tbody>
                         <tr>
                          
-                          <th class="small-12 large-12 columns last">
+                          <th class="small-12 large-12">
                             <table>
-                              <tr>
-                                <th>
-                                  <h1 class="text-center" align="center" >It's your turn to sign</h1>
-                                  <h2 class="text-center" align="center" ><b>Telework</b> from David Krasniy</h2>
-                                  <table class="button large">
-                                    <tr>
-                                      <td>
-                                        <table>
-                                          <tr>
-                                            <td><a href="#">Open Folder</a></td>
-                                          </tr>
-                                        </table>
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </th>
-                              </tr>
+                              <tbody>
+                                <tr>
+                                  <td>
+
+                                    <div style="padding-left:40px;padding-right:40px;">
+                                        <center data-parsed=""> 
+                                            <img src="./sign.png" alt="Virtual Folder Logo" border="0" align="center" class="signicon"> </center>
+                                        <h1 class="main-heading">David Krasniy has sent you a folder with documents to review and sign.</h1>
+                                        <h2 class="heading-subtext">Please take a moment to review and sign the attached documents in <b>Travel Expense Folder</b>.</h2>
+                                      
+                                       <center><table class="button large">
+                                            <tr>
+                                              <td>
+                                                <table>
+                                                  <tr>
+                                                    <td><a href="#">Review & Sign</a></td>
+                                                  </tr>
+                                                </table>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </center> 
+                                    </div>
+                                  </td>
+                                 
+                                </tr>
+                              </tbody>
+
                             </table>
                           </th>
                         </tr>
                       </tbody>
                     </table>
-                    <table class="spacer">
-                      <tbody>
-                        <tr>
-                          <td height="16px" style="font-size:16px;line-height:16px;">&#xA0;</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  
+                    
                     
                     
                     
@@ -1439,7 +1469,7 @@ body.outlook p {
                     <table class="spacer">
                       <tbody>
                         <tr>
-                          <td height="16px" style="font-size:16px;line-height:16px;">&#xA0;</td>
+                          <td height="50px" style="font-size:50px;line-height:50px;">&#xA0;</td>
                         </tr>
                       </tbody>
                     </table>
