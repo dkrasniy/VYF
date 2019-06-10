@@ -1233,17 +1233,15 @@ line-height: 1.5;
             Login Page
 -------------------------------- */
 .login-left-logo-area {
-    background: white;
+    background: #f9f9f9;
     margin: 0px -15px 2em;
     padding: 1em;
-
-    @media (min-width: 991px) {
         min-height: 100vh;
         display: flex;
         -webkit-box-align: center;
         align-items: center;
         margin: 0px -15px;
-    }
+    
     
     .login-logo-container {
         margin: 0 auto;
@@ -2405,39 +2403,46 @@ button.next-page {
 .esignSignatureIsActivated {
     background: #f0b42a!important;
 }
+.is-being-moved {
+    // background: hsla(0, 0%, 100%, 0.5);
+     opacity: .6!important;
+}
+
 .esignContainer {
-    background:#fff;
-    transform:scale(1);
+    background:lightest($blue);
     border-radius:.35em;
     display: flex;
     min-height: 5px;
     align-items: center;
-    transition: .2s ease all;
+    transition: .2s ease opacity;
     cursor: pointer;
+    border-radius: 0.35em;
+    border:2px solid transparent;
 
     &:before {
         content: '';
-        box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        border-radius: 0.35em;
-        background:#fff;
-        transform-origin: center center;
-        transition: all .2s;
-        will-change: transform;
-        z-index: -1;
+        // box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+        // width: 100%;
+        // height: 100%;
+        // position: absolute;
+        // border-radius: 0.35em;
+        // background:#fff;
+        // transform-origin: center center;
+        // transition: all .2s;
+        // will-change: transform;
+        // z-index: -1;
     }
     &.selected-focused {
+        border:2px dashed $blue;
         &:before {
-            box-shadow:1px 1px 10px 1px rgba(0, 0, 0, 0.1),  0 0 0 2px $yellow;
-         transform: scale(1.03);
+            // box-shadow:1px 1px 10px 1px rgba(0, 0, 0, 0.1),  0 0 0 2px $yellow;
+        //  transform: scale(1.03);
         }
        
     }
     
     &:hover:before {
-        transform: scale(1.03);
+        // transform: scale(1.03);
     }
 
     &.sign-mode {
@@ -2489,16 +2494,46 @@ button.next-page {
 
 
 
+.resizers .resizer{
+    width: 1em;
+    height:  1em;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid $blue;
+    position: absolute;
+  }
+.resizers .resizer.top-left {
+    left: -.5em;
+    top: -.5em;
+    cursor: nwse-resize; /*resizer cursor*/
+  }
+.resizers .resizer.top-right {
+    right:-.5em;
+    top:-.5em;
+    cursor: nesw-resize;
+  }
+.resizer.bottom-left {
+    left: -.5em;
+    bottom: -.5em;
+    cursor: nesw-resize;
+  }
+ .resizers .resizer.bottom-right {
+    right: -.5em;
+    bottom: -.5em;
+    cursor: nwse-resize;
+  }
+
 
 .esignContainer p.signer-name {
     font-weight: bold;
     margin: 0;
     line-height: 1.25;
+    color:$blue;
     .esign-type {
         display: block;
         font-weight: normal;
         font-size: 12px;
-        color: #666;
+        color: darker($blue);
     }
 }
 .popUpAutocompleteDialog {
@@ -2545,6 +2580,8 @@ button.next-page {
 }
 .object-height-filler .signature-icon,  .esignContainer .signature-icon {
     margin: 0px 15px;
+    background:$blue!important;
+    color:lightest($blue);
 }
  ul.typeahead.dropdown-menu li a {
     color: #333;
@@ -4161,6 +4198,7 @@ select.ui-datepicker-month,select.ui-datepicker-year  {
     transition: .1s ease transform, .1s ease opacity;
     opacity: 0;
     &.is-visible {
+        display:none;
         opacity: 1;
         visibility: visible;
         transform: translateY(-20px);

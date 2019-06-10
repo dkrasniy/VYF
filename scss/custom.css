@@ -10407,18 +10407,14 @@ span.optional-label-text {
             Login Page
 -------------------------------- */
 .login-left-logo-area {
-  background: white;
+  background: #f9f9f9;
   margin: 0px -15px 2em;
   padding: 1em;
-}
-@media (min-width: 991px) {
-  .login-left-logo-area {
-    min-height: 100vh;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin: 0px -15px;
-  }
+  min-height: 100vh;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0px -15px;
 }
 .login-left-logo-area .login-logo-container {
   margin: 0 auto;
@@ -11463,35 +11459,26 @@ span.uploader-name:before {
   background: #f0b42a !important;
 }
 
+.is-being-moved {
+  opacity: 0.6 !important;
+}
+
 .esignContainer {
-  background: #fff;
-  transform: scale(1);
+  background: #f0f8fe;
   border-radius: 0.35em;
   display: flex;
   min-height: 5px;
   align-items: center;
-  transition: 0.2s ease all;
+  transition: 0.2s ease opacity;
   cursor: pointer;
+  border-radius: 0.35em;
+  border: 2px solid transparent;
 }
 .esignContainer:before {
   content: "";
-  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border-radius: 0.35em;
-  background: #fff;
-  transform-origin: center center;
-  transition: all 0.2s;
-  will-change: transform;
-  z-index: -1;
 }
-.esignContainer.selected-focused:before {
-  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1), 0 0 0 2px #F0B429;
-  transform: scale(1.03);
-}
-.esignContainer:hover:before {
-  transform: scale(1.03);
+.esignContainer.selected-focused {
+  border: 2px dashed #0874d9;
 }
 .esignContainer.sign-mode {
   background: #f8f2fc;
@@ -11540,16 +11527,51 @@ span.uploader-name:before {
   border-left: 19px solid #913FD6;
 }
 
+.resizers .resizer {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #0874d9;
+  position: absolute;
+}
+
+.resizers .resizer.top-left {
+  left: -0.5em;
+  top: -0.5em;
+  cursor: nwse-resize;
+  /*resizer cursor*/
+}
+
+.resizers .resizer.top-right {
+  right: -0.5em;
+  top: -0.5em;
+  cursor: nesw-resize;
+}
+
+.resizer.bottom-left {
+  left: -0.5em;
+  bottom: -0.5em;
+  cursor: nesw-resize;
+}
+
+.resizers .resizer.bottom-right {
+  right: -0.5em;
+  bottom: -0.5em;
+  cursor: nwse-resize;
+}
+
 .esignContainer p.signer-name {
   font-weight: bold;
   margin: 0;
   line-height: 1.25;
+  color: #0874d9;
 }
 .esignContainer p.signer-name .esign-type {
   display: block;
   font-weight: normal;
   font-size: 12px;
-  color: #666;
+  color: #054c8f;
 }
 
 .popUpAutocompleteDialog {
@@ -11597,6 +11619,8 @@ span.uploader-name:before {
 
 .object-height-filler .signature-icon, .esignContainer .signature-icon {
   margin: 0px 15px;
+  background: #0874d9 !important;
+  color: #f0f8fe;
 }
 
 ul.typeahead.dropdown-menu li a {
@@ -13148,6 +13172,7 @@ select.ui-datepicker-month, select.ui-datepicker-year {
   opacity: 0;
 }
 #signBoxToolbar.is-visible {
+  display: none;
   opacity: 1;
   visibility: visible;
   transform: translateY(-20px);
