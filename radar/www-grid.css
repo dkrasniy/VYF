@@ -2782,7 +2782,7 @@ select.ui-datepicker-year {
 
 .document-viewer-container {
 	display: none;
-	width: 936px;
+	width: 65vw;
 	background: #f8f8f8;
 	height: 100vh;
 	z-index: 100000;
@@ -2810,6 +2810,7 @@ body.document-open .document-viewer-container {
 	background: white;
 	padding: 10px 20px;
 	text-align: right;
+	border-bottom: 1px solid #e2e2e2;
 }
 
 .current-quarter-line {
