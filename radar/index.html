@@ -1,0 +1,396 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insight</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="www-grid.css">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="grid4.css">
+
+</head>
+
+<body>
+
+    <div class="application-header shadow z-50 bg-white">
+        <div class="app-branding">
+            <img src="images/insightIconv2.png">
+            <h1>Insight</h1>
+        </div>
+
+        <!--
+         <div>
+            <button class="bg-white hover:bg-grey-lightest text-grey-darkest font-semibold py-2 px-4 border-none rounded shadow mr-2 toggle-filter no-outline relative flex filters-applied-true cursor-pointer"> <i class="fas fa-sliders-h"></i><span class="inline-block text-color-radar-blue bg-color-radar rounded-full px-2 py-1 ml-2 text-xs font-semibold my--dot25" id="filtercnt">0</span></button>
+       </div>
+       -->
+
+        <div>
+            <button
+                class="height-37 bg-white hover:bg-grey-lightest text-grey-darkest font-semibold py-2 px-4 border-none rounded shadow mr-2  no-outline cursor-pointer toggle-glossary">
+                <i class="fas fa-book"></i>
+            </button>
+
+            <div class="search-input-wrapper">
+                <input type="text" class="search-input form-control shadow" id="searchInput"
+                    placeholder="Search by agenda item, presenter, etc">
+                <button class="sr-only" id="searchButton">Go</button>
+            </div>
+
+            <div class="loggedin-user dropdown">
+                <a role="button" class="dropdown-toggle" data-target="userLoginMenu">
+                    <div class="initials">TT</div><i class="fas fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-content dropdown-menu dropdown-align-right" id="userLoginMenu">
+                    <div class="user-info">
+                        <div class="initials">TT</div><span class="logged-in-name">Timothy Taylor</span>
+                    </div>
+                    <button class="dropdown-item" id="logout" href="#">Log Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="document-viewer" class="loading" style="height:100vh;">
+        <div class="viewer-head"><button type="button" class="close" aria-label="Close"><i
+                    class="fas fa-times"></i></button></div>
+        <div class="document-viewer">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <button id="expandCalendarSidebar" type="button"><i class="fas fa-chevron-right"></i></button>
+
+    <!-- Calendar Sidebar -->
+    <div id="calendarSidebar" class="sidebarYearview shadow-lg">
+        Year view calendar
+        <button id="closeCalendarSidebar" type="button"> Close Sidebar <i class="fas fa-chevron-left"></i></button>
+    </div>
+
+
+    <div class="fullMonthHeading">
+        <!-- MONTH -->
+        <div class="prevMonth"><i class="fas fa-chevron-circle-left"></i> MAY</div>
+        <div class="monthName">JUNE 2019</div>
+        <div class="nextMonth">JULY <i class="fas fa-chevron-circle-right"></i></div>
+        <!-- DAY OF WEEK -->
+        <div class="dayOfWeek">SUN</div>
+        <div class="dayOfWeek">MON</div>
+        <div class="dayOfWeek">TUE</div>
+        <div class="dayOfWeek">WED</div>
+        <div class="dayOfWeek">THU</div>
+        <div class="dayOfWeek">FRI</div>
+        <div class="dayOfWeek">SAT</div>
+    </div>
+
+
+    <div class="fullMonthView">
+
+        <!-- WEEK 01 -->
+        <div class="dayItem">
+            <div class="dateLabel"></div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel"></div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel"></div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel"></div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel"></div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel"></div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">01</div>
+        </div>
+
+        <!-- WEEK 02 -->
+        <div class="dayItem">
+            <div class="dateLabel">02</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">03</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">04</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">05</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">06</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">07</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">08</div>
+        </div>
+
+        <!-- WEEK 03 -->
+        <div class="dayItem">
+            <div class="dateLabel">09</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">10</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">11</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">12</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">13</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">14</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">15</div>
+        </div>
+
+        <!-- WEEK 04 -->
+        <div class="dayItem">
+            <div class="dateLabel">16</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">17</div>
+            <div class="eventLabel boa" data-openSidebarById="loa04nt" id="toggleSidebar">BOA</div>
+            <div class="eventLabel ic" data-openSidebarById="leftMinicalendar" id="toggleSidebar">IC</div>
+            <div class="eventLabel ic">IC</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">18</div>
+            <div class="eventLabel phbc">PHBC</div>
+            <div class="eventLabel rac">RAC</div>
+            <div class="eventLabel phbc">PHBC</div>
+            <div class="eventLabel pctm">PCTM</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">19</div>
+            <div class="eventLabel boa">BOA</div>
+            <div class="eventLabel bgc">BGC</div>
+            <div class="eventLabel boa">BOA</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">20</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">21</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">22</div>
+        </div>
+
+        <!-- WEEK 05 -->
+        <div class="dayItem">
+            <div class="dateLabel">23</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">24</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">25</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">26</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">27</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">28</div>
+        </div>
+        <div class="dayItem">
+            <div class="dateLabel">29</div>
+        </div>
+
+        <!-- WEEK 06 
+  <div class="dayItem">
+      <div class="dateLabel">23</div>
+  </div>
+  <div class="dayItem">
+      <div class="dateLabel">24</div>
+  </div>
+  <div class="dayItem">
+      <div class="dateLabel">25</div>
+  </div>
+  <div class="dayItem">
+      <div class="dateLabel">26</div>
+  </div>
+  <div class="dayItem">
+      <div class="dateLabel">27</div>
+  </div>
+   <div class="dayItem">
+      <div class="dateLabel">28</div>
+  </div>
+  <div class="dayItem">
+      <div class="dateLabel">29</div>
+  </div>
+-->
+
+    </div>
+
+    <!-- LEFT SIDEBARS -->
+    <div id="leftMinicalendar" class="sidebarSmall shadow-lg">
+        <div class="slideOutLabel boa" data-openSidebarById="leftMinicalendar" id="toggleSidebar">
+            <h2 class="my-3">Board of Administration</h2> <button type="button" class="close" aria-label="Close"><i
+                    class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDEBARS -->
+    <div id="loa04nt" class="sidebar shadow-lg overlaySidebar">
+        <div class="titleArea boa" data-openSidebarById="loa04nt" id="toggleSidebar">
+            <h2 class="my-3">Board of Administration</h2> <button type="button" class="close close-sidebar outline-none"
+                aria-label="Close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="body">
+            <p><strong>December 18, 2018</strong><br>1:00 pm<br>
+                <span class="agendaIns">Upon adjournment of the Board Governance Committee, Whichever is later</span>
+            </p>
+
+            <span class="agendaItem">Item</span>
+            <ol class="levelOne" type="1">
+                <!--1--><a href="https://www.calpers.ca.gov/docs/board-agendas/201812/financeadmin/item-01-00_a.pdf"
+                    title="Call to Order and Roll Call">
+                    <li>Call to Order and Roll Call</li>
+                </a>
+                <!--2--><a href="https://www.calpers.ca.gov/docs/board-agendas/201812/financeadmin/item-02-00_a.pdf"
+                    title="Approval of the December 18, 2018 Finance and Administration Committee Timed Agenda">
+                    <li>Approval of the December 18, 2018 Finance and Administration Committee Timed Agenda</li>
+                </a>
+
+            </ol>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/radar.js"></script>
+    <script src="js/webviewer.min.js"></script>
+
+    <script>
+
+        $('#toggleSidebar').on("click", function (event) {
+            $('.sidebar.opened').removeClass('opened')
+            let openSidebarWithID = event.target.dataset.opensidebarbyid;
+            $("#" + openSidebarWithID).toggleClass('opened')
+        });
+
+        $('.close-sidebar').on("click", function (event) {
+            $('.sidebar.opened').removeClass('opened')
+        });
+
+        $('#expandCalendarSidebar').on("click", function (event) {
+            $("#calendarSidebar").toggleClass('opened')
+            $("body").toggleClass('leftCalOpen');
+        });
+        $('#closeCalendarSidebar').on("click", function (event) {
+            $("#calendarSidebar").removeClass('opened')
+            $("body").removeClass('leftCalOpen');
+        });
+
+
+        function updateCalendarHeightToFillScreen() {
+            let applicationHeaderHeight = $('.application-header').outerHeight();
+            let fullMonthHeadingHeight = $('.fullMonthHeading').outerHeight();
+            $(".fullMonthView").height('calc(100vh - ' + (applicationHeaderHeight + fullMonthHeadingHeight) + 'px)');
+            $("#calendarSidebar").css({ top: ((applicationHeaderHeight) + 'px') });
+            $("#calendarSidebar").height('calc(100vh - ' + (applicationHeaderHeight) + 'px)');
+        }
+        $(document).ready(function () {
+            initialize();
+            calculateDocumentOpenWidth();
+            updateCalendarHeightToFillScreen();
+        });
+
+        var viewerElement = document.getElementById('document-viewer');
+
+        var myWebViewer = null;
+
+        myWebViewer = new PDFTron.WebViewer({
+            path: './lib',
+            l: 'demo:jpuli@qualapps.com:75f5d8bd01e494ea72d9637d1ec02dad486af2f2662536565c',
+            initialDoc: './docs/item-01-00_a.pdf',
+        }, viewerElement);
+
+
+
+
+        viewerElement.addEventListener('documentLoaded', function () {
+
+            console.log("pdf doc loaded");
+            var viewerInstance = myWebViewer.getInstance();
+
+            //viewerInstance.disableAnnotations();
+            viewerInstance.disableTools();
+            //show the div
+            console.log("PDF type is static mode:");
+
+            $('body').addClass('document-open');
+            calculateDocumentOpenWidth();
+           
+        });
+
+
+        function showPDFDoc(pdfurl) {
+        
+            console.log("show pdf file " + pdfurl);
+            var urlparam = encodeURI(pdfurl);
+            var url = '/secure/policy-radar/pdfviewer&docurl=' + urlparam;
+
+            
+            if (myWebViewer != null) {
+                myWebViewer.loadDocument(pdfurl);
+            }
+        }
+
+
+        function calculateDocumentOpenWidth() {
+            var overlaySidebarWidth = $('#eventsidebar').outerWidth()
+            var documentWidth = $(window).width();
+            $('.document-viewer-container').css('width', (documentWidth - (overlaySidebarWidth) + 'px'));
+
+        }
+
+
+        function getListView() {
+            console.log("fetching calendar view");
+
+            var url = '/secure/policy-radar/home';
+
+            window.location.href = url;
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

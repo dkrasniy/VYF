@@ -1,0 +1,413 @@
+@import url('https://rsms.me/inter/inter-ui.css');
+
+html {
+    font-family: 'Inter UI', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+    html {
+        font-family: 'Inter UI var alt', sans-serif;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Inter UI', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+}
+
+/* MASTHEAD */
+
+.application-header {
+	padding: .4rem;
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.02);
+	position: relative;
+	z-index: 1;
+	display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10000;
+}
+
+.height-37 button {
+    min-height: 42px;
+}
+
+.app-branding {
+    display: inline-flex;
+    align-items: center;
+}
+
+.app-branding img {
+    width: 48px;
+    height: 48px;
+    margin-right: .75em;
+}
+
+.application-header h1 {
+	font-size: 1.25em;
+	text-align: left;
+	margin: 0;
+}
+
+.search-input-wrapper input {
+    padding-left: 30px;
+}
+.height-37 input {
+    min-height: 42px;
+}
+.search-input {
+    width: 300px;
+}
+.form-control {
+    padding: .75rem;
+        padding-left: 0.75rem;
+    font-size: .8em;
+    border: none;
+    border-radius: 5px;
+}
+
+.shadow {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+}
+.shadow {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06);
+}
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.py-2 {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+.mr-2 {
+    margin-right: .5rem;
+}
+.font-semibold {
+    font-weight: 600;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.border-none {
+    border-style: none;
+}
+.rounded {
+    border-radius: .25rem;
+}
+.bg-white {
+    background-color: #fff;
+}
+button {
+    font-size: 1em;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.loggedin-user a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: .95em;
+}
+
+.loggedin-user .initials {
+    background: #f8f8f8;
+    border-radius: 50%;
+    padding: 2px;
+    height: 32px;
+    width: 32px;
+    font-size: .8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+    font-weight: 600;
+}
+
+.height-37 button {
+    min-height: 42px;
+}
+.shadow {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+}
+.shadow {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06);
+}
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.py-2 {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+.mr-2 {
+    margin-right: .5rem;
+}
+.font-semibold {
+    font-weight: 600;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.border-none {
+    border-style: none;
+}
+.rounded {
+    border-radius: .25rem;
+}
+.bg-white {
+    background-color: #fff;
+}
+
+button {
+    font-size: 1em;
+}
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+
+.loggedin-user .user-info {
+    margin-top: -1em;
+    padding: 1em;
+    background: #f7f7f7;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown .dropdown-content {
+    padding: 1em 0;
+}
+.dropdown-align-right {
+    right: 0 !important;
+}
+.dropdown-content {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 18px 30px 0px;
+    border-radius: 0.25em;
+    min-width: 16rem;
+    visibility: hidden;
+    border: 1px solid #eeeeee;
+    background-color: #fff;
+    right: 0;
+    border-radius: .25em;
+    overflow: hidden;
+    position: absolute !important;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    transform: translateY(0);
+}
+
+.search-input-wrapper {
+    display: initial;
+    margin-right: 1rem;
+    position: relative;
+}
+
+.dropdown-content.show {
+    z-index: 100000;
+}
+.dropdown-content.show {
+    opacity: 1;
+    visibility: visible;
+    height: unset;
+    overflow: unset;
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
+}
+.dropdown .dropdown-content {
+    padding: 1em 0;
+}
+.dropdown-align-right {
+    right: 0 !important;
+}
+.dropdown-content {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 18px 30px 0px;
+    border-radius: 0.25em;
+    min-width: 16rem;
+    visibility: hidden;
+    border: 1px solid #eeeeee;
+    background-color: #fff;
+    right: 0;
+    border-radius: .25em;
+    overflow: hidden;
+    position: absolute !important;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    transform: translateY(0);
+}
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+.dropdown {
+    cursor: pointer;
+}
+
+.loggedin-user .user-info .initials {
+    background: white;
+    font-size: .85em;
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+}
+
+.dropdown-item {
+    display: flex;
+    width: 100%;
+    padding: .75rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    text-align: left;
+    align-items: center;
+}
+
+.loggedin-user a i {
+    margin-left: .75em;
+}
+
+/*Not Required*/
+.btn{margin-bottom:15px;}
+/*Required*/
+@media (max-width: 576px){.modal-dialog.modal-dialog-slideout {width: 80%}}
+.modal-dialog-slideout {min-height: 100%; margin: 0 auto 0 0 ;background: #fff;}
+.modal.fade .modal-dialog.modal-dialog-slideout {-webkit-transform: translate(-100%,0);transform: translate(-100%,0);}
+.modal.fade.show .modal-dialog.modal-dialog-slideout {-webkit-transform: translate(0,0);transform: translate(0,0);flex-flow: column;}
+.modal-dialog-slideout .modal-content{border: 0;}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 40vw;
+    background: white;
+    z-index: 100000;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sidebarSmall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 20vw;
+    background: white;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sidebar.opened, .sidebarSmall.opened {
+    opacity: 1;
+    visibility: visible;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+#expandCalendarSidebar {
+    position: absolute;
+
+    /* will be overwritten after js calc */
+    top: 20vh;
+    
+    background: #eee;
+    padding: 8px 15px;
+    outline: none!important;
+    border-width: 0!important;
+    border-radius: 0 5px 5px 0;
+    left: 0;
+    z-index: 100;
+}
+#expandCalendarSidebar:hover {
+    background:#e6e6e6;
+    cursor: pointer;
+}
+
+.sidebarYearview {
+    position: absolute;
+    overflow:scroll;
+    top:0;
+    left:0;
+    width:15vw;
+    height:100vh;
+    z-index:100;
+    background:#fff;
+    opacity: 0;
+    visibility: hidden;
+}
+.sidebarYearview.opened {
+    opacity: 1;
+    visibility: visible;
+}
+
+.leftCalOpen .fullMonthHeading,.leftCalOpen .fullMonthView {
+    width:85vw;
+    margin-left: auto;
+}
+.fullMonthHeading,.fullMonthView {
+    transition: .12s ease width;
+    margin-left: auto;
+}
+
+.agenda {
+    font-size: 100%;
+}
+
+
+.agenda ul {
+    line-height: 1.2;
+    margin-top: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+ul .agendaItem {
+    list-style: none;
+}
+
+.li {
+    padding-left: .8em;
+    list-style: none;
+}
+
+.agendaItenAttach {
+font-size: .9em;
+    padding-left: 30px;
+}
+
+.metaData {
+    font-size: .8em;
+    line-height: ;
+    margin-top: -5px;
+}
