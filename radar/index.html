@@ -13,11 +13,8 @@
 </head>
 
 <body>
-        <a href="#" data-url="https://vxf.netlify.com/radar//docs/test-doc.pdf" class="loadPDFDocFromURL">Attachment 1</a>
-        <a href="#" data-url="https://vxf.netlify.com/radar//docs/item-01-00_a.pdf" class="loadPDFDocFromURL">Attachment 2</a>
-        <a href="#" data-url="https://vxf.netlify.com/radar//docs/test-doc.pdf" class="loadPDFDocFromURL">Attachment 3</a>
-       
-    <div class="application-header z-50 bg-white">
+
+        <div class="application-header z-50 bg-white">
         <div class="app-branding">
             <img src="images/insightIconv2.png">
             <h1>Insight</h1>
@@ -55,17 +52,14 @@
         </div>
     </div>
 
-    <div class="document-viewer-container">
+    <div id="document-viewer "class="document-viewer-container">
         <div class="viewer-head"><button type="button" class="close" aria-label="Close"><i
                     class="fas fa-times"></i></button></div>
-        <div id="document-viewer">
                 <div class="spinner">
                         <div class="bounce1"></div>
                         <div class="bounce2"></div>
                         <div class="bounce3"></div>
                      </div>
-        </div>
-
     </div>
 
 
@@ -266,8 +260,15 @@
                 <span class="agendaIns">Upon adjournment of the Board Governance Committee, Whichever is later</span>
             </p>
 
+            <a href="#" data-url="https://vxf.netlify.com/radar/docs/test-doc.pdf" class="loadPDFDocFromURL">TEST: Attachment 1</a>
+            <a href="#" data-url="https://vxf.netlify.com/radar/docs/item-01-00_a.pdf" class="loadPDFDocFromURL">TEST: Attachment 2</a>
+            <a href="#" data-url="https://vxf.netlify.com/radar/docs/test-doc.pdf" class="loadPDFDocFromURL">TEST: Attachment 3</a>
+
+
             <span class="agendaItem">Item</span>
             <ol class="levelOne" type="1">
+
+                
                 <!--1--><a href="https://www.calpers.ca.gov/docs/board-agendas/201812/financeadmin/item-01-00_a.pdf"
                     title="Call to Order and Roll Call">
                     <li>Call to Order and Roll Call</li>
@@ -330,7 +331,7 @@
         });
 
         $('.loadPDFDocFromURL').on("click", function (event) {
-            $('body').addClass('document-open document-loading');
+            $('document-viewer-container').addClass('loading');
             event.preventDefault();
             let loadURL = event.target.dataset.url;
             showPDFDoc(loadURL);
@@ -370,7 +371,7 @@
             console.log("PDF type is static mode:");
 
             $('body').addClass('document-open');
-            $('body').removeClass('document-loading');
+            $('.document-viewer-container.loading').removeClass('loading');
             calculateDocumentOpenWidth();
            
         });
