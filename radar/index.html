@@ -13,9 +13,9 @@
 </head>
 
 <body>
-        <a href="#" data-url="./docs/test-doc.pdf" class="loadPDFDocFromURL">Attachment 1</a>
-        <a href="#" data-url="./docs/item-01-00_a.pdf" class="loadPDFDocFromURL">Attachment 2</a>
-        <a href="#" data-url="./docs/test-doc.pdf" class="loadPDFDocFromURL">Attachment 3</a>
+        <a href="#" data-url="https://vxf.netlify.com/radar//docs/test-doc.pdf" class="loadPDFDocFromURL">Attachment 1</a>
+        <a href="#" data-url="https://vxf.netlify.com/radar//docs/item-01-00_a.pdf" class="loadPDFDocFromURL">Attachment 2</a>
+        <a href="#" data-url="https://vxf.netlify.com/radar//docs/test-doc.pdf" class="loadPDFDocFromURL">Attachment 3</a>
        
     <div class="application-header z-50 bg-white">
         <div class="app-branding">
@@ -55,11 +55,15 @@
         </div>
     </div>
 
-    <div id="document-viewer" class="document-viewer-container loading">
+    <div class="document-viewer-container">
         <div class="viewer-head"><button type="button" class="close" aria-label="Close"><i
                     class="fas fa-times"></i></button></div>
-        <div class="document-viewer">
-            
+        <div id="document-viewer">
+                <div class="spinner">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
+                     </div>
         </div>
 
     </div>
@@ -326,11 +330,10 @@
         });
 
         $('.loadPDFDocFromURL').on("click", function (event) {
-            // $('body').removeClass('document-open');
+            $('body').addClass('document-open document-loading');
             event.preventDefault();
             let loadURL = event.target.dataset.url;
             showPDFDoc(loadURL);
-            // $('body').addClass('document-open');
         });
 
         function updateCalendarHeightToFillScreen() {
@@ -367,6 +370,7 @@
             console.log("PDF type is static mode:");
 
             $('body').addClass('document-open');
+            $('body').removeClass('document-loading');
             calculateDocumentOpenWidth();
            
         });
