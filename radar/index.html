@@ -12,8 +12,11 @@
 
 </head>
 
-<body><p class="loadPDFDocFromURL" data-docurl="./docs/test-doc.pdf">Load  TEST DOC DOC</p>
-
+<body>
+        <a href="#" data-url="./docs/test-doc.pdf" class="loadPDFDocFromURL">Attachment 1</a>
+        <a href="#" data-url="./docs/item-01-00_a.pdf" class="loadPDFDocFromURL">Attachment 2</a>
+        <a href="#" data-url="./docs/test-doc.pdf" class="loadPDFDocFromURL">Attachment 3</a>
+       
     <div class="application-header z-50 bg-white">
         <div class="app-branding">
             <img src="images/insightIconv2.png">
@@ -60,7 +63,7 @@
         </div>
 
     </div>
-    <p id="viewDocument">Open Doc</p>
+
 
     <button id="expandCalendarSidebar" type="button"><i class="fas fa-chevron-right"></i></button>
 
@@ -323,9 +326,11 @@
         });
 
         $('.loadPDFDocFromURL').on("click", function (event) {
-            let loadURL = event.target.dataset.docurl;
+            // $('body').removeClass('document-open');
+            event.preventDefault();
+            let loadURL = event.target.dataset.url;
             showPDFDoc(loadURL);
-            $('body').addClass('document-open');
+            // $('body').addClass('document-open');
         });
 
         function updateCalendarHeightToFillScreen() {
@@ -354,7 +359,6 @@
 
 
         viewerElement.addEventListener('documentLoaded', function () {
-            console.log("pdf doc loaded");
             var viewerInstance = myWebViewer.getInstance();
 
             //viewerInstance.disableAnnotations();
