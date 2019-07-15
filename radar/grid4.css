@@ -93,11 +93,12 @@ body {
     width: 95%;
     height: 12%;
     color: #FFF;
-    padding-top: .4em;
     padding-left: .5em;
     font-size: .9em;
     margin-bottom: .2em;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .dateLabel {

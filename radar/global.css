@@ -106,6 +106,18 @@ body {
 .rounded {
     border-radius: .25rem;
 }
+.rounded-l {
+    border-top-left-radius: .25rem;
+border-bottom-left-radius: .25rem;
+}
+.rounded-r {
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+.-ml-1	{
+    margin-left: -0.25rem;
+}
+
 .bg-white {
     background-color: #fff;
 }
@@ -302,7 +314,7 @@ button {
 .modal-dialog-slideout .modal-content{border: 0;}
 
 .sidebar {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
@@ -311,6 +323,7 @@ button {
     z-index: 100000;
     opacity: 0;
     visibility: hidden;
+    overflow: scroll;
 }
 
 .sidebarSmall {
@@ -408,6 +421,29 @@ font-size: .9em;
 
 .metaData {
     font-size: .8em;
-    line-height: ;
     margin-top: -5px;
+}
+
+
+
+div#videoPlayerFloat {
+    background:#000;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.videoContainer iframe {
+    height: 19vw;
+    width: 35vw;
+}
+.hover\:bg-grey-lightest:hover {
+    background:#f3f3f3;
+}
+span.closeVideo {
+    color: #eee;
+    font-size: .85em;
+    text-align: center;
+    display: block;
+    padding: 7px;
+    cursor: pointer;
 }

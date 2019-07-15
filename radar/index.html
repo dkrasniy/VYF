@@ -27,8 +27,22 @@
        -->
 
         <div>
+
+            <button class="bg-white hover:bg-grey-lightest text-grey-darkest font-semibold no-outline cursor-pointer border-none  py-2 px-4 rounded-l" id="listviewbtn">
+                <i class="fas fa-list"></i>
+            </button>
+
+            <button class="height-37 bg-white hover:bg-grey-lightest text-grey-darkest -ml-1 mr-2 font-semibold no-outline cursor-pointer border-none py-2 px-4 rounded-r" id="calviewbtn">
+                <i class="fas fa-calendar-alt"></i>
+            </button>
+
             <button
-                class="height-37 bg-white hover:bg-grey-lightest text-grey-darkest font-semibold py-2 px-4 border-none rounded shadow mr-2  no-outline cursor-pointer toggle-glossary">
+            class="height-37 bg-white hover:bg-grey-lightest text-grey-darkest font-semibold py-2 px-4 border-none rounded mr-2  no-outline cursor-pointer toggle-glossary">
+            <i class="fas fa-chart-pie"></i>
+        </button>
+          
+            <button
+                class="height-37 bg-white hover:bg-grey-lightest text-grey-darkest font-semibold py-2 px-4 border-none rounded mr-2  no-outline cursor-pointer toggle-glossary">
                 <i class="fas fa-book"></i>
             </button>
 
@@ -257,8 +271,9 @@
             </p>
 
             <a href="#" data-url="https://vxf.netlify.com/radar/docs/test-doc.pdf" class="loadPDFDocFromURL">TEST: Attachment 1</a><br/>
+            <a href="#" data-videosrc="https://www.youtube.com/embed/ZbZSe6N_BXs" class="playVideo">Open Video</a>
             <a href="#" data-url="https://vxf.netlify.com/radar/docs/item-01-00_a.pdf" class="loadPDFDocFromURL">TEST: Attachment 2</a><br/>
-            <a href="#" data-url="https://vxf.netlify.com/radar/docs/test-doc.pdf" class="loadPDFDocFromURL">TEST: Attachment 3</a>
+            <a href="#" data-url="https://vxf.netlify.com/radar/docs/test-doc.pdf" class="loadPDFDocFromURL">TEST: Attachment 3</a><br/>
 
 
             <span class="agendaItem">Item</span>
@@ -275,13 +290,11 @@
                 </a>
 
             </ol>
-
-
-
-
         </div>
     </div>
 
+
+    
 
 
 
@@ -333,6 +346,24 @@
             let loadURL = event.target.dataset.url;
             showPDFDoc(loadURL);
         });
+
+        $('.playVideo').on("click", function (event) {
+            event.preventDefault();
+            let vidSRC = event.target.dataset.videosrc;
+            var htm = '<div id="videoPlayerFloat" class="shadow-lg"><span class="closeVideo">Close video</span><div class="videoContainer"><iframe width="425" height="349" src="' + vidSRC + '" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>';
+            $('.sidebar.opened').append(htm)
+            
+        });
+
+        $('body').on("click",'.closeVideo',function() { 
+            $("#videoPlayerFloat").remove(); 
+        });
+
+       
+        
+       
+
+        
 
         function updateCalendarHeightToFillScreen() {
             let applicationHeaderHeight = $('.application-header').outerHeight();
