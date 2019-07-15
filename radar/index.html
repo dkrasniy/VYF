@@ -271,7 +271,8 @@
             </p>
 
             <a href="#" data-url="https://vxf.netlify.com/radar/docs/test-doc.pdf" class="loadPDFDocFromURL">TEST: Attachment 1</a><br/>
-            <a href="#" data-videosrc="https://www.youtube.com/embed/ZbZSe6N_BXs" class="playVideo">Open Video</a>
+            <a href="#" data-videosrc="https://www.youtube.com/embed/ZbZSe6N_BXs" class="playVideo">Open Video</a><br/>
+            <a href="#" class="openTranscript">Open Transcript</a><br/><br/><br/>
             <a href="#" data-url="https://vxf.netlify.com/radar/docs/item-01-00_a.pdf" class="loadPDFDocFromURL">TEST: Attachment 2</a><br/>
             <a href="#" data-url="https://vxf.netlify.com/radar/docs/test-doc.pdf" class="loadPDFDocFromURL">TEST: Attachment 3</a><br/>
 
@@ -347,23 +348,34 @@
             showPDFDoc(loadURL);
         });
 
+        $('.openTranscript').on("click", function (event) {
+            $("#transcriptFloat").remove(); 
+            var htm = '<div id="transcriptFloat"><span class="closeTranscript"><i class="fas fa-times"></i></span><div class="transcript-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet libero volutpat, mollis ex ut, auctor purus. Fusce ultricies accumsan lectus sit amet accumsan. Etiam eget rutrum arcu. Vivamus eros dolor, imperdiet nec porta ac, porta nec turpis. Nullam ante turpis, accumsan sed leo id, ornare aliquet velit. Ut porta facilisis dui, vitae luctus arcu vestibulum et. Aenean felis eros, fermentum ac semper ac, luctus eget nisl. Phasellus convallis in arcu a sodales. Fusce vitae viverra ipsum. Nulla in imperdiet mi. In non odio non sapien vulputate malesuada at nec quam. Morbi ac tortor quis ex cursus tincidunt eget et felis. Fusce vitae finibus risus. Integer fringilla luctus metus sit amet aliquet. Phasellus sit amet feugiat arcu.</p></div></div>';
+            $('.sidebar.opened').append(htm)
+            $('.sidebar.opened').addClass('transcript-open');
+        });
+
+
         $('.playVideo').on("click", function (event) {
             event.preventDefault();
+            $("#videoPlayerFloat").remove(); 
             let vidSRC = event.target.dataset.videosrc;
-            var htm = '<div id="videoPlayerFloat" class="shadow-lg"><span class="closeVideo">Close video</span><div class="videoContainer"><iframe width="425" height="349" src="' + vidSRC + '" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>';
+            var htm = '<div id="videoPlayerFloat" class="shadow-lg"><span class="closeVideo"><i class="fas fa-times"></i></span><div class="videoContainer"><iframe width="425" height="349" src="' + vidSRC + '" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>';
             $('.sidebar.opened').append(htm)
-            
+            $('.sidebar.opened').addClass('video-open');
         });
 
         $('body').on("click",'.closeVideo',function() { 
             $("#videoPlayerFloat").remove(); 
-        });
+            $('.video-open').removeClass('video-open');
+        });   
 
-       
-        
-       
+        $('body').on("click",'.closeTranscript',function() { 
+            $("#transcriptFloat").remove(); 
+            $('.transcript-open').removeClass('transcript-open');
+        });   
 
-        
+    
 
         function updateCalendarHeightToFillScreen() {
             let applicationHeaderHeight = $('.application-header').outerHeight();

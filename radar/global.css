@@ -431,6 +431,7 @@ div#videoPlayerFloat {
     position: fixed;
     bottom: 0;
     right: 0;
+    height:21vw;
 }
 .videoContainer iframe {
     height: 19vw;
@@ -442,8 +443,53 @@ div#videoPlayerFloat {
 span.closeVideo {
     color: #eee;
     font-size: .85em;
-    text-align: center;
+    text-align: right;
     display: block;
     padding: 7px;
     cursor: pointer;
+    height: 2vw;
+}
+.sidebar.video-open {
+    height: calc(100vh - 21vw);
+}
+.sidebar.transcript-open {
+    height: calc(80vh);
+}
+.sidebar.video-open.transcript-open{
+    height: calc(79vh - 20vw);
+}
+.sidebar.video-open .transcript-container {
+    position: fixed;
+    height: 10vh;
+    bottom:21vh;
+    right:0;
+    width: 35vw;
+}
+
+#transcriptFloat {
+    background:#f6f6f6;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 35vw;
+    height: 20vh;
+    background: #222;
+    color: #eee;
+    overflow: hidden;
+}
+.transcript-body {
+    padding: .5em 1em;
+    overflow-y: scroll;
+    height: 74%;
+}
+.closeTranscript {
+    color: #eee;
+    font-size: .85em;
+    text-align: right;
+    display: block;
+    padding: 7px;
+    cursor: pointer;
+}
+.sidebar.video-open #transcriptFloat {
+    bottom: 21vw!important;
 }
