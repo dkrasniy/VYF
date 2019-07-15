@@ -327,6 +327,7 @@
         });
 
         $('.loadPDFDocFromURL').on("click", function (event) {
+            $('body').addClass('document-open');
             $('.document-viewer-container').addClass('loading');
             event.preventDefault();
             let loadURL = event.target.dataset.url;
@@ -366,7 +367,7 @@
             //show the div
             console.log("PDF type is static mode:");
 
-            $('body').addClass('document-open');
+            
             $('.document-viewer-container.loading').removeClass('loading');
             calculateDocumentOpenWidth();
            
