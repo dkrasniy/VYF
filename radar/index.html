@@ -331,7 +331,7 @@
         });
 
         $('.loadPDFDocFromURL').on("click", function (event) {
-            $('document-viewer-container').addClass('loading');
+            $('.document-viewer-container').addClass('loading');
             event.preventDefault();
             let loadURL = event.target.dataset.url;
             showPDFDoc(loadURL);
